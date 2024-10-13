@@ -84,7 +84,7 @@ function buildHtml(_pageDir, _exportPath) {
 		var ext = parsedName.ext;
 		if (ext == "" && !fs.existsSync(exportPath + i))
 			fs.mkdirSync(exportPath + i, {recursive: true});
-		if (ext == ".png" || ext == ".jpg" || ext == ".jpeg" || ext == ".gif") {
+		if (ext == ".png" || ext == ".jpg" || ext == ".jpeg" || ext == ".gif" || ext == ".webm" || ext == ".mp4") {
 			fs.copyFile("./src/" + wikiDir + i, exportPath + i, () => {});
 		}
 		if (ext == ".md") {

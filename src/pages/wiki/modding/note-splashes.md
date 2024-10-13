@@ -1,62 +1,75 @@
 ---
-author: Microkat (KadePleaseHelpMe)
+author: Microkat (KadePleaseHelpMe) & Frakits & Ne_Eo
 desc: How to make custom note splashes.
 lastUpdated: 2024-10-12, 21:54:27 EDT
 title: Note splashes
 ---
-Apparently nobody else is taking this task so I guess I'll do it
 
-# WELCOME TO CUSTOM NOTE SPLASHES !!!!1!
+# Note Splashes
 
-First thing's first, you need your .png and your .xml files (located in assets/images/game/splashes/...)
-Here's an example:
-![Screenshot 2024-10-12 202850](https://github.com/user-attachments/assets/1d07e462-a622-49d7-bcd6-fb5862770e3e)
-![Screenshot 2024-10-12 202844](https://github.com/user-attachments/assets/ea54cfae-d007-4c63-a879-50a8bfc15026)
+First, you need to put the .png and .xml of the notesplashes into ``./images/game/splashes/``
+The filename should be the name you want to reference the splashes in the data, in this case we'll use ``sploosh``.
+Here is how the spritesheet should look like:
 
-What you name the subtextures doesn't matter because of...
+<!-- TODO: get custom ones so we dont have to worry about copyrights -->
+<img src="./note-splashes-1.png">
+<img src="./note-splashes-2.png">
 
-### STEP 2 !!111!!1!1 !! !
-Next, you need another .xml, but this time it's in assets/data/splashes instead of the image path
-Example: 
-![image](https://github.com/user-attachments/assets/bec625f4-7ae1-469d-982f-47bb50ba4b86)
+Keep in mind the names of the animations in the .xml because you will need them to form the splashes data.
 
-The essential variables for the data .xml are the ``splashes``, the ``strums``, and the ``anims``.
-Splashes variables:
-- ``Sprite``: The sprite that appears for the note splashes (starting from ``assets/images/...``).
-- ``Alpha``: The visibility of the splash, with 1 being completely solid and 0 being useless because it just makes the splash transparent.
-- ``Antialiasing``: ... What am I supposed to say? It's antialiasing.
-- ``Scale``: The scale of the splashes' pixels (so if you made your splashes too damn big, you don't have to remake the whole spritesheet).
-Strums variables:
-- ``Id``: The ID of the splash you're making data for from left to right (left = 0, down = 1, etc.).
-Anim variables:
-- ``Name``: This is the name of the animation that you're editing in the data
-- ``Anim``: This is the name of the animation that you're editing in the spritesheet .xml file.
-- ``FPS``: (Do I really need to explain what FPS is an acronym for?)
-- ``X``: This is the X offset of your notesplash in case it's not properly centered on the arrows.
-- ``Y``: Ditto but it's the Y offset.
+### Making the splash xml
 
-Now for the fun part...
+Next, you need to make a .xml file for the data of the splashes, you can do this by placing the xml file in ``data/splashes/sploosh.xml``
+```xml
+<!DOCTYPE codename-engine-splashes>
+<splashes sprite="game/splashes/sploosh" alpha="0.6">
+	<strum id="0"> <!-- LEFT -->
+		<anim name="splash purple" anim="sploosh left" fps="24" x="0" y="0" />
+	</strum>
+	<strum id="1"> <!-- DOWN -->
+		<anim name="splash blue" anim="sploosh down" fps="24" x="0" y="0" />
+	</strum>
+	<strum id="2"> <!-- UP -->
+		<anim name="splash green" anim="sploosh up" fps="24" x="0" y="0" />
+	</strum>
+	<strum id="3"> <!-- RIGHT -->
+		<anim name="splash red" anim="sploosh right" fps="24" x="0" y="0" />
+	</strum>
+</splashes>
+```
 
-### STEP 3 !1 ! 1 ! !!! !!!11! ! !1 1
+Heres what the essential variables for the data .xml are:
 
-Time to use your custom note splashes in the game! Changing note splashes is really easy.
-Just put a .hx script in your mysong/scripts folder with something like this in it:
+To start, <syntax lang="xml">&lt;splashes&gt;</syntax> is where you start with. It has basic attributes like:
+- ``sprite``: The sprite that appears for the notesplashes (starting from ``./images/``).
+- ``alpha``: The visibility of the splash, with 1being completely solid and 0 being useless because itjust   makes the splash transparent.
+- ``antialiasing``: Changes if the splashes areantialiased or not. (default is `true`).
+- ``scale``: The scale the splashes show up as. (default is `1`).
+
+After defining the previous node, <syntax lang="xml">&lt;strum&gt;</syntax> is for defining each strum. It only has one singular attribute which is:
+- ``id``: The ID of the splash you're making data for. (left = 0, down = 1, etc.).
+
+Then, to define the animation of the splash (or animations since you can have multiple of those) use <syntax lang="xml">&lt;anim&gt;</syntax>, the following attributes are:
+- ``name``: This is the name of the animation that you're editing in the data
+- ``anim``: This is the name of the animation that you're editing in the spritesheet .xml file.
+- ``fps``: The framerate of the animation.
+- ``x``: This is the X offset (use this if the splash is not centered on the arrow).
+- ``y``: This is the Y offset (use this if the splash is not centered on the arrow).
+
+## Making the splash show up
+
+Now that you setup the note splashes, you have to code them in. <br>
+All you have to do is add this one piece of code in a Gameplay Script: *(change ``sploosh`` to the name of the splahses you just made)*
 ```haxe
 function onPlayerHit(e)
 {
 	e.note.splash = "sploosh";
 }
 ```
-[weed]: <> (I had to figure this out by backtracking through playstate and looking through 7 different source files)
-And bada bing bada boom you have...
-(🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁)
-Hold up why isn't it working
-Oh I forgot width and height in my spritesheet oops
-There fixed it
-![image](https://github.com/user-attachments/assets/37569dd2-ebdc-43a7-a71e-6656cbdcf155)
-And now...
-(🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁)
+And then this is how they should look in-game or something like that.
 
-### CUSTOM NOTE SPLASHES !! 1! 1 ! 1 1  ! !! !! !
-
-![custom_splashes](https://github.com/user-attachments/assets/f0a553bd-99c7-41cb-b92f-2df3e34ee389)
+<!-- muted is required for autoplay on chromium -->
+<video width="360" height="360" autoplay muted>
+  <source src="./note-splashes.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
