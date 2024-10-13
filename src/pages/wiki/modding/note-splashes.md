@@ -1,7 +1,7 @@
 ---
 author: Microkat (KadePleaseHelpMe) & Frakits & Ne_Eo
 desc: How to make custom note splashes.
-lastUpdated: 2024-10-12, 21:54:27 EDT
+lastUpdated: 2024-10-13T17:46:45.182Z
 title: Note splashes
 ---
 
