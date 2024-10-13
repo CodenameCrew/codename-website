@@ -7,7 +7,7 @@ title: Note splashes
 
 # Note Splashes
 
-First, you need to put the .png and .xml of the note splashes into ``./images/game/splashes/``
+First, you need to put the .png and .xml of the note splashes into ``images/game/splashes/``
 The filename should be the name you want to reference the splashes in the data, in this case we'll use ``sploosh``.
 Here is how the spritesheet should look like:
 
