@@ -179,7 +179,7 @@ pre {
   padding: 0 4%;
   flex-grow: 1;
 
-  >ul {
+  >ul:has(li a) {
     z-index: 0;
     position: relative;
     overflow: hidden;
