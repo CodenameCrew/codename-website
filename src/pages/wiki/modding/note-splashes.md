@@ -1,46 +1,57 @@
 ---
 author: Microkat (KadePleaseHelpMe)
 desc: How to make custom note splashes.
-lastUpdated: 2024-10-12, 21:54:27 EDT
+lastUpdated: 2024-10-13T17:46:45.182Z
 title: Note splashes
 ---
-Apparently nobody else is taking this task so I guess I'll do it
 
-# WELCOME TO CUSTOM NOTE SPLASHES !!!!1!
+# CUSTOM NOTE SPLASHES
 
-First thing's first, you need your .png and your .xml files (located in assets/images/game/splashes/...)
+For starters, you need your spritesheet (located in ``assets/images/game/splashes/...``).
 Here's an example:
-![Screenshot 2024-10-12 202850](https://github.com/user-attachments/assets/1d07e462-a622-49d7-bcd6-fb5862770e3e)
-![Screenshot 2024-10-12 202844](https://github.com/user-attachments/assets/ea54cfae-d007-4c63-a879-50a8bfc15026)
+![custom-splashes_spritesheet](https://github.com/user-attachments/assets/e8353358-c1d1-4b0b-9ba3-ee3f49e9bd0f)
 
-What you name the subtextures doesn't matter because of...
-
-### STEP 2 !!111!!1!1 !! !
-Next, you need another .xml, but this time it's in assets/data/splashes instead of the image path
+Secondly, you need a .xml file to store the data of the note splash (located in ``assets/data/splashes/...``).
 Example: 
-![image](https://github.com/user-attachments/assets/bec625f4-7ae1-469d-982f-47bb50ba4b86)
+```xml
+<!DOCTYPE codename-engine-splashes>
+<splashes sprite="game/splashes/sploosh" alpha="0.6">
+	<strum id="0"> <!-- LEFT -->
+		<anim name="splash purple" anim="sploosh left" fps="24" x="0" y="0" />
+	</strum>
+	<strum id="1"> <!-- DOWN -->
+		<anim name="splash blue" anim="sploosh down" fps="24" x="0" y="0" />
+	</strum>
+	<strum id="2"> <!-- UP -->
+		<anim name="splash green" anim="sploosh up" fps="24" x="0" y="0" />
+	</strum>
+	<strum id="3"> <!-- RIGHT -->
+		<anim name="splash red" anim="sploosh right" fps="24" x="0" y="0" />
+	</strum>
+</splashes>
+```
 
-The essential variables for the data .xml are the ``splashes``, the ``strums``, and the ``anims``.
-Splashes variables:
-- ``Sprite``: The sprite that appears for the note splashes (starting from ``assets/images/...``).
+The essential nodes for the data .xml are the <syntax lang="xml">&lt;splashes&gt;</syntax>, the <syntax lang="xml">&lt;strum&gt;</syntax>, and the <syntax lang="xml">&lt;anim&gt;</syntax>.
+
+The <syntax lang="xml">&lt;splashes&gt;</syntax> node has four main parameters:
+- ``Sprite``: The spritesheet applied to the note splashes (starting from ``assets/images/...``).
 - ``Alpha``: The visibility of the splash, with 1 being completely solid and 0 being useless because it just makes the splash transparent.
-- ``Antialiasing``: ... What am I supposed to say? It's antialiasing.
+- ``Antialiasing``: Whether or not the sprite gets antialiasing applied (you know what antialiasing is).
 - ``Scale``: The scale of the splashes' pixels (so if you made your splashes too damn big, you don't have to remake the whole spritesheet).
-Strums variables:
+
+The <syntax lang="xml">&lt;strum&gt;</syntax> node has one important parameter:
 - ``Id``: The ID of the splash you're making data for from left to right (left = 0, down = 1, etc.).
-Anim variables:
+
+Finally, the <syntax lang="xml">&lt;anim&gt;</syntax> nodes have a few necessary parameters:
 - ``Name``: This is the name of the animation that you're editing in the data
 - ``Anim``: This is the name of the animation that you're editing in the spritesheet .xml file.
-- ``FPS``: (Do I really need to explain what FPS is an acronym for?)
+- ``FPS``: The FPS of the animation. Fairly self explanatory.
 - ``X``: This is the X offset of your notesplash in case it's not properly centered on the arrows.
-- ``Y``: Ditto but it's the Y offset.
+- ``Y``: Ditto but the Y offset.
 
-Now for the fun part...
+Now for the fun part: Applying your custom note splashes to a song!
 
-### STEP 3 !1 ! 1 ! !!! !!!11! ! !1 1
-
-Time to use your custom note splashes in the game! Changing note splashes is really easy.
-Just put a .hx script in your mysong/scripts folder with something like this in it:
+Changing note splashes is really easy. All that's needed is a .hx script in your ``mysong/scripts/...`` folder with something like this in it:
 ```haxe
 function onPlayerHit(e)
 {
@@ -48,15 +59,8 @@ function onPlayerHit(e)
 }
 ```
 [weed]: <> (I had to figure this out by backtracking through playstate and looking through 7 different source files)
-And bada bing bada boom you have...
-(🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁)
-Hold up why isn't it working
-Oh I forgot width and height in my spritesheet oops
-There fixed it
-![image](https://github.com/user-attachments/assets/37569dd2-ebdc-43a7-a71e-6656cbdcf155)
-And now...
-(🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁)
 
-### CUSTOM NOTE SPLASHES !! 1! 1 ! 1 1  ! !! !! !
+Once you run your game and open your song, you should find that you now have...
+### CUSTOM NOTE SPLASHES!
 
 ![custom_splashes](https://github.com/user-attachments/assets/f0a553bd-99c7-41cb-b92f-2df3e34ee389)
