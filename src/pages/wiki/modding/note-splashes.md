@@ -1,16 +1,14 @@
 ---
 author: Microkat (KadePleaseHelpMe)
 desc: How to make custom note splashes.
-lastUpdated: 2024-10-12, 21:54EDT
+lastUpdated: 2024-10-12, 21:54:27 EDT
 title: Note splashes
 ---
-# Note splashes
-
 Apparently nobody else is taking this task so I guess I'll do it
 
-### WELCOME TO NOTE SPLASHES !!!!1!
+# WELCOME TO CUSTOM NOTE SPLASHES !!!!1!
 
-First thing's first, you need your .png and your .xml files (located in assets/images/game/splashes)
+First thing's first, you need your .png and your .xml files (located in assets/images/game/splashes/...)
 Here's an example:
 ![Screenshot 2024-10-12 202850](https://github.com/user-attachments/assets/1d07e462-a622-49d7-bcd6-fb5862770e3e)
 ![Screenshot 2024-10-12 202844](https://github.com/user-attachments/assets/ea54cfae-d007-4c63-a879-50a8bfc15026)
@@ -36,6 +34,7 @@ Anim variables:
 - ``FPS``: (Do I really need to explain what FPS is an acronym for?)
 - ``X``: This is the X offset of your notesplash in case it's not properly centered on the arrows.
 - ``Y``: Ditto but it's the Y offset.
+
 Now for the fun part...
 
 ### STEP 3 !1 ! 1 ! !!! !!!11! ! !1 1
