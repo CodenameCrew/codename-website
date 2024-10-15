@@ -2,11 +2,11 @@
     "name": "Project: Chino's Chaos",
     "description": "A mod based off of the Chino's Animated animations.",
     "author": "NebulaStellaNova",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "link": "https://gamebanana.com/mods/545648",
     "source": "",
 
     "lastUpdated": "2024-09-30T17:00:00.000Z",
 
-    "tags": ["hardcoded", "long-desc", "long-title"]
+    "tags": ["softcoded", "long-desc", "long-title"]
 }
