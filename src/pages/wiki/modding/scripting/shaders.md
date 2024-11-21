@@ -93,3 +93,36 @@ Avoid initializing variables with the name `input` or `sample`, as those cause t
 Avoid using the % (modulo) operator and instead use the mod function.
 
 Avoid using arrays. Since some platforms don't support them.
+
+## Important: Runtime Initialization of Globals
+
+In OpenGL ES, global variables declared without a storage qualifier (const, uniform, or varying) must be initialized with constant expressions at compile time. This means you cannot assign runtime-dependent values like openfl_TextureCoordv.xy or openfl_TextureSize directly to global variables outside a function.
+
+For example:
+
+```glsl
+// INVALID: Global initialization with runtime values
+vec2 uv = openfl_TextureCoordv.xy;  // ERROR: Non-constant initialization
+vec2 fragCoord = openfl_TextureCoordv * openfl_TextureSize;  // ERROR: Non-constant initialization
+vec2 iResolution = openfl_TextureSize;  // ERROR: Non-constant initialization
+```
+
+This happens because variables like openfl_TextureCoordv and openfl_TextureSize are populated dynamically by the GPU during the shader's execution and are not available at compile time.
+
+To fix this, move such assignments into the main() function or any local scope where runtime data is valid:
+
+```glsl
+// VALID: Runtime initialization inside a function
+void main() {
+    vec2 fragCoord = openfl_TextureCoordv * openfl_TextureSize; // Valid inside main()
+    vec2 iResolution = openfl_TextureSize; // Valid inside main()
+
+    vec2 uv = fragCoord / iResolution.xy;
+    vec4 col = flixel_texture2D(bitmap, uv);
+
+    gl_FragColor = col;
+}
+```
+
+This adjustment ensures the shader complies with GLSL rules and works correctly across all platforms.
+
