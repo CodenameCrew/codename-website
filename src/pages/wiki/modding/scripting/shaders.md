@@ -1,7 +1,7 @@
 ---
-author: Ne_Eo & Frakits
+author: Ne_Eo & Frakits & Lily Ross (mcagabe19)
 desc: This page explains how to add custom shaders
-lastUpdated: 2024-09-05T11:31:01.000Z
+lastUpdated: 2024-11-21T21:28:09.603Z
 title: Shaders
 ---
 # Shaders
@@ -114,10 +114,10 @@ To fix this, move such assignments into the main() function or any local scope w
 ```glsl
 // VALID: Runtime initialization inside a function
 void main() {
-    vec2 fragCoord = openfl_TextureCoordv * openfl_TextureSize; // Valid inside main()
-    vec2 iResolution = openfl_TextureSize; // Valid inside main()
+    vec2 uv = openfl_TextureCoordv.xy;
+    vec2 iResolution = openfl_TextureSize; 
+    vec2 fragCoord = uv * iResolution;
 
-    vec2 uv = fragCoord / iResolution.xy;
     vec4 col = flixel_texture2D(bitmap, uv);
 
     gl_FragColor = col;
