@@ -96,7 +96,7 @@ Avoid using arrays. Since some platforms don't support them.
 
 ## Important: Runtime Initialization of Globals
 
-In OpenGL ES, global variables declared without a storage qualifier (const, uniform, or varying) must be initialized with constant expressions at compile time. This means you cannot assign runtime-dependent values like openfl_TextureCoordv.xy or openfl_TextureSize directly to global variables outside a function.
+In OpenGL ES (such as on mobile and web), global variables declared without a storage qualifier (const, uniform, or varying) must be initialized with constant expressions at compile time. This means you cannot assign runtime-dependent values like openfl_TextureCoordv.xy or openfl_TextureSize directly to global variables outside a function.
 
 For example:
 
