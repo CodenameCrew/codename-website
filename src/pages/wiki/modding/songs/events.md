@@ -22,7 +22,7 @@ When this event is ran, it calls the function of the same name as the first para
 
 It can mainly be used if you wanna trigger a specific function at a specific time without having to code it like <syntax lang="haxe">if(curBeat == 69)</syntax>.
 
-Arguments are limited to strings only.
+Arguments are passed as strings. You may need to convert it.
 
 <img src="./HScript Call.png"/>
 
@@ -36,7 +36,7 @@ Arguments are limited to strings only.
   Your browser does not support the video tag.
 </video>
 
-This event is used to focus on a specific character, can be used to show the current character who is singing, and it can be used to have it be like a resting change, where it shows both sides of the characters, mainly during empty parts or cutscenes.
+This event is used to focus on a specific character, can be used to show the current character who is singing, and for extra movement during sections of a song where no one is singing.
 
 In Legacy FNF charts this used to be the mustHitSection which moved the camera.
 This event is automatically created when using Legacy FNF charts in Codename.
