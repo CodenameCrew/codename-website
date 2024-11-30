@@ -152,3 +152,108 @@ This event is used in Stress when Tankman says "Heh. Pretty good!".
 - **Character**: The strumline (and its respective character), to play the animation on.
 - **Animation**: The name of the animation to play.
 - **Is Forced?**: If checked, the animation will play even if there is another animation happening.
+
+# <h2 id="custom-events">Custom Events</h2>
+
+This tutorial assumes that you already know the basics of using haxeflixel, and scripting in codename. If not please take a look at <a href="../scripting/">Scripting</a>.
+
+Your average custom event will usually have 3 files
+- A JSON file (`.json`) in `./data/events/`.
+- A HScript file (`.hx`) in `./data/events/`.
+- (Optional) An image file (`.png`) for the charter icon in `./images/editor/charter/event-icons/`
+
+Each file should be named the exact same.
+
+The JSON file (`.json`) is to define the parameters of the event. The HScript file (`.hx`) file is used to handle the event, and the image is the icon that will be used in the charter.
+
+I'm going to show a `Play Sound` event and explain what is going on in each file.
+
+First lets start with the json file inside `.data/events/Play Sound.json`
+
+```json
+{
+    "params": [
+        {
+            "name": "Sound File Path",
+            "type": "String",
+            "defaultValue": ""
+        },
+        {
+            "name": "Volume",
+            "type": "Float(0, 1, 0.1, 2)",
+            "defaultValue": "1"
+        },
+        {
+            "name": "Looped",
+            "type": "Bool",
+            "defaultValue": "false"
+        }
+    ]
+}
+```
+
+Alright lets break this down.
+Each parameter in the `params` array should have a `name`, `type`, and `defaultValue`.
+
+The `name` is just the name that will be displayed and what you will check for in your script.
+
+The types that you can use are:
+
+- `Bool`: A checkmark that can be toggled on and off.
+- `Int(min, max, step)`: A box that can only contain whole numbers.
+- `Float(min, max, step, precision)`: A box that can contain decimal numbers with a desired presicion.
+- `String`: A textbox the user can type anything into.
+- `Strumline`: Let's the user pick a strumline that is passed into the script.
+- `ColorWheel`: Create's a color wheel that will return a color into the script.
+- `DropDown([choices ...])`: Creates a dropdown with the values defined in the array.
+
+And the `defaultValue` is self explainitory, but it's what is automatically set for the value of the parameter.
+
+Next let's move onto the script itself in `.data/events/Play Sound.hx`.
+
+First lets make the `onEvent` function:
+
+```haxe
+function onEvent(event) {
+
+}
+```
+
+To get our event we need to check if the name is the same as the `Play Sound` event.
+We can check that by checking `event.event.name`
+
+```haxe
+function onEvent(event) {
+  if(event.event.name == "Play Sound")
+  {
+
+  }
+}
+```
+
+Now we need to get the parameters from the event, so we can play the correct sound.
+We can get the parameters by getting the params array: `event.event.params`.
+
+The `params` array will be in the same order as the params your event `.json`.
+
+So in our case, `event.event.params[0]` will be the Sound File Path parameter, the next will be the volume parameter, and so on.
+
+```haxe
+function onEvent(event) {
+  if(event.event.name == "Play Sound")
+  {
+    // FlxG.sound.play(SoundFilePath, Volume, Looped)
+    FlxG.sound.play(Paths.sound(event.event.params[0]), event.event.params[1], event.event.params[2]);
+  }
+}
+```
+
+And thats it! Whenever our new event `Play Sound` is ran, it will run this code inside `onEvent` and play the sound based on the parameters in the event.
+
+## Event packing
+
+If you wish to make this all a bit more cleaner and share this event, you can pack the event.
+
+Packing an event is pretty simple. Visit the <a href="https://codename-engine.com/tools/event-packer">event packer</a> to pack your event into one `.pack` file.
+
+This `.pack` file goes into `./data/events/` and will work identically to its unpacked version.
