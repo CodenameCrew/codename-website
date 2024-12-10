@@ -51,7 +51,7 @@
         {
             "name": "~ Care",
             "profilePicture": "https://storage.ko-fi.com/cdn/useruploads/post/1f73237b-a38f-499c-8c49-9b97f3ed1ec3_c8fd4a56-829d-48cd-849c-e1e84abe18e9.jpg",
-            "hasMembership": true,
+            "hasMembership": false,
             "donations": [
                 {
                     "amount": 3,
@@ -85,7 +85,7 @@
         {
             "name": "Moromaniac",
             "profilePicture": "https://storage.ko-fi.com/cdn/useruploads/post/33531ebf-09c7-4a49-b788-9286a13da1bc_9e1311c7-e9a3-4aae-8c41-8383158670e1.png",
-            "hasMembership": true,
+            "hasMembership": false,
             "donations": [
                 {
                     "amount": 3,
