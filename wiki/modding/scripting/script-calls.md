@@ -148,6 +148,7 @@ Before `FlxG.game` calls `_state.create()`
 ### <syntax lang="haxe">preUpdate()</syntax>, <syntax lang="haxe">update()</syntax>, <syntax lang="haxe">postUpdate()</syntax>
 
 ## <h2 id="transition-scripts">Transition Scripts</h2>
+
 ### <syntax lang="haxe">create(event:TransitionCreationEvent)</syntax>, <syntax lang="haxe">postCreate(event:TransitionCreationEvent)</syntax>
 
 The ``event`` is shared between both calls, but cancelling ``create``'s event stops ``postCreate`` from being called.
