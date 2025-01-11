@@ -1,7 +1,7 @@
 ---
 author: hifish
 desc: This page has small general tips and tricks.
-lastUpdated: 2025-01-08T23:43:42.123Z
+lastUpdated: 2025-01-11T23:44:26.934Z
 title: Tips & Tricks
 ---
 # Tips & Tricks
@@ -13,12 +13,12 @@ var blueSolid = new FunkinSprite(200, 200).makeSolid(200, 200, FlxColor.RED);
 add(blueSolid);
 
 var redSolid = new FunkinSprite(250, 250).makeSolid(100, 100, FlxColor.RED);
-//add(redSolid);
+insert(members.indexOf(blueSolid)+1, redSolid);
 /*
-This would add the red solid above the blue solid. If we want it below the blue
+This would add the red solid right above the blue solid. If we want it below the blue
 solid, we would use the insert function, like so.
 */
-insert(members.indexOf(blueSolid)-1, redSolid);
+insert(members.indexOf(blueSolid), redSolid);
 
 ```
 ## <h2 id="set-window-name" sidebar="Window Name">Set Window Name</h2>
@@ -51,7 +51,7 @@ graphicCache.cache(Paths.image('your image'));
 
 ## <h2 id="add-mod-menu" sidebar="Mod switch menu in custom state">Adding the mod switch menu to a ModState.</h2>
 
-<img src="./Tips-1.png" alt/>
+<img src="./Tips-1.png" alt='An image showing the mod switch menu in the normal main menu state.'/>
 
 If you want to add this mod switch menu to your custom mod state, it is relatively simple.
 
@@ -82,8 +82,8 @@ if (FlxG.keys.justPressed.SEVEN) //Or any sort of event you want this to happen
 You may want an audio file to have a BPM assigned to it, like the menu music. 
 
 To do this, navigate to the folder that has the audio you want to assign a BPM to (ex: freakyMenu.ogg).
-<img src="./Tips-2.png" alt/>
+<img src="./Tips-2.png" alt='An image showing a file named "freakyMenu.ogg" in the file explorer.'/>
 
 Now, create an .ini file with the same name as the audio file you want to assign a BPM to, and open the file and add `BPM=your bpm value`.
-<img src="./Tips-3.png" alt/>
-<img src="./Tips-4.png" alt/>
+<img src="./Tips-3.png" alt='An image showing two files in the file explorer both named "freakyMenu", with the different file extensions ".ini" and ".ogg".'/>
+<img src="./Tips-4.png" alt='An image showing a file named "freakyMenu.ini" in the notepad editor, with it saying "BPM=100" in the file.'/>
