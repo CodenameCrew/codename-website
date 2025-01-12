@@ -87,3 +87,5 @@ To do this, navigate to the folder that has the audio you want to assign a BPM t
 Now, create an .ini file with the same name as the audio file you want to assign a BPM to, and open the file and add `BPM=your bpm value`.
 <img src="./Tips-3.png" alt='An image showing two files in the file explorer both named "freakyMenu", with the different file extensions ".ini" and ".ogg".'/>
 <img src="./Tips-4.png" alt='An image showing a file named "freakyMenu.ini" in the notepad editor, with it saying "BPM=100" in the file.'/>
+
+Please note that you must use `CoolUtil.playMusic()` for the .ini file to have any effect.
