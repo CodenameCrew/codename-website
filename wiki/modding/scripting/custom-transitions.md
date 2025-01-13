@@ -33,7 +33,17 @@ function postCreate(event) {
 	transitionTween = FlxTween.tween(transitionCamera.scroll, {x: -transitionCamera.width}, 2/3, {ease: FlxEase.sineOut, onComplete: (_) -> finish()});
 }
 ```
-*(``event`` has more parameters, and there exists other calls. Check <a href="script-calls.md">All Script Calls</a>, to learn more)*
+Or even, cancelling the base one for one of your own:
+```haxe
+function create(event) {
+	event.cancel();
+
+	// your code here
+}
+```
+It's all up to preference.
+
+*(Note: ``event`` has more parameters, and there exists other calls. Check <a href="script-calls.md">All Script Calls</a>, to learn more)*
 
 ## <h2 id="skipping-transitions" sidebar="Skipping Transitions, No Good">Transition Skipping</h2>
 
