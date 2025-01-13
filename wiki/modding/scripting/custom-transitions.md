@@ -1,7 +1,7 @@
 ---
 author: BerGP
 desc: This page explains how to use Custom Transitions
-lastUpdated: 2025-01-11T05:57:34.343Z
+lastUpdated: 2025-01-13T01:18:53.593Z
 title: Custom Transitions
 ---
 # Custom Transitions
