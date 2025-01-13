@@ -144,7 +144,10 @@ function buildFile(pageDir, exportPath) {
 
 	var template = fs.readFileSync("./src/sitemap.template.xml", 'utf8');
 	var sitemap = Handlebars.compile(template)({
-		links: prioList,
+		links: prioList.map(link => ({
+			link: link.link.replace(/\.html$/, ""),
+			prio: link.prio
+		})),
 		root: root
 	});
 
