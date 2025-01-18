@@ -45,7 +45,7 @@ It's all up to preference.
 
 *(Note: ``event`` has more parameters, and there exists other calls. Check <a href="script-calls.md">All Script Calls</a>, to learn more)*
 
-## <h2 id="skipping-transitions" sidebar="Skipping Transitions, No Good">Transition Skipping</h2>
+## <h2 id="skipping-transitions" sidebar="Preventing Skipping">Skipping Transitions, No Good</h2>
 
 In Codename Engine, you can skip transitions by holding SHIFT.<br>
 But that wouldn't be so cool with *your* hard-worked transition, would it?

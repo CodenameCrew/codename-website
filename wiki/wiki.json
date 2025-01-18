@@ -1,44 +1,70 @@
 [
-    ["index", "Home"],
-    ["navigation", "How to navigate the engine"],
-    ["differences", "Differences between other FNF engines"],
-    ["faq", "FAQ"],
-    ["troubleshooting", "Troubleshooting"],
-    ["modding/index", "Modding The Engine", [
-        ["songs/index", "Creating songs", [
-            ["editor-features", "Chart Editor Features"],
-            ["events", "Chart Events"],
-            ["displaying-songs", "Displaying Songs - UNFINISHED"]
-        ]],
-        ["characters/index", "Creating characters", [
-            ["editor-features", "Character Editor Features - UNFINISHED"]
-        ]],
-        ["stages/index", "Creating Stages", [
-            ["stage-extensions", "Stage Extensions - UNFINISHED"]
-        ]],
-        ["cutscenes-dialogues", "Cutscenes/Dialogues"],
-        ["note-splashes", "Note Splashes"],
-        ["scripting/index", "Scripting", [
-            ["playstate-scripts/index", "PlayState Scripts", [
-                ["gameplay-scripts", "Gameplay Scripts"],
-                ["events-notetypes-scripts", "Events/Notetype Scripts"],
-                ["cutscenes-dialogue-scripts", "Cutscenes/Dialogue Scripts"],
-                ["character-stage-scripts", "Character/Stage Scripts"],
-                ["pause-gameover-scripts", "Pause/Game Over Scripts"]
-            ]],
-            ["state-substate-scripts", "State/Substate Scripts"],
-            ["global-scripts", "Global Scripts"],
-            ["shaders", "Shaders"],
-            ["hxvlc", "Using hxvlc for videos"],
-            ["custom-options", "Custom Options"],
-            ["custom-classes", "Custom Classes"],
-            ["3d-rendering", "3D rendering - UNFINISHED"],
-            ["script-calls", "All of the script calls - UNFINISHED"],
-            ["script-snippets", "Useful script snippets for modders - UNFINISHED"],
-            ["scripted-assets-libraries", "Scripted Assets Libraries - UNFINISHED"],
-            ["ndll-scripting", "NDLL Scripting - UNFINISHED"],
-            ["custom-transitions", "Custom Transitions - UNFINISHED"]
-        ]],
-        ["hardcoding/index", "Hardcoding - UNFINISHED"]
-    ]]
+	["index", "Home"],
+	["navigation", "How to navigate the engine"],
+	["differences", "Differences between other FNF engines"],
+	["faq", "FAQ"],
+	["troubleshooting", "Troubleshooting"],
+	[
+		"modding/index",
+		"Modding The Engine",
+		[
+			[
+				"songs/index",
+				"Creating songs",
+				[
+					["editor-features", "Chart Editor Features"],
+					["events", "Chart Events"],
+					["displaying-songs", "Displaying Songs - UNFINISHED"]
+				]
+			],
+			[
+				"characters/index",
+				"Creating characters",
+				[["editor-features", "Character Editor Features - UNFINISHED"]]
+			],
+			[
+				"stages/index",
+				"Creating Stages",
+				[["stage-extensions", "Stage Extensions - UNFINISHED"]]
+			],
+			["cutscenes-dialogues", "Cutscenes/Dialogues"],
+			["note-splashes", "Note Splashes"],
+			[
+				"scripting/index",
+				"Scripting",
+				[
+					[
+						"playstate-scripts/index",
+						"PlayState Scripts",
+						[
+							["gameplay-scripts", "Gameplay Scripts"],
+							["events-notetypes-scripts", "Events/Notetype Scripts"],
+							["cutscenes-dialogue-scripts", "Cutscenes/Dialogue Scripts"],
+							["character-stage-scripts", "Character/Stage Scripts"],
+							["pause-gameover-scripts", "Pause/Game Over Scripts"]
+						]
+					],
+					["state-substate-scripts", "State/Substate Scripts"],
+					["global-scripts", "Global Scripts"],
+					["shaders", "Shaders"],
+					["hxvlc", "Using hxvlc for videos"],
+					["custom-options", "Custom Options"],
+					["custom-classes", "Custom Classes"],
+					["3d-rendering", "3D rendering - UNFINISHED"],
+					["script-calls", "All of the script calls - UNFINISHED"],
+					[
+						"script-snippets",
+						"Useful script snippets for modders - UNFINISHED"
+					],
+					[
+						"scripted-assets-libraries",
+						"Scripted Assets Libraries - UNFINISHED"
+					],
+					["ndll-scripting", "NDLL Scripting - UNFINISHED"],
+					["custom-transitions", "Custom Transitions"]
+				]
+			],
+			["hardcoding/index", "Hardcoding - UNFINISHED"]
+		]
+	]
 ]
