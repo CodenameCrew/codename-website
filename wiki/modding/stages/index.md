@@ -57,7 +57,7 @@ Other options include:
 - ``alpha`` is the "opacity" of the sprite
 - ``color`` tints the sprite in the color you set it to *(example <code class="hljs-string">#FF0000</code> will tint the sprite in full red)*
 - ``playOnCountdown`` tells the sprite whether or not to play it's animation during countdown or not.
-- ``beatInterval, beatOffset``, honestly, I don't even know what this shit is okay.
+-  ``beatOffset`` offsets animated sprite boping, and ``beatInterval`` sets animated sprites boping to a interval *(``(curBeat + beatOffset) % beatInterval`` similar to camera modulo)
 
 You can also define animations by giving it a child node called <syntax lang="xml">&lt;anim&gt;</syntax>. A sprite node with an animation node looks something like this:
 ```xml
