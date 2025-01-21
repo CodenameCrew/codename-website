@@ -165,7 +165,8 @@
 <li><code class="inline-code">alpha</code> is the "opacity" of the sprite</li>
 <li><code class="inline-code">color</code> tints the sprite in the color you set it to <em>(example <code class="hljs-string inline-code">#FF0000</code> will tint the sprite in full red)</em></li>
 <li><code class="inline-code">playOnCountdown</code> tells the sprite whether or not to play it's animation during countdown or not.</li>
-<li><code class="inline-code">beatOffset</code> offsets animated sprite boping, and <code class="inline-code">beatInterval</code> sets animated sprites boping to a interval *(<code class="inline-code">(curBeat + beatOffset) % beatInterval</code> similar to camera modulo)</li>
+<li><code class="inline-code">beatOffset</code> offsets which beat to play the sprite animation</li>
+<li><code class="inline-code">beatInterval</code> sets sprite's animation to play at a beat interval <em>(basically the amount of beats to skip + 1)</em></li>
 </ul>
 <p>You can also define animations by giving it a child node called <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">anim</span>&gt;</span></code>. A sprite node with an animation node looks something like this:</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">sprite</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"dancer1"</span> <span class="hljs-attr">sprite</span>=<span class="hljs-string">"limoDancer"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"beat"</span>&gt;</span>
