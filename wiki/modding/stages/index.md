@@ -58,7 +58,7 @@ Other options include:
 - ``color`` tints the sprite in the color you set it to *(example <code class="hljs-string">#FF0000</code> will tint the sprite in full red)*
 - ``playOnCountdown`` tells the sprite whether or not to play it's animation during countdown or not.
 - ``beatOffset`` offsets which beat to play the sprite animation
-- ``beatInterval`` sets sprite's animation to play at an interval *(basically the amount of beats to skip + 1)*
+- ``beatInterval`` sets sprite's animation to play at a beat interval *(basically the amount of beats to skip + 1)*
 
 You can also define animations by giving it a child node called <syntax lang="xml">&lt;anim&gt;</syntax>. A sprite node with an animation node looks something like this:
 ```xml
