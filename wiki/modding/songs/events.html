@@ -139,7 +139,7 @@
 <p>When this event is ran, it calls the function of the same name as the first parameter in any of the loaded scripts.</p>
 <p>It can mainly be used if you wanna trigger a specific function at a specific time without having to code it like <code class="inline-syntax inline-code"><span class="hljs-keyword">if</span>(curBeat == <span class="hljs-number">69</span>)</code>.</p>
 <p>Arguments are passed as strings. You may need to convert it.</p>
-<p><img src="./HScript Call.png" alt></p>
+<p><img src="./HScript Call.png" alt="Properties of the HScript Call event"></p>
 <ul>
 <li><strong>Function name</strong>: The function you want to call.</li>
 <li><strong>Function parameters</strong>: The functions arguments, each argument is separated by a comma.</li>
@@ -152,7 +152,7 @@
 <p>This event is used to focus on a specific character, can be used to show the current character who is singing, and for extra movement during sections of a song where no one is singing.</p>
 <p>In Legacy FNF charts this used to be the mustHitSection which moved the camera.
 This event is automatically created when using Legacy FNF charts in Codename.</p>
-<p><img src="./Camera Movement.png" alt></p>
+<p><img src="./Camera Movement.png" alt="Properties of the Camera Movement event"></p>
 <ul>
 <li><strong>Camera Target</strong>: The character you want the camera to focus on.</li>
 </ul>
@@ -163,7 +163,7 @@ This event is automatically created when using Legacy FNF charts in Codename.</p
 </video>
 <p>When this event is ran, the selected camera in the <strong>Camera</strong> parameter zooms the amount in the <strong>Amount</strong> parameter. This can be used to create intensity in a song where it would feel normally static without it.</p>
 <p>Note that this does not change the zoom of the camera permanently. It zooms back to the value of <code class="inline-code">defaultCamZoom</code>.</p>
-<p><img src="./Add Camera Zoom.png" alt></p>
+<p><img src="./Add Camera Zoom.png" alt="Properties of the Add Camera Zoom event"></p>
 <ul>
 <li><strong>Amount</strong>: The desired zoom amount.</li>
 <li><strong>Camera</strong>: The camera you want to zoom. (<strong>camGame</strong> or <strong>camHUD</strong>)</li>
@@ -176,7 +176,7 @@ This event is automatically created when using Legacy FNF charts in Codename.</p
 <p>This event changes the amount of beats before the camera bumps.
 This can be used to create a similar effect to M.I.L.Fs drop where the camera bumps every beat, without having to script anything.</p>
 <p>In the image below, the event will make the camera bump after every 4th beat</p>
-<p><img src="./Camera Modulo Change.png" alt></p>
+<p><img src="./Camera Modulo Change.png" alt="Properties of the Camera Modulo Change event"></p>
 <ul>
 <li><strong>Modulo Interval (Beats)</strong>: The amount of beats before the camera bumps.</li>
 <li><strong>Bump strength</strong>: The strength of the bump.</li>
@@ -188,7 +188,7 @@ This can be used to create a similar effect to M.I.L.Fs drop where the camera bu
 </video>
 <p>This event simply runs the flixel function to flash the camera.
 This can be used to add a simple camera flash without having to type <code class="inline-syntax inline-code">camHUD.<span class="hljs-title function_">flash</span>(<span class="hljs-title class_">FlxColor</span>.<span class="hljs-property">WHITE</span>, <span class="hljs-number">0.6</span>);</code> whenever you want to add a camera flash.</p>
-<p><img src="./Camera Flash.png" alt></p>
+<p><img src="./Camera Flash.png" alt="Properties of the Camera Flash event"></p>
 <ul>
 <li><strong>Reversed?</strong>: If checked, the camera will fade into the color instead of flash and fade out.</li>
 <li><strong>Color</strong>: The color of the flash.</li>
@@ -197,7 +197,7 @@ This can be used to add a simple camera flash without having to type <code class
 </ul>
 <h2 id="bpm-change">BPM Change</h2>
 <p>This event simply changes the BPM of the <code class="inline-code">Conductor</code>. Making sure everything stays in sync with your song.</p>
-<p><img src="./BPM Change.png" alt></p>
+<p><img src="./BPM Change.png" alt="Properties of the BPM Change event"></p>
 <ul>
 <li><strong>Target BPM</strong>: The BPM you want to change to.</li>
 </ul>
@@ -207,7 +207,7 @@ This can be used to add a simple camera flash without having to type <code class
   Your browser does not support the video tag.
 </video>
 <p>This event changes the scroll speed of all the strumlines. It can be used to increase or decrease difficulty mid-song. It also has a parameter to tween the scroll speed, making it feel less snappy and much smoother.</p>
-<p><img src="./Scroll Speed Change.png" alt></p>
+<p><img src="./Scroll Speed Change.png" alt="Properties of the Scroll Speed Change event"></p>
 <ul>
 <li><strong>Tween Speed?</strong>: If checked, the scroll speed will be changed with a tween.</li>
 <li><strong>New Speed</strong>: The new scroll speed the strumlines will change to.</li>
@@ -222,7 +222,7 @@ This can be used to add a simple camera flash without having to type <code class
 </video>
 <p>This event toggles if the chosen strumlines characters will use their animation with the <code class="inline-code">-alt</code> suffix to the animation for their sing poses and/or their idle poses.</p>
 <p>This is used in the christmas week, when the parents take turns singing.</p>
-<p><img src="./Alt Animation Toggle.png" alt></p>
+<p><img src="./Alt Animation Toggle.png" alt="Properties of the Alt Animation Toggle event"></p>
 <ul>
 <li><strong>Enable On Sing Poses</strong>: If checked, the characters will use their alt singing animations.</li>
 <li><strong>Enable On Idle</strong>: If checked, the characters will use their alt idle animation.</li>
@@ -234,7 +234,7 @@ This can be used to add a simple camera flash without having to type <code class
 </video>
 <p>This event plays a characters animation. Can be used to make a small cutscenes or small dialogue moments within the song.</p>
 <p>This event is used in Stress when Tankman says "Heh. Pretty good!".</p>
-<p><img src="./Play Animation.png" alt></p>
+<p><img src="./Play Animation.png" alt="Properties of the Play Animation event"></p>
 <ul>
 <li><strong>Character</strong>: The strumline (and its respective character), to play the animation on.</li>
 <li><strong>Animation</strong>: The name of the animation to play.</li>
