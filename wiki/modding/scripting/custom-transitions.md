@@ -1,7 +1,7 @@
 ---
 author: BerGP
 desc: This page explains how to use Custom Transitions
-lastUpdated: 2025-01-13T01:18:53.593Z
+lastUpdated: 2025-02-08T23:47:46.390Z
 title: Custom Transitions
 ---
 # Custom Transitions
@@ -13,7 +13,7 @@ To do so, you must load it from a Script *(anyone really)*.
 ```haxe	
 MusicBeatTransition.script = 'data/scripts/customTransition';
 ```
-This snippet would load from ``.data/scripts`` looking for the ``customTransition.hx`` script.
+This snippet would load from ``./data/scripts`` looking for the ``customTransition.hx`` script.
 
 You can mod the transition in any way you'd like. For example, making the transition go left to right:
 ```haxe
@@ -45,12 +45,12 @@ It's all up to preference.
 
 *(Note: ``event`` has more parameters, and there exists other calls. Check <a href="script-calls.md">All Script Calls</a>, to learn more)*
 
-## <h2 id="skipping-transitions" sidebar="Preventing Skipping">Skipping Transitions, No Good</h2>
+## <h2 id="skipping-transitions" sidebar="Preventing Skipping">Skipping Prevental</h2>
 
 In Codename Engine, you can skip transitions by holding SHIFT.<br>
-But that wouldn't be so cool with *your* hard-worked transition, would it?
+But as always, it's possible to avoid it.
 
-To prevent that from happening, disable ``allowSkip``
+To prevent it, disable ``allowSkip``
 ```haxe
 function create(event) {
 	allowSkip = false;
