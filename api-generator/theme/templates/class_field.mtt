@@ -7,7 +7,7 @@
 	</a>
 ::end::
 
-	<a ::attr name field.name::></a>
+	<a ::attr id field.name::></a>
 
 	<h3 class="anchor">$$printFieldSignature(::field::,::isStatic::,::type::)</h3>
 	::if field.overloads != null::
