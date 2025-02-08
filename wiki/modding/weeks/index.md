@@ -40,7 +40,7 @@ week6
 ```
 This example would order the weeks as Week 4 going first, Week 2 going second and Week 6 being last.
 
-Commentary is possible by typing a pound sign (``#``) before it.
+You can add comments to the list by using a pound sign (``#``) at the start of the line.
 
 Phew, that was.. wordy... Wait, I almost forgot to explain the other nodes! Let's just get to them.
 

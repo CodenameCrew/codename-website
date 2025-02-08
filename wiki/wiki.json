@@ -10,7 +10,7 @@
             ["events", "Chart Events"],
             ["displaying-songs", "Displaying Songs"]
         ]],
-				["weeks/index", "Creating weeks", [
+			  ["weeks/index", "Creating weeks", [
 						["week-characters", "Character Creation"]
 				]],
         ["characters/index", "Creating characters", [
