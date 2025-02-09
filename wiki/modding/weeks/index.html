@@ -1,25 +1,25 @@
 <!DOCTYPE html><html lang="en"><head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Pause and Game Over Scripts - Codename Engine Wiki</title>
+	<title>Weeks - Codename Engine Wiki</title>
 	<link rel="stylesheet" href="/style.css">
 	<link rel="stylesheet" href="/wiki.css">
 
-	<meta name="title" content="Pause and Game Over Scripts - Codename Engine Wiki">
-	<meta name="description" content="This page explains how to use Pause and Game Over Scripts in your mod!">
-	<meta property="og:description" content="This page explains how to use Pause and Game Over Scripts in your mod!">
-	<meta property="twitter:description" content="This page explains how to use Pause and Game Over Scripts in your mod!">
+	<meta name="title" content="Weeks - Codename Engine Wiki">
+	<meta name="description" content="How to make custom weeks">
+	<meta property="og:description" content="How to make custom weeks">
+	<meta property="twitter:description" content="How to make custom weeks">
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://codename-engine.com/">
-	<meta property="og:title" content="Pause and Game Over Scripts - Codename Engine Wiki">
+	<meta property="og:title" content="Weeks - Codename Engine Wiki">
 	<meta property="og:image" content="https://codename-engine.com/img/banner.png">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://codename-engine.com/">
-	<meta property="twitter:title" content="Pause and Game Over Scripts - Codename Engine Wiki">
+	<meta property="twitter:title" content="Weeks - Codename Engine Wiki">
 	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png">
 
 	<meta name="theme-color" content="#b265bd">
@@ -41,7 +41,7 @@
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
         <img src="/img/logo-banner-mini.png" alt="Codename Logo" class="mobile">
     </a>
-    <h2 class="header-title">Pause and Game Over Scripts</h2>
+    <h2 class="header-title">Weeks</h2>
     <div>
         <a href="/api-docs/">API</a><a href="/wiki/">Wiki</a>
     </div>
@@ -72,7 +72,13 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/songs/displaying-songs" class="odd">Displaying Songs</a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/weeks/" class="even">Creating weeks</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even selected"><a href="#main" class="even selected">Creating weeks</a><ul class="sidebar-unordered-list even pagination">
+<li><a href="#week-xml">Week.xml</a></li>
+<li><a href="#week-sorting">Organizing Weeks</a></li>
+<li><a href="#week-song-node">Song Node</a></li>
+<li><a href="#week-diff-node">Week Difficulties</a></li>
+</ul>
+<ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/weeks/week-characters" class="odd">Character Creation</a></li>
 </ul>
 </li>
@@ -92,11 +98,7 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts" class="odd">Events/Notetype Scripts</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts" class="even">Cutscenes/Dialogue Scripts</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/character-stage-scripts" class="odd">Character/Stage Scripts</a></li>
-<li class="sidebar-list-item even selected"><a href="#main" class="even selected">Pause/Game Over Scripts</a><ul class="sidebar-unordered-list even pagination">
-<li><a href="#pause">Pause Scripts</a></li>
-<li><a href="#gameover">Game Over Scripts</a></li>
-</ul>
-</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/pause-gameover-scripts" class="even">Pause/Game Over Scripts</a></li>
 </ul>
 </li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/state-substate-scripts" class="odd">State/Substate Scripts</a></li>
@@ -122,64 +124,66 @@
 		</div>
 
 		<div class="content">
-			<h1>Pause and Game Over Scripts</h1>
-<h2 id="pause">Pause Scripts</h2>
-<p>Pause Scripts can change the pause menu, either entirely or tiny bits of it.<br>
-To use one, you have to load it from a Script <em>(any script can do, even Song Scripts)</em>.</p>
-<pre class="hljs"><code class="language-haxe"><span class="hljs-title class_">PauseSubState</span>.<span class="hljs-property">script</span> = <span class="hljs-string">'data/scripts/pause'</span>;
+			<h1>Creating Weeks</h1>
+<p>Weeks have to be created manually currently, sorry.</p>
+<h2 id="week-xml">The XML</h2>
+<p>Make the xml under <code class="inline-code">./data/weeks/weeks/</code>. This seems complicated but trust me, it's quite easy to learn.</p>
+<pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">week</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"PICO"</span> <span class="hljs-attr">chars</span>=<span class="hljs-string">"pico,bf,gf"</span> <span class="hljs-attr">sprite</span>=<span class="hljs-string">"week3"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">song</span>&gt;</span>Pico<span class="hljs-tag">&lt;/<span class="hljs-name">song</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">song</span>&gt;</span>Philly Nice<span class="hljs-tag">&lt;/<span class="hljs-name">song</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">song</span>&gt;</span>Blammed<span class="hljs-tag">&lt;/<span class="hljs-name">song</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">week</span>&gt;</span>
 </code></pre>
-<p>This code points to the script that can be found in <code class="inline-code">./data/scripts/</code> and is called <code class="inline-code">pause.hx</code>.</p>
-<p>You can do many things in this script. For example, this is how you can override it and have your own entirely custom pause menu here:</p>
-<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params">event</span>) {
-    event.<span class="hljs-title function_">cancel</span>();
-
-    camera = pauseCam = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxCamera</span>();
-    pauseCam.<span class="hljs-property">bgColor</span> = <span class="hljs-title class_">FlxColor</span>.<span class="hljs-property">TRANSPARENT</span>;
-    <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">cameras</span>.<span class="hljs-title function_">add</span>(pauseCam, <span class="hljs-literal">false</span>);
-
-    <span class="hljs-comment">// your code here</span>
-}
+<p>The Week XML above is from Week 3. Your week xml will likely follow a similar format.</p>
+<p>First goes the "parent node", <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">week</span>&gt;</span></code>. That's where the options for the week are defined.</p>
+<pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">week</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"PICO"</span> <span class="hljs-attr">chars</span>=<span class="hljs-string">"pico,bf,gf"</span> <span class="hljs-attr">sprite</span>=<span class="hljs-string">"week3"</span>&gt;</span>
 </code></pre>
-<p><em>(<code class="inline-code">create</code>'s event has more parameters than that. Check for <a href="../script-calls">All of the script calls</a>, and for calls other than <code class="inline-code">create</code>)</em><br>
-This script will prevent the base pause menu from loading and allows you to add whatever you want to it.</p>
-<p>Important functions to use when coding the pause menu:</p>
+<p>So far, possible options to set there are:</p>
 <ul>
-<li><code class="inline-syntax inline-code"><span class="hljs-title function_">close</span>();</code> - Closes the pause menu, resumes gameplay.</li>
-<li><code class="inline-syntax inline-code"><span class="hljs-title class_">FlxG</span>.<span class="hljs-title function_">switchState</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">PlayState</span>());</code> - Reloads the state, restarts the song.</li>
+<li><code class="inline-code">name</code>, which updates the title text for the week (usually on the top right in the Story Mode menu)</li>
+<li><code class="inline-code">chars</code>, which controls what characters are shown when selecting the week <em>(in the order of <code class="inline-code">opponent,boyfriend,girlfriend</code>, no spaces)</em>.</li>
+<li><code class="inline-code">sprite</code>, which tells the engine what image to use for the week button <em>(has to be at <code class="inline-code">menus/storymenu/weeks/</code>)</em>. When excluded, the xml filename will be used.</li>
 </ul>
-<h2 id="gameover">Game Over Scripts</h2>
-<p>Game over scripts work the same as Pause Scripts, though presents some differences.
-This is how you load one:</p>
-<pre class="hljs"><code class="language-haxe"><span class="hljs-title class_">GameOverSubstate</span>.<span class="hljs-property">script</span> = <span class="hljs-string">"data/scripts/gameover"</span>
+<h2 id="week-sorting">weeks.txt</h2>
+<p>There exists an optional text file you can use to sort the weeks. It goes under <code class="inline-code">./data/weeks/</code>.
+<br>All you gotta do to order the weeks is just type their file names in the order you'd like:</p>
+<pre class="inline-code"><code class="inline-code">week4
+week2
+week6
 </code></pre>
-<p>This code points to the script that can be found in <code class="inline-code">./data/scripts/</code> and is called <code class="inline-code">gameover.hx</code>.</p>
-<p>Here's an example of playing a video when the player dies:</p>
-<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params">event</span>) {
-    event.<span class="hljs-title function_">cancel</span>(); <span class="hljs-comment">// cancels out initializing characters and stuff</span>
-
-    deathVideo = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxVideo</span>();
-    deathVideo.<span class="hljs-property">onEndReached</span>.<span class="hljs-title function_">add</span>(deathVideo.<span class="hljs-property">dispose</span>);
-    <span class="hljs-keyword">var</span> path = <span class="hljs-title class_">Paths</span>.<span class="hljs-title function_">file</span>(<span class="hljs-string">"videos/death.mp4"</span>);
-    deathVideo.<span class="hljs-title function_">load</span>(<span class="hljs-title class_">Assets</span>.<span class="hljs-title function_">getPath</span>(path));
-    deathVideo.<span class="hljs-title function_">play</span>();
-}
+<p>This example would order the weeks as Week 4 going first, Week 2 going second and Week 6 being last.</p>
+<p>You can add comments to the list by using a pound sign (<code class="inline-code">#</code>) at the start of the line.</p>
+<h2 id="week-song-node">Song Node (<code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">song</span>&gt;</span></code>)</h2>
+<p>To make songs appear, you have to type them following this format:</p>
+<pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">song</span>&gt;</span>song-name<span class="hljs-tag">&lt;/<span class="hljs-name">song</span>&gt;</span>
 </code></pre>
-<p><code class="inline-code">create</code>'s event has even more parameters for changing SFX and other stuff. Check for <a href="../script-calls">All of the script calls</a>, and for calls other than <code class="inline-code">create</code>.</p>
+<p>The example above would make there be a <code class="inline-code">song-name</code> named song under the songs list.</p>
+<p><em>(note that order is important, cause it'll follow in-game)</em></p>
+<h2 id="week-diff-node">Difficulty Node (<code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">difficulty</span>&gt;</span></code>)</h2>
+<p>You do have control over which difficulties your week will have. It's as simple as making a difficulty node for each difficulty:</p>
+<pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">difficulty</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Easy"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">difficulty</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Normal"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">difficulty</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Hard"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">difficulty</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Erect"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">difficulty</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Nightmare"</span>/&gt;</span>
+</code></pre>
+<p>This would make the week have <code class="inline-code">easy</code>, <code class="inline-code">normal</code>, <code class="inline-code">hard</code>, <code class="inline-code">erect</code> and <code class="inline-code">nightmare</code> as difficulty options.</p>
+<p>Custom difficulties are also supported. Just remember to have their image at <code class="inline-code">menus/storymenu/difficulties/</code> with the name in lowercase <em>(<code class="inline-code">menus/storymenu/difficulties/erect</code> for example)</em>.</p>
 
 
 			<div class="info">
-				<div class="written">Written by: Frakits &amp; usb_port_2</div>
-				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-08-31T18:37:25.000Z">2024-08-31</span></div>
+				<div class="written">Written by: BerGP</div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2025-02-08T23:46:14.246Z">2025-02-08</span></div>
 
 				<div class="github-edit-button">
-					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/modding/scripting/playstate-scripts/pause-gameover-scripts.md">Edit this page on GitHub</a>
+					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/modding/weeks/index.md">Edit this page on GitHub</a>
 				</div>
 			</div>
 
 			<div class="giscus"></div>
 			<div class="giscus-frame"></div>
 
-			<script src="https://giscus.app/client.js" data-repo="CodenameCrew/codename-website" data-repo-id="R_kgDOMm2E8w" data-category="Website" data-category-id="DIC_kwDOMm2E884Cio1F" data-mapping="specific" data-term="wiki/modding/scripting/playstate-scripts/pause-gameover-scripts" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="https://codename-engine.com/giscus-theme.css" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
+			<script src="https://giscus.app/client.js" data-repo="CodenameCrew/codename-website" data-repo-id="R_kgDOMm2E8w" data-category="Website" data-category-id="DIC_kwDOMm2E884Cio1F" data-mapping="specific" data-term="wiki/modding/weeks/index" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="https://codename-engine.com/giscus-theme.css" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
 			</script>
 		</div>
 	</div>

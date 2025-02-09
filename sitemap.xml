@@ -129,6 +129,14 @@
   <priority>0.65</priority>
 </url>
 <url>
+  <loc>https://codename-engine.com/wiki/modding/weeks/</loc>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://codename-engine.com/wiki/modding/weeks/week-characters</loc>
+  <priority>0.65</priority>
+</url>
+<url>
   <loc>https://codename-engine.com/wiki/modding/scripting/playstate-scripts/character-stage-scripts</loc>
   <priority>0.65</priority>
 </url>

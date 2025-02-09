@@ -69,7 +69,11 @@
 <li class="sidebar-list-item even"><a href="/wiki/modding/songs/" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/songs/editor-features" class="odd">Chart Editor Features</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/songs/events" class="even">Chart Events</a></li>
-<li class="sidebar-list-item odd"><a href="/wiki/modding/songs/displaying-songs" class="odd">Displaying Songs - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/songs/displaying-songs" class="odd">Displaying Songs</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/weeks/" class="even">Creating weeks</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/weeks/week-characters" class="odd">Character Creation</a></li>
 </ul>
 </li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/characters/" class="even">Creating characters</a><ul class="sidebar-unordered-list even">
@@ -124,7 +128,7 @@
 To do so, you must load it from a Script <em>(anyone really)</em>.</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-title class_">MusicBeatTransition</span>.<span class="hljs-property">script</span> = <span class="hljs-string">'data/scripts/customTransition'</span>;
 </code></pre>
-<p>This snippet would load from <code class="inline-code">.data/scripts</code> looking for the <code class="inline-code">customTransition.hx</code> script.</p>
+<p>This snippet would load from <code class="inline-code">./data/scripts</code> looking for the <code class="inline-code">customTransition.hx</code> script.</p>
 <p>You can mod the transition in any way you'd like. For example, making the transition go left to right:</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">postCreate</span>(<span class="hljs-params">event</span>) {
     transitionTween.<span class="hljs-title function_">cancel</span>(); <span class="hljs-comment">// Disabling original tween</span>
@@ -151,10 +155,10 @@ To do so, you must load it from a Script <em>(anyone really)</em>.</p>
 </code></pre>
 <p>It's all up to preference.</p>
 <p><em>(Note: <code class="inline-code">event</code> has more parameters, and there exists other calls. Check <a href="script-calls">All Script Calls</a>, to learn more)</em></p>
-<h2 id="skipping-transitions">Skipping Transitions, No Good</h2>
+<h2 id="skipping-transitions">Skipping Prevental</h2>
 <p>In Codename Engine, you can skip transitions by holding SHIFT.<br>
-But that wouldn't be so cool with <em>your</em> hard-worked transition, would it?</p>
-<p>To prevent that from happening, disable <code class="inline-code">allowSkip</code></p>
+But as always, it's possible to avoid it.</p>
+<p>To prevent it, disable <code class="inline-code">allowSkip</code></p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params">event</span>) {
     allowSkip = <span class="hljs-literal">false</span>;
 
@@ -165,7 +169,7 @@ But that wouldn't be so cool with <em>your</em> hard-worked transition, would it
 
 			<div class="info">
 				<div class="written">Written by: BerGP</div>
-				<div class="last-updated">Last updated: <span id="last-updated" data-time="2025-01-13T01:18:53.593Z">2025-01-13</span></div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2025-02-08T23:47:46.390Z">2025-02-08</span></div>
 
 				<div class="github-edit-button">
 					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/modding/scripting/custom-transitions.md">Edit this page on GitHub</a>

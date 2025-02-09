@@ -69,9 +69,15 @@
 <li class="sidebar-list-item even"><a href="/wiki/modding/songs/" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/songs/editor-features" class="odd">Chart Editor Features</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/songs/events" class="even">Chart Events</a></li>
-<li class="sidebar-list-item odd selected"><a href="#main" class="odd selected">Displaying Songs - <span style="color: #FF0000;">UNFINISHED</span></a><ul class="sidebar-unordered-list odd pagination">
+<li class="sidebar-list-item odd selected"><a href="#main" class="odd selected">Displaying Songs</a><ul class="sidebar-unordered-list odd pagination">
+<li><a href="#week-song">On a Week</a></li>
+<li><a href="#freeplay-song">Freeplay Only</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/weeks/" class="even">Creating weeks</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/weeks/week-characters" class="odd">Character Creation</a></li>
 </ul>
 </li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/characters/" class="even">Creating characters</a><ul class="sidebar-unordered-list even">
@@ -117,12 +123,27 @@
 
 		<div class="content">
 			<h1>Displaying Songs</h1>
-<p>type a bit about how to properly implement them in the mod via weeks making and freeplay.
-type about the creation of weeks
-type about freeplayList.txt (not too long tho)</p>
+<h2 id="week-song">Week Song</h2>
+<p>Simply add a <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">song</span>&gt;</span></code> node to your week xml, containing the song name.</p>
+<pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">song</span>&gt;</span>song-name<span class="hljs-tag">&lt;/<span class="hljs-name">song</span>&gt;</span>
+</code></pre>
+<p><em>(if you wanna learn more about week xmls, consider taking a <a href="../weeks/index">read into it</a>)</em></p>
+<h2 id="freeplay-song">Freeplay Exclusive</h2>
+<p>Or if you prefer not to use weeks, just <a href="index.html#creating-the-song-itself">create your song normally</a> and it'll automatically appear in freeplay.</p>
+<p>And optionally, you can make use of <code class="inline-code">./data/freeplayList.txt</code>, it follows a similar format to <a href="../weeks/index.html#week-sorting"><code class="inline-code">./data/weeks/weeks.txt</code></a>.</p>
+<pre class="inline-code"><code class="inline-code">song-name
+other-song
+
+hot-milk
+# This is a comment
+</code></pre>
+<p>It serves to tell Freeplay what songs to show and in what order.</p>
+<p>You can add comments to the list by using a pound sign (<code class="inline-code">#</code>) at the start of the line.</p>
 
 
 			<div class="info">
+				<div class="written">Written by: BerGP</div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2025-02-08T23:45:46.603Z">2025-02-08</span></div>
 
 				<div class="github-edit-button">
 					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/modding/songs/displaying-songs.md">Edit this page on GitHub</a>

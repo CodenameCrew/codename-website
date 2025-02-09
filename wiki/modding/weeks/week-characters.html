@@ -1,25 +1,25 @@
 <!DOCTYPE html><html lang="en"><head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Pause and Game Over Scripts - Codename Engine Wiki</title>
+	<title>Week Characters - Codename Engine Wiki</title>
 	<link rel="stylesheet" href="/style.css">
 	<link rel="stylesheet" href="/wiki.css">
 
-	<meta name="title" content="Pause and Game Over Scripts - Codename Engine Wiki">
-	<meta name="description" content="This page explains how to use Pause and Game Over Scripts in your mod!">
-	<meta property="og:description" content="This page explains how to use Pause and Game Over Scripts in your mod!">
-	<meta property="twitter:description" content="This page explains how to use Pause and Game Over Scripts in your mod!">
+	<meta name="title" content="Week Characters - Codename Engine Wiki">
+	<meta name="description" content="How to make custom Story Menu characters.">
+	<meta property="og:description" content="How to make custom Story Menu characters.">
+	<meta property="twitter:description" content="How to make custom Story Menu characters.">
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://codename-engine.com/">
-	<meta property="og:title" content="Pause and Game Over Scripts - Codename Engine Wiki">
+	<meta property="og:title" content="Week Characters - Codename Engine Wiki">
 	<meta property="og:image" content="https://codename-engine.com/img/banner.png">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://codename-engine.com/">
-	<meta property="twitter:title" content="Pause and Game Over Scripts - Codename Engine Wiki">
+	<meta property="twitter:title" content="Week Characters - Codename Engine Wiki">
 	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png">
 
 	<meta name="theme-color" content="#b265bd">
@@ -41,7 +41,7 @@
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
         <img src="/img/logo-banner-mini.png" alt="Codename Logo" class="mobile">
     </a>
-    <h2 class="header-title">Pause and Game Over Scripts</h2>
+    <h2 class="header-title">Week Characters</h2>
     <div>
         <a href="/api-docs/">API</a><a href="/wiki/">Wiki</a>
     </div>
@@ -73,7 +73,10 @@
 </ul>
 </li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/weeks/" class="even">Creating weeks</a><ul class="sidebar-unordered-list even">
-<li class="sidebar-list-item odd"><a href="/wiki/modding/weeks/week-characters" class="odd">Character Creation</a></li>
+<li class="sidebar-list-item odd selected"><a href="#main" class="odd selected">Character Creation</a><ul class="sidebar-unordered-list odd pagination">
+<li><a href="#week-char">Character.xml</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/characters/" class="even">Creating characters</a><ul class="sidebar-unordered-list even">
@@ -92,11 +95,7 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts" class="odd">Events/Notetype Scripts</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts" class="even">Cutscenes/Dialogue Scripts</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/character-stage-scripts" class="odd">Character/Stage Scripts</a></li>
-<li class="sidebar-list-item even selected"><a href="#main" class="even selected">Pause/Game Over Scripts</a><ul class="sidebar-unordered-list even pagination">
-<li><a href="#pause">Pause Scripts</a></li>
-<li><a href="#gameover">Game Over Scripts</a></li>
-</ul>
-</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/pause-gameover-scripts" class="even">Pause/Game Over Scripts</a></li>
 </ul>
 </li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/state-substate-scripts" class="odd">State/Substate Scripts</a></li>
@@ -122,64 +121,34 @@
 		</div>
 
 		<div class="content">
-			<h1>Pause and Game Over Scripts</h1>
-<h2 id="pause">Pause Scripts</h2>
-<p>Pause Scripts can change the pause menu, either entirely or tiny bits of it.<br>
-To use one, you have to load it from a Script <em>(any script can do, even Song Scripts)</em>.</p>
-<pre class="hljs"><code class="language-haxe"><span class="hljs-title class_">PauseSubState</span>.<span class="hljs-property">script</span> = <span class="hljs-string">'data/scripts/pause'</span>;
+			<h1>Week Character</h1>
+<p>Similar to a character, we gotta make a xml to have him displaying nicely. The folder this time is <code class="inline-code">./data/weeks/characters/</code>.</p>
+<h2 id="week-char">XML, The How</h2>
+<pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">char</span> <span class="hljs-attr">scale</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">sprite</span>=<span class="hljs-string">"menus/storymenu/characters/my-character"</span>&gt;</span>
 </code></pre>
-<p>This code points to the script that can be found in <code class="inline-code">./data/scripts/</code> and is called <code class="inline-code">pause.hx</code>.</p>
-<p>You can do many things in this script. For example, this is how you can override it and have your own entirely custom pause menu here:</p>
-<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params">event</span>) {
-    event.<span class="hljs-title function_">cancel</span>();
-
-    camera = pauseCam = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxCamera</span>();
-    pauseCam.<span class="hljs-property">bgColor</span> = <span class="hljs-title class_">FlxColor</span>.<span class="hljs-property">TRANSPARENT</span>;
-    <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">cameras</span>.<span class="hljs-title function_">add</span>(pauseCam, <span class="hljs-literal">false</span>);
-
-    <span class="hljs-comment">// your code here</span>
-}
-</code></pre>
-<p><em>(<code class="inline-code">create</code>'s event has more parameters than that. Check for <a href="../script-calls">All of the script calls</a>, and for calls other than <code class="inline-code">create</code>)</em><br>
-This script will prevent the base pause menu from loading and allows you to add whatever you want to it.</p>
-<p>Important functions to use when coding the pause menu:</p>
+<p>This time it's something more simple. The only node we have here is the "parent" one — <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">char</span>&gt;</span></code>.</p>
+<p>The options available are:</p>
 <ul>
-<li><code class="inline-syntax inline-code"><span class="hljs-title function_">close</span>();</code> - Closes the pause menu, resumes gameplay.</li>
-<li><code class="inline-syntax inline-code"><span class="hljs-title class_">FlxG</span>.<span class="hljs-title function_">switchState</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">PlayState</span>());</code> - Reloads the state, restarts the song.</li>
+<li><code class="inline-code">scale</code>, which scaling to apply to the character. Has a default of 1 when excluded.</li>
+<li><code class="inline-code">x</code>, X offset. Defaults to 0.</li>
+<li><code class="inline-code">y</code>, Y offset. Also defaults to 0.</li>
+<li><code class="inline-code">sprite</code>, which spritesheet to use for the character. When excluded, it defaults to <code class="inline-code">menus/storymenu/characters/</code> + the xml filename.</li>
 </ul>
-<h2 id="gameover">Game Over Scripts</h2>
-<p>Game over scripts work the same as Pause Scripts, though presents some differences.
-This is how you load one:</p>
-<pre class="hljs"><code class="language-haxe"><span class="hljs-title class_">GameOverSubstate</span>.<span class="hljs-property">script</span> = <span class="hljs-string">"data/scripts/gameover"</span>
-</code></pre>
-<p>This code points to the script that can be found in <code class="inline-code">./data/scripts/</code> and is called <code class="inline-code">gameover.hx</code>.</p>
-<p>Here's an example of playing a video when the player dies:</p>
-<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params">event</span>) {
-    event.<span class="hljs-title function_">cancel</span>(); <span class="hljs-comment">// cancels out initializing characters and stuff</span>
-
-    deathVideo = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxVideo</span>();
-    deathVideo.<span class="hljs-property">onEndReached</span>.<span class="hljs-title function_">add</span>(deathVideo.<span class="hljs-property">dispose</span>);
-    <span class="hljs-keyword">var</span> path = <span class="hljs-title class_">Paths</span>.<span class="hljs-title function_">file</span>(<span class="hljs-string">"videos/death.mp4"</span>);
-    deathVideo.<span class="hljs-title function_">load</span>(<span class="hljs-title class_">Assets</span>.<span class="hljs-title function_">getPath</span>(path));
-    deathVideo.<span class="hljs-title function_">play</span>();
-}
-</code></pre>
-<p><code class="inline-code">create</code>'s event has even more parameters for changing SFX and other stuff. Check for <a href="../script-calls">All of the script calls</a>, and for calls other than <code class="inline-code">create</code>.</p>
 
 
 			<div class="info">
-				<div class="written">Written by: Frakits &amp; usb_port_2</div>
-				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-08-31T18:37:25.000Z">2024-08-31</span></div>
+				<div class="written">Written by: BerGP</div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2025-02-09T00:10:03.482Z">2025-02-09</span></div>
 
 				<div class="github-edit-button">
-					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/modding/scripting/playstate-scripts/pause-gameover-scripts.md">Edit this page on GitHub</a>
+					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/modding/weeks/week-characters.md">Edit this page on GitHub</a>
 				</div>
 			</div>
 
 			<div class="giscus"></div>
 			<div class="giscus-frame"></div>
 
-			<script src="https://giscus.app/client.js" data-repo="CodenameCrew/codename-website" data-repo-id="R_kgDOMm2E8w" data-category="Website" data-category-id="DIC_kwDOMm2E884Cio1F" data-mapping="specific" data-term="wiki/modding/scripting/playstate-scripts/pause-gameover-scripts" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="https://codename-engine.com/giscus-theme.css" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
+			<script src="https://giscus.app/client.js" data-repo="CodenameCrew/codename-website" data-repo-id="R_kgDOMm2E8w" data-category="Website" data-category-id="DIC_kwDOMm2E884Cio1F" data-mapping="specific" data-term="wiki/modding/weeks/week-characters" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="https://codename-engine.com/giscus-theme.css" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
 			</script>
 		</div>
 	</div>
