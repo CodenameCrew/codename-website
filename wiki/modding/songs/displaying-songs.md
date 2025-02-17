@@ -20,7 +20,7 @@ Simply add a <syntax lang="xml">&lt;song&gt;</syntax> node to your week xml, con
 
 Or if you prefer not to use weeks, just <a href="index.html#creating-the-song-itself">create your song normally</a> and it'll automatically appear in freeplay.
 
-And optionally, you can make use of ``./data/freeplayList.txt``, it follows a similar format to <a href="../weeks/index.html#week-sorting">``./data/weeks/weeks.txt``</a>.
+And optionally, you can make use of ``./data/freeplatSonglist.txt``, it follows a similar format to <a href="../weeks/index.html#week-sorting">``./data/weeks/weeks.txt``</a>.
 ```
 song-name
 other-song
