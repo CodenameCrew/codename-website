@@ -1,6 +1,6 @@
 {
     "name": "hello again john doe",
-    "description": "Well it seems as though John Doe is here AGAIN.",
+    "description": "Well it seems as though John Doe is here AGAIN. Fan mod of infry's hello john doe. (Art by @moonb3rries)",
     "author": "SoupSkid",
     "version": "unreleased",
     "link": "https://x.com/SoupSkid",
@@ -8,5 +8,6 @@
 
     "lastUpdated": "unreleased",
 
-    "tags": ["upcoming", "softcoded", "long-title"]
+    "tags": ["upcoming", "softcoded", "long-title"],
+    "userTags": ["hello-john-doe", "roblox"]
 }
