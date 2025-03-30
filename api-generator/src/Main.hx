@@ -54,16 +54,28 @@ class Main {
 }
 
 class CodenameApi extends Api {
+	public function packToUrl(pack:String) {
+		var url = "/api-docs/" + pack.split(".").join("/") + ".html";
+		return cleanUrl(url);
+	}
+
+	public function cleanUrl(url:String) {
+		if(url.endsWith("index.html"))
+			url = url.substr(0, url.length - 10);
+		#if ACTIONS
+		if(url.endsWith(".html"))
+			url = url.substr(0, url.length - 5);
+		#end
+		return url;
+	}
+
 	override public function pathToUrl(path:Path):String {
 		var rootPath = config.rootPath;
 		if(config.rootPath == "::rootPath::") {
 			rootPath = "/api-docs/";
 		}
 		var res = rootPath + sanitizePath(path).split(".").join("/") + ".html";
-		if(res.endsWith("index.html")) {
-			res = res.substr(0, res.length - 10);
-		}
-		return res;
+		return cleanUrl(res);
 	}
 
 	override public function packageToUrl(full:String):String {
@@ -77,10 +89,7 @@ class CodenameApi extends Api {
 		} else {
 			res = rootPath + full.split(".").join("/") + "/index.html";
 		}
-		if(res.endsWith("index.html")) {
-			res = res.substr(0, res.length - 10);
-		}
-		return res;
+		return cleanUrl(res);
 	}
 
 	override function getSourceLink(type:TypeInfos):Null<String> {

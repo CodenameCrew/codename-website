@@ -1,3 +1,4 @@
+var { getGlobals } = require("../../utils.js");
 var path = require("path");
 var fs = require('fs');
 const { execSync } = require('child_process');
@@ -24,9 +25,18 @@ function buildHtml(_pageDir, _exportPath) {
 	console.log("Building Api Docs");
 	console.log("Using api generator at " + apiGenerator);
 
+	var { isActions } = getGlobals();
+
 	//if(isWatch) {
 		// build with haxe
-		execSync("haxe dox.hxml", {cwd: apiGenerator}, function(error, stdout, stderr) {
+		var args = [
+			"haxe",
+			"dox.hxml",
+		];
+		if(isActions) {
+			args.push("--define ACTIONS");
+		}
+		execSync(args.join(" "), {cwd: apiGenerator}, function(error, stdout, stderr) {
 			console.log(stdout);
 		});
 	//} else {

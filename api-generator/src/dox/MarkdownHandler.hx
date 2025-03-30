@@ -97,7 +97,11 @@ class MarkdownHandler {
 	public function pathHref(path:String) {
 		// return config.rootPath + path.split(".").join("/") + ".html";
 		// EDIT: this is a hack to fix the rootPath
-		return "/api-docs/" + path.split(".").join("/") + ".html";
+		var path = "/api-docs/" + path.split(".").join("/");
+		#if !ACTIONS
+		path += ".html";
+		#end
+		return path;
 	}
 
 	public function resolveTypeLink(type:String, ?field:String) {

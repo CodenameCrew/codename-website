@@ -9,22 +9,23 @@
   "scripts": {
     "build": "node ./src/index.js",
     "build:full": "node ./src/index.js --full",
+    "build:actions": "node ./src/index.js --full --actions",
     "watch": "node ./src/index.js --watch"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "dompurify": "^3.2.2",
+    "dompurify": "^3.2.4",
     "gray-matter": "^4.0.3",
     "handlebars": "^4.7.8",
-    "highlight.js": "^11.10.0",
-    "jsdom": "^25.0.1",
+    "highlight.js": "^11.11.1",
+    "jsdom": "^26.0.0",
     "remarkable": "^2.0.1",
-    "terser": "^5.36.0"
+    "terser": "^5.37.0"
   },
   "devDependencies": {
     "clean-css": "^5.3.3",
-    "sass": "^1.82.0"
+    "sass": "^1.83.4"
   }
 }

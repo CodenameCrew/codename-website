@@ -1,12 +1,13 @@
 {
     "name": "VS. Bamber & Davey",
-    "description": "please help me",
-    "author": "Verwex and Glitch.smh",
+    "description": "A take on Dave & Bambi following a different vision. What antics will they be in?",
+    "author": "Team Reimagination",
     "version": "unreleased",
-    "link": "https://gamebanana.com/mods/383308",
+    "link": "https://glitchdotsmh.itch.io/bnd",
     "source": "",
 
     "lastUpdated": "unreleased",
 
-    "tags": ["upcoming", "softcoded", "long-title"]
+    "tags": ["upcoming", "softcoded", "long-title", "long-desc","difficulty-hard", "length-long"],
+	"userTags": ["dave-and-bambi", "bamber-and-davey", "team-reimagination"]
 }

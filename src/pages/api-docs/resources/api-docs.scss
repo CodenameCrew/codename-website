@@ -83,13 +83,13 @@ code {
   color: white !important;
 }
 
-.anchor > code {
+.anchor > code, .field > h3 > code {
   padding: 0.4em 0.6em;
   font-size: 13px;
   font-family: monospace;
 }
 
-.anchor > code * {
+.anchor > code *, .field > h3 > code * {
   font-size: 13px;
   font-family: monospace;
 }
