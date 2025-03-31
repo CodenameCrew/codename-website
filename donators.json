@@ -14,7 +14,7 @@
         },
         {
             "name": "Saladjusted",
-            "profilePicture": "https://ko-fi.com/img/anon9.png?v=10",
+            "profilePicture": "https://storage.ko-fi.com/cdn/useruploads/post/a17edebe-03d7-43c5-b6e4-987d8bc94211_77e6f5bb-568a-4625-9399-b5531c18b74a.png",
             "hasMembership": false,
             "donations": [
                 {
@@ -50,7 +50,7 @@
         },
         {
             "name": "~ Care",
-            "profilePicture": "https://storage.ko-fi.com/cdn/useruploads/post/1f73237b-a38f-499c-8c49-9b97f3ed1ec3_c8fd4a56-829d-48cd-849c-e1e84abe18e9.jpg",
+            "profilePicture": "https://storage.ko-fi.com/cdn/useruploads/post/b94f103c-b5da-4df3-aee1-d354e7f5feba_e44bc4b0-6dbd-4a53-9c3f-19649ce7d9.jpg",
             "hasMembership": true,
             "donations": [
                 {
@@ -72,6 +72,11 @@
                     "amount": 5,
                     "currency": "$",
                     "type": "membership"
+                },
+                {
+                    "amount": 5,
+                    "currency": "$",
+                    "type": "membership"
                 }
             ]
         },
@@ -80,6 +85,11 @@
             "profilePicture": "https://storage.ko-fi.com/cdn/useruploads/post/46ec1c3e-0b47-4173-8483-9acde233082c_ac05ceff-7fd5-412b-a3d0-c104565685ca.png",
             "hasMembership": false,
             "donations": [
+                {
+                    "amount": 100,
+                    "currency": "$",
+                    "type": "donation"
+                },
                 {
                     "amount": 100,
                     "currency": "$",
@@ -169,11 +179,16 @@
         },
         {
             "name": "Fiffi",
-            "profilePicture": "https://ko-fi.com/img/anon7.png?v=1",
+            "profilePicture": "https://storage.ko-fi.com/cdn/useruploads/post/bc3d1621-c7c7-4a36-8fdf-d93b1794ddfb_d5dddd93-fef2-48f9-80d0-8b2dae214b58.jpeg",
             "hasMembership": false,
             "donations": [
                 {
                     "amount": 10,
+                    "currency": "$",
+                    "type": "donation"
+                },
+                {
+                    "amount": 50,
                     "currency": "$",
                     "type": "donation"
                 }
@@ -186,6 +201,47 @@
             "donations": [
                 {
                     "amount": 21,
+                    "currency": "$",
+                    "type": "donation"
+                }
+            ]
+        },
+        {
+            "name": "GlaveJayce",
+            "profilePicture": "https://storage.ko-fi.com/cdn/useruploads/post/2fa9d9f0-c478-4afa-bf68-69938ae89a54_d5f627d4-6083-44a2-8a36-61a594c8b1d2.png",
+            "hasMembership": false,
+            "donations": [
+                {
+                    "amount": 5,
+                    "currency": "$",
+                    "type": "donation"
+                },
+                {
+                    "amount": 5,
+                    "currency": "$",
+                    "type": "donation"
+                }
+            ]
+        },
+        {
+            "name": "Vechett",
+            "profilePicture": "https://storage.ko-fi.com/cdn/useruploads/9907e5b6-d355-4bdf-8ab4-e056161d40ae_fef73c24-6ef5-4f0c-9bd7-4f28785d1b36.png",
+            "hasMembership": false,
+            "donations": [
+                {
+                    "amount": 5,
+                    "currency": "$",
+                    "type": "donation"
+                }
+            ]
+        },
+        {
+            "name": "Circuitella",
+            "profilePicture": "https://ko-fi.com/img/anon9.png?v=1",
+            "hasMembership": false,
+            "donations": [
+                {
+                    "amount": 3,
                     "currency": "$",
                     "type": "donation"
                 }

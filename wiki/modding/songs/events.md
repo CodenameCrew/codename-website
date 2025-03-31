@@ -24,7 +24,7 @@ It can mainly be used if you wanna trigger a specific function at a specific tim
 
 Arguments are passed as strings. You may need to convert it.
 
-<img src="./HScript Call.png" alt/>
+<img src="./HScript Call.png" alt="Properties of the HScript Call event"/>
 
 - **Function name**: The function you want to call.
 - **Function parameters**: The functions arguments, each argument is separated by a comma.
@@ -41,7 +41,7 @@ This event is used to focus on a specific character, can be used to show the cur
 In Legacy FNF charts this used to be the mustHitSection which moved the camera.
 This event is automatically created when using Legacy FNF charts in Codename.
 
-<img src="./Camera Movement.png" alt/>
+<img src="./Camera Movement.png" alt="Properties of the Camera Movement event"/>
 
 - **Camera Target**: The character you want the camera to focus on.
 
@@ -56,7 +56,7 @@ When this event is ran, the selected camera in the **Camera** parameter zooms th
 
 Note that this does not change the zoom of the camera permanently. It zooms back to the value of `defaultCamZoom`.
 
-<img src="./Add Camera Zoom.png" alt/>
+<img src="./Add Camera Zoom.png" alt="Properties of the Add Camera Zoom event"/>
 
 - **Amount**: The desired zoom amount.
 - **Camera**: The camera you want to zoom. (**camGame** or **camHUD**)
@@ -73,7 +73,7 @@ This can be used to create a similar effect to M.I.L.Fs drop where the camera bu
 
 In the image below, the event will make the camera bump after every 4th beat
 
-<img src="./Camera Modulo Change.png" alt/>
+<img src="./Camera Modulo Change.png" alt="Properties of the Camera Modulo Change event"/>
 
 - **Modulo Interval (Beats)**: The amount of beats before the camera bumps.
 - **Bump strength**: The strength of the bump.
@@ -88,7 +88,7 @@ In the image below, the event will make the camera bump after every 4th beat
 This event simply runs the flixel function to flash the camera.
 This can be used to add a simple camera flash without having to type <syntax lang="haxe">camHUD.flash(FlxColor.WHITE, 0.6);</syntax> whenever you want to add a camera flash.
 
-<img src="./Camera Flash.png" alt/>
+<img src="./Camera Flash.png" alt="Properties of the Camera Flash event"/>
 
 - **Reversed?**: If checked, the camera will fade into the color instead of flash and fade out.
 - **Color**: The color of the flash.
@@ -99,7 +99,7 @@ This can be used to add a simple camera flash without having to type <syntax lan
 
 This event simply changes the BPM of the `Conductor`. Making sure everything stays in sync with your song.
 
-<img src="./BPM Change.png" alt/>
+<img src="./BPM Change.png" alt="Properties of the BPM Change event"/>
 
 - **Target BPM**: The BPM you want to change to.
 
@@ -112,7 +112,7 @@ This event simply changes the BPM of the `Conductor`. Making sure everything sta
 
 This event changes the scroll speed of all the strumlines. It can be used to increase or decrease difficulty mid-song. It also has a parameter to tween the scroll speed, making it feel less snappy and much smoother.
 
-<img src="./Scroll Speed Change.png" alt/>
+<img src="./Scroll Speed Change.png" alt="Properties of the Scroll Speed Change event"/>
 
 - **Tween Speed?**: If checked, the scroll speed will be changed with a tween.
 - **New Speed**: The new scroll speed the strumlines will change to.
@@ -131,7 +131,7 @@ This event toggles if the chosen strumlines characters will use their animation 
 
 This is used in the christmas week, when the parents take turns singing.
 
-<img src="./Alt Animation Toggle.png" alt/>
+<img src="./Alt Animation Toggle.png" alt="Properties of the Alt Animation Toggle event"/>
 
 - **Enable On Sing Poses**: If checked, the characters will use their alt singing animations.
 - **Enable On Idle**: If checked, the characters will use their alt idle animation.
@@ -147,7 +147,7 @@ This event plays a characters animation. Can be used to make a small cutscenes o
 
 This event is used in Stress when Tankman says "Heh. Pretty good!".
 
-<img src="./Play Animation.png" alt/>
+<img src="./Play Animation.png" alt="Properties of the Play Animation event"/>
 
 - **Character**: The strumline (and its respective character), to play the animation on.
 - **Animation**: The name of the animation to play.

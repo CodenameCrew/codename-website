@@ -1,7 +1,7 @@
 <div class="field">
 	<h3>
 		<code>
-			<a name="::ctor.name::" href="#::ctor.name::">
+			<a id="::ctor.name::" href="#::ctor.name::">
 				<span class="identifier">::ctor.name::</span>
 			</a>
 			::if ctor.args != null::

@@ -147,4 +147,27 @@ Before `FlxG.game` calls `_state.create()`
 
 ### <syntax lang="haxe">preUpdate()</syntax>, <syntax lang="haxe">update()</syntax>, <syntax lang="haxe">postUpdate()</syntax>
 
+## <h2 id="transition-scripts">Transition Scripts</h2>
+
+### <syntax lang="haxe">create(event:TransitionCreationEvent)</syntax>, <syntax lang="haxe">postCreate(event:TransitionCreationEvent)</syntax>
+
+The ``event`` is shared between both calls, but cancelling ``create``'s event stops ``postCreate`` from being called.
+
+``event`` in question has the following parameters:
+- ``newState`` which represents the next state (can be ``null``).
+- ``transOut`` which represents whether it's doing a in or out transition.
+
+### <syntax lang="haxe">update(elapsed:Float)</syntax>, <syntax lang="haxe">postUpdate(elapsed:Float)</syntax>
+
+### <syntax lang="haxe">destroy()</syntax>
+
+### <syntax lang="haxe">onSkip(event:CancellableEvent)</syntax>
+
+The ``event`` can be cancelled to stop the transition from being skipped by holding SHIFT.
+
+### <syntax lang="haxe">onFinish(event:CancellableEvent)</syntax>, <syntax lang="haxe">onPostFinish()</syntax>
+
+The ``event`` can be cancelled to stop the transition from finishing (switching to the next state).<br>
+Doing so, ``onPostFinish`` won't be called.
+
 more to be documented soon

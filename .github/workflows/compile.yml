@@ -44,7 +44,7 @@ jobs:
           haxelib --global install markdown 1.1.3 --quiet
 
       - run: npm install
-      - run: npm run build:full ./
+      - run: npm run build:actions ./
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1

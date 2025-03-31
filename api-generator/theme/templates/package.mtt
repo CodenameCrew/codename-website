@@ -16,7 +16,7 @@
 			::set treeType = api.getTreeType(tree)::
 			<tr class="::treeType::" ::cond name.charAt(0) != "_"::>
 				::if (treeType=="package")::
-				<td colspan="2">
+				<td>
 					<i class="fa fa-folder-o"></i>
 					<a href="::api.getTreeUrl(tree)::" title="::full::.::name::">::name::</a>
 				</td>

@@ -1,0 +1,11 @@
+{
+    "name": "Super Funkin' Galaxy",
+    "description": "Super Funkin' Galaxy is a project that aims to combine the worlds of Friday Night Funkin' and Super Mario Galaxy into one!",
+    "author": "SFG64 and The SFG Team",
+    "version": "unreleased",
+    "link": "https://funkingalaxy.com",
+
+    "lastUpdated": "unreleased",
+
+    "tags": ["upcoming", "hardcoded", "softcoded", "long-title", "long-desc"]
+}

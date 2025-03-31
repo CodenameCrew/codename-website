@@ -22,7 +22,10 @@ process.argv = process.argv.filter(arg => arg != '--first-run');
 var isRelease = process.argv.includes('--release') || isFullBuild;
 process.argv = process.argv.filter(arg => arg != '--release');
 
-setGlobals({isFullBuild, isWatch, isFirstRun, isRelease});
+var isActions = process.argv.includes('--actions');
+process.argv = process.argv.filter(arg => arg != '--actions');
+
+setGlobals({isFullBuild, isWatch, isFirstRun, isRelease, isActions});
 
 hljs.registerLanguage('haxe', haxeFormat);
 

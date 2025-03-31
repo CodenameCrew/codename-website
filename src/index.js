@@ -10,6 +10,9 @@ process.argv = process.argv.filter(arg => arg != '--watch');
 var isRelease = process.argv.includes('--release') || isFullBuild;
 process.argv = process.argv.filter(arg => arg != '--release');
 
+var isActions = process.argv.includes('--actions');
+process.argv = process.argv.filter(arg => arg != '--actions');
+
 var firstRun = true;
 
 function startChild() {
@@ -29,6 +32,9 @@ function startChild() {
 	if(firstRun) {
 		args.push('--first-run');
 		firstRun = false;
+	}
+	if(isActions) {
+		args.push('--actions');
 	}
 
 	child = spawn('node', ['src/build.js', ...args], {

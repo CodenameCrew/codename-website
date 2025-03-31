@@ -116,14 +116,14 @@
 		<p>This includes PlayState, Character, Stage and more</p>
 	::elseif pageName == "funkin.game.cutscenes"::
 		<p>Handles the cutscenes before the song starts/or when the song ends such as, videos, dialogues, and scripted cutscenes</p>
-		<p>Read more at <a href="/wiki/modding/cutscenes-dialogues.html">Cutscenes/Dialogues</a></p>
+		<p>Read more at <a href="::api.cleanUrl("/wiki/modding/cutscenes-dialogues.html")::">Cutscenes/Dialogues</a></p>
 	::elseif pageName == "funkin.game.cutscenes.dialogue"::
 		<p>This part deals with the dialogue cutscenes both the box and character sprites, and contains code to make it work</p>
 
 
 	::elseif pageName == "funkin.menus"::
 		<p>This has the code for all of the engines' states and substates</p>
-		<small>(Excluding some small ones such as <a href="/api-docs/funkin/options/keybinds/KeybindsOptions.html">KeybindsOptions</a>, <a href="/api-docs/funkin/options/OptionsMenu.html">OptionsMenu</a> and <a href="/api-docs/funkin/game/PlayState.html">PlayState</a>)</small>
+		<small>(Excluding some small ones such as <a href="::api.packToUrl("funkin.options.keybinds.KeybindsOptions")::">KeybindsOptions</a>, <a href="::api.packToUrl("funkin.options.OptionsMenu")::">OptionsMenu</a> and <a href="::api.packToUrl("funkin.game.PlayState")::">PlayState</a>)</small>
 	::elseif pageName == "funkin.menus.credits"::
 		<p>Credits state showing all relevant parties fnf dev, and cne devs showing contributions</p>
 	::elseif pageName == "funkin.menus.ui"::
@@ -132,7 +132,7 @@
 
 	::elseif pageName == "funkin.options"::
 		<p>Contains the tools to create options categories/separate options</p>
-		<p>Using the options.xml file, read more on <a href="/wiki/modding/scripting/custom-options.html">Custom Options</a></p>
+		<p>Using the options.xml file, read more on <a href="::api.cleanUrl("/wiki/modding/scripting/custom-options.html")::">Custom Options</a></p>
 	::elseif pageName == "funkin.options.categories"::
 		<p>Contains the already existing options categories, keybinds appearance etc</p>
 	::elseif pageName == "funkin.options.keybinds"::
@@ -142,7 +142,7 @@
 
 	::elseif pageName == "funkin.savedata"::
 		<p>This code handles all of the Highscore stuff for the engine</p>
-		<p>The actual save data fields are in <a href="/api-docs/funkin/options/Options.html">Options</a></p>
+		<p>The actual save data fields are in <a href="::api.packToUrl("funkin.options.Options")::">Options</a></p>
 		<p>For custom save data use <code class="inline-syntax inline-code"><span class="hljs-title class_">FlxG</span>.<span class="hljs-property">save</span>.<span class="hljs-property">data</span></code></p>
 	::end::
 </macro>

@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="preconnect" href="https://netdna.bootstrapcdn.com">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ pageTitle }} - Codename Engine Docs</title>
 	<link rel="stylesheet" href="root/style.css">
 	<link rel="stylesheet" href="root/index.css">
 
-	<meta name="title" content="{{ pageTitle }} - Codename Engine Docs" />
-	<meta name="description" content="Website dedicated to things for Codename Engine!" />
 	<meta name="keywords" content="codename engine, codename, engine, game, modding, mods, website, documentation, wiki, tools, tool, codenameengine, cne, funkin, fnf, fnf engine, fnf engines, friday night funkin, gamebanana fnf" />
+
+	<meta name="title" content="{{ pageTitle }} - Codename Engine Docs" />
+	<meta property="og:title" content="{{ pageTitle }} - Codename Engine Docs" />
+	<meta property="twitter:title" content="{{ pageTitle }} - Codename Engine Docs" />
+
+	<meta name="description" content="Website dedicated to things for Codename Engine!" />
+	<meta property="og:description" content="Website dedicated to things for Codename Engine!" />
+	<meta property="twitter:description" content="Website dedicated to things for Codename Engine!" />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://codename-engine.com/" />
-	<meta property="og:title" content="{{ pageTitle }} - Codename Engine Docs" />
-	<meta property="og:description" content="Website dedicated to things for Codename Engine!" />
 	<meta property="og:image" content="https://codename-engine.com/img/banner.png" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="https://codename-engine.com/" />
-	<meta property="twitter:title" content="{{ pageTitle }} - Codename Engine Docs" />
-	<meta property="twitter:description" content="Website dedicated to things for Codename Engine!" />
 	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png" />
 
 	<meta name="theme-color" content="#b265bd">
 
+	<link rel="shortcut icon" href="root/favicon.ico" />
 	<link rel="icon" href="root/favicon.ico" type="image/x-icon"/>
-	<link rel="apple-touch-icon" sizes="180x180" href="root/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="root/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="root/favicon-16x16.png">
-	<link rel="manifest" href="root/site.webmanifest">
+	<link rel="icon" type="image/svg+xml" href="root/favicon.svg" />
+	<link rel="apple-touch-icon" sizes="180x180" href="root/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="96x96" href="root/favicon-96x96.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="root/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="root/favicon-16x16.png" />
+	<meta name="apple-mobile-web-app-title" content="Codename" />
+	<link rel="manifest" href="root/site.webmanifest" />
 
 	<link href='https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' rel='stylesheet' type='text/css' />
 </head>
@@ -52,7 +59,7 @@
 				<br />
 				<a href="/api-docs/" class="default-button">API</a>
 				<a href="/wiki/" class="default-button">Wiki</a>
-				<!-- <a href="./tools/">Tools</a> -->
+				<a href="/tools/" class="default-button">Tools</a>
 				<div>
 					<p>Codename Engine is a fork of Friday Night Funkin'<br>with a focus on softcoding and modding.</p>
 				</div>
@@ -63,44 +70,27 @@
 					<div class="os-button">
 						<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/windows/main/Codename%20Engine.zip" class="default-button">
 							<span>
-								<img class="os-logo" src="root/img/os/windows.svg" alt> Windows
+								<img class="os-logo" src="root/img/os/windows.svg" alt="Icon for Windows"> Windows
 							</span>
 						</a>
 					</div>
 					<div class="os-button">
 						<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/macos/main/Codename%20Engine.zip" class="default-button">
 							<span>
-								<img class="os-logo" src="root/img/os/apple.svg" alt> MacOS
+								<img class="os-logo" src="root/img/os/apple.svg" alt="Icon for MacOS"> MacOS
 							</span>
 						</a>
 					</div>
 					<div class="os-button">
 						<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/linux/main/Codename%20Engine.zip" class="default-button">
 							<span>
-								<img class="os-logo" src="root/img/os/linux.svg" alt> Linux
-							</span>
-						</a>
-					</div>
-				</div>
-				<h4><i class="fa fa-github"></i> <a href="https://github.com/MobilePorting/CodenameEngine-Mobile/"> Unofficial port</a> for mobile phones:</h4>
-				<div class="downloads">
-					<div class="os-button">
-						<a href="https://nightly.link/MobilePorting/CodenameEngine-Mobile/workflows/android/cne-pr/Codename%20Engine.zip" class="default-button">
-							<span>
-								<img class="os-logo" src="root/img/os/android.svg" alt> Android
-							</span>
-						</a>
-					</div>
-					<div class="os-button">
-						<a href="https://nightly.link/MobilePorting/CodenameEngine-Mobile/workflows/ios/cne-pr/Codename%20Engine.zip" class="default-button">
-							<span>
-								<img class="os-logo" src="root/img/os/apple.svg" alt> iOS
+								<img class="os-logo" src="root/img/os/linux.svg" alt="Icon for Linux"> Linux
 							</span>
 						</a>
 					</div>
 				</div>
 				<div>
-					<i>Make sure to join our official <img class="icon" src="root/img/icons/discord.svg" alt> <a href="https://discord.gg/WTzm35kekB">Discord&nbsp;Server</a>!</i>
+					<i>Make sure to join our official <img class="icon" src="root/img/icons/discord.svg" alt="Discord"> <a href="https://discord.gg/WTzm35kekB">Discord&nbsp;Server</a>!</i>
 					<br>
 					<i>You can contribute to this website by going to the <i class="fa fa-github"></i> <a href="https://github.com/CodenameCrew/codename-website">Website&nbsp;repository</a></i>
 					<br>
@@ -122,7 +112,7 @@
 				{{/members}}
 				{{/hasMembers-disable}} -->
 				<h2>Donators</h2>
-				<span class="donators-list">
+				<div class="donators-list">
 					{{#each donators}}
 					<div class="donator{{#if hasMembership}} membership{{/if}}">
 						<img src="{{profilePicture}}" alt="{{name}}" width="32" height="32">
@@ -132,13 +122,11 @@
 						</div>
 					</div>
 					{{/each}}
-				</span>
+				</div>
 			</div>
 		</div>
 		<div class="content mods">
-			<div>
-				<h2>Mods</h2>
-			</div>
+			<h2>Mods</h2>
 			<div class="sort-buttons hide-nojs">
 				<div>
 					<a href="./#" class="sort-button category-button default-button selected" data-sort="all">
@@ -192,11 +180,11 @@
 						{{#if premium}}
 						<picture>
 							<source srcset="root/img/sparkle-top.webp" type="image/webp">
-							<img src="root/img/sparkle-top.gif" class="sparkle top" alt>
+							<img src="root/img/sparkle-top.gif" class="sparkle top" alt="Sparkle Top">
 						</picture>
 						<picture>
 							<source srcset="root/img/sparkle-bottom.webp" type="image/webp">
-							<img src="root/img/sparkle-bottom.gif" class="sparkle bottom" alt>
+							<img src="root/img/sparkle-bottom.gif" class="sparkle bottom" alt="Sparkle Bottom">
 						</picture>
 						{{/if}}
 					</a>
