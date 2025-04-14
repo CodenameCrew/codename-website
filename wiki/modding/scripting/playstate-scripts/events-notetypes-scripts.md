@@ -86,7 +86,7 @@ Making note types only consists of 2 files: the script file and the note sprites
 
 Putting the sprites in ``./images/game/notes`` and naming them after the note type name will automatically replace the default note sprites with those.
 
-Writing a script for the note types is very easy. Though only one script is ran for all existing note types instead of each note, you can still code actions for them. <br>
+The script file goes in ``./data/notes``. Writing a script for the note types is very easy. Though only one script is ran for all existing note types instead of each note, you can still code actions for them. <br>
 For example here is code for triggering actions when the player presses it:
 ```haxe
 function onPlayerHit(event) {
