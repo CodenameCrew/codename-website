@@ -58,11 +58,6 @@ if (curCameraTarget == 1) // Equivalent to mustHitSection == true
 
 ### Difficulty-Based Scripts
 
-You can now add **Difficulty Based scripts** by placing them in a subfolder named after the difficulty inside the song’s scripts folder. For example:
-
-```
-songs/dadbattle/scripts/erect/
-```
-
-This allows you to define different behavior for each difficulty level of a song. The game will automatically use the script corresponding to the selected difficulty, if it exists.
+You can also add **Difficulty Based scripts** by placing them in a subfolder named after the difficulty inside the song’s scripts folder.<br>
+For example the scripts inside `songs/dadbattle/scripts/erect/` will only get loaded if the current difficulty is `erect`.
 
