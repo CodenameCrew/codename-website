@@ -195,7 +195,7 @@ There's a lot of them but we'll go over each one.</p>
 <h2 id="notetypes">Note types</h2>
 <p>Making note types only consists of 2 files: the script file and the note sprites.</p>
 <p>Putting the sprites in <code class="inline-code">./images/game/notes</code> and naming them after the note type name will automatically replace the default note sprites with those.</p>
-<p>Writing a script for the note types is very easy. Though only one script is ran for all existing note types instead of each note, you can still code actions for them. <br>
+<p>The script file goes in <code class="inline-code">./data/notes</code>. Writing a script for the note types is very easy. Though only one script is ran for all existing note types instead of each note, you can still code actions for them. <br>
 For example here is code for triggering actions when the player presses it:</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">onPlayerHit</span>(<span class="hljs-params">event</span>) {
     <span class="hljs-keyword">if</span> (event.<span class="hljs-property">noteType</span> == <span class="hljs-string">"Damage Note"</span>) {
