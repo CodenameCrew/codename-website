@@ -125,40 +125,43 @@
 		<div class="content">
 			<h1>Gameplay Scripts</h1>
 <h2 id="gameplay-scripts">Gameplay scripts run during gameplay <em>(yep)</em></h2>
-<p>You can run Gameplay Scripts in <strong>a song</strong>, by putting the scripts in <code class="inline-code">./song/YOUR SONG/scripts</code>, or run them in <strong>every song</strong>, by putting them in the <code class="inline-code">./songs</code> folder itself.</p>
-<p>Gameplay Scripts can change the gameplay in various ways, for example, this is how you can hide the player character:</p>
+<p>You can run Gameplay Scripts in <strong>a song</strong>, by putting the scripts in <code class="inline-code">./songs/YOUR SONG/scripts</code>, or run them in <strong>every song</strong>, by putting them in the <code class="inline-code">./songs</code> folder itself.</p>
+<p>Gameplay Scripts can change the gameplay in various ways. For example, here's how you can hide the player character:</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>) {
     boyfriend.<span class="hljs-property">visible</span> = <span class="hljs-literal">false</span>;
 }
 </code></pre>
 <p>Or how to create a normal sprite:</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>) {
-    <span class="hljs-keyword">var</span> sprite = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxSprite</span>(x, y).<span class="hljs-title function_">loadGraphic</span>(<span class="hljs-title class_">Paths</span>.<span class="hljs-title function_">image</span>(<span class="hljs-string">"my new sprite"</span>)); <span class="hljs-comment">//picks the png image from the ./images folder</span>
+    <span class="hljs-keyword">var</span> sprite = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxSprite</span>(x, y).<span class="hljs-title function_">loadGraphic</span>(<span class="hljs-title class_">Paths</span>.<span class="hljs-title function_">image</span>(<span class="hljs-string">"my new sprite"</span>)); <span class="hljs-comment">// Picks the PNG image from the ./images folder</span>
 }
 </code></pre>
-<p>If you notice, this looks slightly like source code, aside from the usual <code class="inline-syntax inline-code"><span class="hljs-keyword">override</span> <span class="hljs-keyword">function</span></code> or <code class="inline-syntax inline-code"><span class="hljs-variable language_">super</span>.<span class="hljs-title function_">create</span>()</code>, which does not exist in our scripting language.<br>
-If you already got the hang of source coding, then scripting will feel like a breeze. If not.. well.. prepare to learn!</p>
+<p>If you notice, this looks slightly like source code, aside from the usual <code class="inline-syntax inline-code"><span class="hljs-keyword">override</span> <span class="hljs-keyword">function</span></code> or <code class="inline-syntax inline-code"><span class="hljs-variable language_">super</span>.<span class="hljs-title function_">create</span>()</code>, which do not exist in our scripting language.<br>
+If you're already familiar with source coding, scripting will feel like a breeze. If not… well… prepare to learn!</p>
 <h2 id="particularities">Particularities</h2>
-<h3>Accessing characters.</h3>
-<p>Characters are actually accessed differently. Due to the modularity of having more than one Strumline, and having more than one character in a Strumline, characters are accessible like this:</p>
-<pre class="hljs"><code class="language-haxe"><span class="hljs-title function_">trace</span>(strumLines.<span class="hljs-property">members</span>[<span class="hljs-number">0</span>].<span class="hljs-property">characters</span>[<span class="hljs-number">0</span>]); <span class="hljs-comment">// opponent character</span>
-<span class="hljs-title function_">trace</span>(strumLines.<span class="hljs-property">members</span>[<span class="hljs-number">1</span>].<span class="hljs-property">characters</span>[<span class="hljs-number">0</span>]); <span class="hljs-comment">// player character</span>
-<span class="hljs-title function_">trace</span>(strumLines.<span class="hljs-property">members</span>[<span class="hljs-number">2</span>].<span class="hljs-property">characters</span>[<span class="hljs-number">0</span>]); <span class="hljs-comment">// girlfriend character</span>
+<h3>Accessing characters</h3>
+<p>Characters are actually accessed differently. Due to the modularity of having more than one Strumline, and more than one character in a Strumline, characters are accessible like this:</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-title function_">trace</span>(strumLines.<span class="hljs-property">members</span>[<span class="hljs-number">0</span>].<span class="hljs-property">characters</span>[<span class="hljs-number">0</span>]); <span class="hljs-comment">// Opponent character</span>
+<span class="hljs-title function_">trace</span>(strumLines.<span class="hljs-property">members</span>[<span class="hljs-number">1</span>].<span class="hljs-property">characters</span>[<span class="hljs-number">0</span>]); <span class="hljs-comment">// Player character</span>
+<span class="hljs-title function_">trace</span>(strumLines.<span class="hljs-property">members</span>[<span class="hljs-number">2</span>].<span class="hljs-property">characters</span>[<span class="hljs-number">0</span>]); <span class="hljs-comment">// Girlfriend character</span>
 </code></pre>
-<p>Though we have also established a few shortcuts to avoid typing this much code</p>
+<p>Though we’ve also established a few shortcuts to avoid typing this much code:</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-title function_">trace</span>(dad);
 <span class="hljs-title function_">trace</span>(boyfriend);
 <span class="hljs-title function_">trace</span>(gf);
 </code></pre>
-<h3>Replacing <code class="inline-code">mustHitSection</code>.</h3>
-<p>Sections do not exists, and therefore, <code class="inline-code">mustHitSection</code> no longer works. But, as a workaround, you can use <code class="inline-code">curCameraTarget</code> to replace it.</p>
-<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">if</span> (curCameraTarget == <span class="hljs-number">1</span>) <span class="hljs-comment">// mustHitSection == true</span>
+<h3>Replacing <code class="inline-code">mustHitSection</code></h3>
+<p>Sections do not exist, and therefore, <code class="inline-code">mustHitSection</code> no longer works. As a workaround, you can use <code class="inline-code">curCameraTarget</code> instead:</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">if</span> (curCameraTarget == <span class="hljs-number">1</span>) <span class="hljs-comment">// Equivalent to mustHitSection == true</span>
 </code></pre>
+<h3>Difficulty-Based Scripts</h3>
+<p>You can also add <strong>Difficulty Based scripts</strong> by placing them in a subfolder named after the difficulty inside the song’s scripts folder.<br>
+For example the scripts inside <code class="inline-code">songs/dadbattle/scripts/erect/</code> will only get loaded if the current difficulty is <code class="inline-code">erect</code>.</p>
 
 
 			<div class="info">
 				<div class="written">Written by: Frakits</div>
-				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-09-03T18:08:41.000Z">2024-09-03</span></div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2025-05-02T18:08:41.000Z">2025-05-02</span></div>
 
 				<div class="github-edit-button">
 					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/modding/scripting/playstate-scripts/gameplay-scripts.md">Edit this page on GitHub</a>
