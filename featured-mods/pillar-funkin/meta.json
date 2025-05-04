@@ -1,12 +1,15 @@
 {
     "name": "Pillar Funkin'",
-    "description": "THE DEMO IS OUT!!! Featuring Rosemary, Vapor, Uncle Samsonite, and two secret songs for you to discover. Play Now!",
+    "description": "HOTFIX RELEASED!! This mod features several monsters from Pillar Chase 2 such as; Rosemary, Vapor, Uncle Samsonite, and more! There are some... secret songs, if you can find them!",
     "author": "LuigiChaser & Stalebaguette & EmiliaFumo",
-    "version": "0.1.0",
+    "version": "0.5.2",
     "link": "https://gamebanana.com/mods/582155",
     "source": "",
-
-    "lastUpdated": "2025-03-18T02:22:45.000Z",
-
-    "tags": ["softcoded", "difficulty-normal", "length-short"]
+    "lastUpdated": "2025-04-29T01:50:14.000Z",
+    "tags": [
+        "softcoded",
+        "difficulty-normal",
+        "length-medium",
+        "longer-desc"
+    ]
 }

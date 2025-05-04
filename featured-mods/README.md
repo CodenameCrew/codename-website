@@ -14,7 +14,7 @@
 
    We don't wish to have ports of mods that were originally made for another engine, unless they are uploaded by the original author.
 
-   **Note:** We don't allow mods that contain piracy or illegal content. If you have any questions, please ask in the [Discord Server](https://discord.gg/WTzm35kekB).
+   **Note:** We don't allow mods that contain piracy or illegal content. If you have any questions, please ask in the [Discord Server](https://discord.com/servers/codename-engine-860561967383445535).
 
 3. **Download Links**
    Providing a full build download link is **discouraged**. Please refrain from including direct links to full builds. Unless your mod is a **hardcoded Codename Engine mod**.

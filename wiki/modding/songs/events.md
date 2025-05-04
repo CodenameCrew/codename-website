@@ -203,7 +203,7 @@ The types that you can use are:
 - `Int(min, max, step)`: A box that can only contain whole numbers.
 - `Float(min, max, step, precision)`: A box that can contain decimal numbers with a desired precision.
 - `String`: A textbox the user can type anything into.
-- `Strumline`: Let's the user pick a strumline that is passed into the script.
+- `StrumLine`: Let's the user pick a strumline that is passed into the script.
 - `ColorWheel`: Create's a color wheel that will return a color into the script.
 - `DropDown([choices ...])`: Creates a dropdown with the values defined in the array.
 
