@@ -412,6 +412,17 @@ div.compact {
     height: min-content;
 }
 
+.horizontal-stack {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.horizontal-stack div.content {
+    flex: 2;
+    margin-bottom: 0 !important;
+}
+
 .donators-list {
     display: flex;
     flex-wrap: wrap;

@@ -49,52 +49,71 @@
 	</div>
 	<div class="container">
 		<div class="vertical-stack">
-			<div class="content main-content">
-				<h1 class="page-logo">
-					<picture>
-						<source srcset="root/img/codename-animated.webp" type="image/webp">
-						<img class="content-logo" src="root/img/codename-animated.gif" alt="Codename Engine">
-					</picture>
-				</h1>
-				<br />
-				<a href="/api-docs/" class="default-button">API</a>
-				<a href="/wiki/" class="default-button">Wiki</a>
-				<a href="/tools/" class="default-button">Tools</a>
-				<div>
-					<p>Codename Engine is a fork of Friday Night Funkin'<br>with a focus on softcoding and modding.</p>
-				</div>
-				<div>
-					<h2>Downloads</h2>
-				</div>
-				<div class="downloads">
-					<div class="os-button">
-						<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/windows/main/Codename%20Engine.zip" class="default-button">
-							<span>
-								<img class="os-logo" src="root/img/os/windows.svg" alt="Icon for Windows"> Windows
-							</span>
-						</a>
+			<div class="horizontal-stack">
+				<div class="content main-content">
+					<h1 class="page-logo">
+						<picture>
+							<source srcset="root/img/codename-animated.webp" type="image/webp">
+							<img class="content-logo" src="root/img/codename-animated.gif" alt="Codename Engine">
+						</picture>
+					</h1>
+					<br />
+					<a href="/api-docs/" class="default-button">API</a>
+					<a href="/wiki/" class="default-button">Wiki</a>
+					<a href="/tools/" class="default-button">Tools</a>
+					<div>
+						<p>Codename Engine is a fork of Friday Night Funkin'<br>with a focus on softcoding and modding.</p>
 					</div>
-					<div class="os-button">
-						<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/macos/main/Codename%20Engine.zip" class="default-button">
-							<span>
-								<img class="os-logo" src="root/img/os/apple.svg" alt="Icon for MacOS"> MacOS
-							</span>
-						</a>
+					<div>
+						<h2>Downloads</h2>
 					</div>
-					<div class="os-button">
-						<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/linux/main/Codename%20Engine.zip" class="default-button">
-							<span>
-								<img class="os-logo" src="root/img/os/linux.svg" alt="Icon for Linux"> Linux
-							</span>
-						</a>
+					<div class="downloads">
+						<div class="os-button">
+							<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/windows/main/Codename%20Engine.zip" class="default-button">
+								<span>
+									<img class="os-logo" src="root/img/os/windows.svg" alt="Icon for Windows"> Windows
+								</span>
+							</a>
+						</div>
+						<div class="os-button">
+							<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/macos/main/Codename%20Engine.zip" class="default-button">
+								<span>
+									<img class="os-logo" src="root/img/os/apple.svg" alt="Icon for MacOS"> MacOS
+								</span>
+							</a>
+						</div>
+						<div class="os-button">
+							<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/linux/main/Codename%20Engine.zip" class="default-button">
+								<span>
+									<img class="os-logo" src="root/img/os/linux.svg" alt="Icon for Linux"> Linux
+								</span>
+							</a>
+						</div>
+					</div>
+					<div>
+						<i>Make sure to join our official <img class="icon" src="root/img/icons/discord.svg" alt="Discord"> <a href="https://discord.com/servers/codename-engine-860561967383445535">Discord&nbsp;Server</a>!</i>
+						<br>
+						<i>You can contribute to this website by going to the <i class="fa fa-github"></i> <a href="https://github.com/CodenameCrew/codename-website">Website&nbsp;repository</a></i>
+						<br>
+						<i>You can find the engine source by going to the <i class="fa fa-github"></i> <a href="https://github.com/CodenameCrew/CodenameEngine">Engine&nbsp;repository</a></i>
 					</div>
 				</div>
-				<div>
-					<i>Make sure to join our official <img class="icon" src="root/img/icons/discord.svg" alt="Discord"> <a href="https://discord.com/servers/codename-engine-860561967383445535">Discord&nbsp;Server</a>!</i>
-					<br>
-					<i>You can contribute to this website by going to the <i class="fa fa-github"></i> <a href="https://github.com/CodenameCrew/codename-website">Website&nbsp;repository</a></i>
-					<br>
-					<i>You can find the engine source by going to the <i class="fa fa-github"></i> <a href="https://github.com/CodenameCrew/CodenameEngine">Engine&nbsp;repository</a></i>
+	
+				<div class="discordWidget">
+					<div class="discordWidget-header">
+						<h2 style="text-align: center; margin: 0; transform: translateY(50%);">Discord Server</h2>
+					</div>
+					<div class="discordWidget-content">
+						<span>Members online</span>
+						<div class="discordWidget-user">
+							<img style="margin-right: 8px;"; src=""/>
+							<span></span>
+						</div>
+					</div>
+					<div class="discordWidget-footer">
+						<span>Want to chat?</span>
+						<a style="margin-left: 35px;" href="#" class="default-button">Join Server</a>
+					</div>
 				</div>
 			</div>
 
@@ -195,6 +214,37 @@
 			<script src="root/featuredMods.js"></script>
 		</div>
 	</div>
+
+	<script>
+		const widgetContent = document.querySelector(".discordWidget-content");
+		const widgetFooter = document.querySelector(".discordWidget-footer");
+		const userTemplate = document.querySelector(".discordWidget-user");
+		userTemplate.remove();
+		fetch("https://discord.com/api/guilds/860561967383445535/widget.json").then(response => response.json()).then(data => {
+			widgetFooter.querySelector("a").href = data.instant_invite;
+			for (const member of data.members) {
+				const user = userTemplate.cloneNode(true);
+				user.querySelector("img").src = member.avatar_url + "?size=16";
+				user.querySelector("span").innerText = member.username;
+				user.querySelector("img").style.border = "solid var(--discord-" + member.status + ") 2px";
+				widgetContent.appendChild(user);
+			}
+		})
+
+		function syncHeights() {
+			const main = document.querySelector('.main-content');
+			const discord = document.querySelector('.discordWidget');
+			if (main && discord) {
+				discord.style.height = `${main.offsetHeight}px`;
+				const mainStyles = window.getComputedStyle(main);
+  				discord.style.marginTop = mainStyles.marginTop;
+			}
+		}
+
+		window.addEventListener('load', syncHeights);
+		window.addEventListener('DOMContentLoaded', syncHeights);
+		window.addEventListener('resize', syncHeights);
+	</script>
 
 	<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
 	<script>
