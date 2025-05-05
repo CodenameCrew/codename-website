@@ -19,6 +19,7 @@
         ["stages/index", "Creating Stages", [
             ["stage-extensions", "Stage Extensions - UNFINISHED"]
         ]],
+        ["making-custom-icons", "Making Custom Icons"],
         ["cutscenes-dialogues", "Cutscenes/Dialogues"],
         ["note-splashes", "Note Splashes"],
         ["scripting/index", "Scripting", [

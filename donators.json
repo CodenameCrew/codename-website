@@ -89,6 +89,11 @@
                     "amount": 100,
                     "currency": "$",
                     "type": "donation"
+                },
+                {
+                    "amount": 100,
+                    "currency": "$",
+                    "type": "donation"
                 }
             ]
         },
