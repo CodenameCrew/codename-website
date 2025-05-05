@@ -1,27 +1,38 @@
 (function() {
 
-	/**@__PURE__*/
-	function minimizeCss( content ) {
-		content = content.trim();
-		content = content.replace( /\n/g, '' );
-		content = content.replace( /\t/g, '' );
-		// sadly i cant include more optimizations since minification wont pre run the replacements
-		return content;
-	}
+/**@__PURE__*/
+function minimizeCss( content ) {
+	content = content.trim();
+	content = content.replace( /\n/g, '' );
+	content = content.replace( /\t/g, '' );
+	// sadly i cant include more optimizations since minification wont pre run the replacements
+	return content;
+}
 
-	/*
+/*
 
-	// Cause a whole new rendering layer
-	transform: translateZ(0px);
-	will-change: transform;
-	*/
-	var styleCss = minimizeCss(`
+// Cause a whole new rendering layer
+transform: translateZ(0px);
+will-change: transform;
+*/
+var styleCss = minimizeCss(`
 .countdown-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 
 	font-size: 2em;
+	height: 1.2em;
+}
+
+.end-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	margin-top: 1em;
+
+	font-size: 1em;
 	height: 1.2em;
 }
 
@@ -142,182 +153,267 @@ function getTimeDiffArr(diff) {
 	return [days, hours, minutes, seconds];
 }
 
-	const DAYS = 0;
-	const HOURS = 1;
-	const MINUTES = 2;
-	const SECONDS = 3;
+const DAYS = 0;
+const HOURS = 1;
+const MINUTES = 2;
+const SECONDS = 3;
 
-	const maxDigitFirst = [10, 3, 6, 6];
+const maxDigitFirst = [10, 3, 6, 6];
 
-	class CountdownTimer extends HTMLElement {
-		constructor() {
-			super();
-			this.attachShadow({ mode: "open" });
+class CountdownTimer extends HTMLElement {
+	constructor() {
+		super();
+		this.attachShadow({ mode: "open" });
 
-			const style = document.createElement("style");
-			style.textContent = styleCss;
-			this.shadowRoot.appendChild(style);
+		const style = document.createElement("style");
+		style.textContent = styleCss;
+		this.shadowRoot.appendChild(style);
 
-			var time = this.getTime();
+		let time = this.getTime();
 
-			this.days = this.createDigitsFor(DAYS, 3);
-			this.hours = this.createDigitsFor(HOURS);
-			this.minutes = this.createDigitsFor(MINUTES);
-			this.seconds = this.createDigitsFor(SECONDS);
+		console.log(time);
+		this.days = this.createDigitsFor(DAYS, 3);
+		this.hours = this.createDigitsFor(HOURS);
+		this.minutes = this.createDigitsFor(MINUTES);
+		this.seconds = this.createDigitsFor(SECONDS);
 
-			var container = document.createElement("div");
-			container.classList.add("countdown-container");
-			if(time == null) {
-				container.setAttribute("data-message", this.getAttribute("data-date") == "awaiting-date" ? "Awaiting Date" : "Invalid Date");
-				container.classList.add("finished");
-			} else {
-				container.setAttribute("data-message", this.getAttribute("data-message") ?? "To be deleted");
-			}
-			if(this.finished) {
-				container.classList.add("finished");
-			}
-
-			container.appendChild($$("div", {"className": "days"}, [
-				$$("div", {"className": "digit-group"}, this.days),
-				this.createSpacing("d")
-			]));
-
-			container.appendChild($$("div", {"className": "hours"}, [
-				$$("div", {"className": "digit-group"}, this.hours),
-				this.createSpacing("h")
-			]));
-
-			container.appendChild($$("div", {"className": "minutes"}, [
-				$$("div", {"className": "digit-group"}, this.minutes),
-				this.createSpacing("m")
-			]));
-
-			container.appendChild($$("div", {"className": "seconds"}, [
-				$$("div", {"className": "digit-group"}, this.seconds),
-				this.createSpacing("s")
-			]));
-
-			this.shadowRoot.appendChild(container);
-
-			//this.debug = document.createElement("div");
-			//this.debug.classList.add("debug");
-			//this.shadowRoot.appendChild(this.debug);
+		let container = document.createElement("div");
+		container.classList.add("countdown-container");
+		if(time == null) {
+			container.setAttribute("data-message", this.getAttribute("data-date") == "awaiting-date" ? "Awaiting Date" : "Invalid Date");
+			container.classList.add("finished");
+		} else {
+			container.setAttribute("data-message", this.getAttribute("data-message") ?? "! Awaiting Deletion !");
+		}
+		if(this.finished) {
+			container.classList.add("finished");
 		}
 
-		createDigitsFor(type, totalDigits=2) {
-			var maxFirst = maxDigitFirst[type];
+		container.appendChild($$("div", {"className": "days"}, [
+			$$("div", {"className": "digit-group"}, this.days),
+			this.createSpacing("d")
+		]));
 
-			var digits = [];
+		container.appendChild($$("div", {"className": "hours"}, [
+			$$("div", {"className": "digit-group"}, this.hours),
+			this.createSpacing("h")
+		]));
 
-			//var currentTime = time[["days", "hours", "minutes", "seconds"].indexOf(type)];
+		container.appendChild($$("div", {"className": "minutes"}, [
+			$$("div", {"className": "digit-group"}, this.minutes),
+			this.createSpacing("m")
+		]));
 
-			for(let i = 0; i < totalDigits; i++) {
-				if(this.finished) {
-					digits.push(this.createDigits(1));
-				} else {
-					digits.push(this.createDigits(i == 0 ? maxFirst : 10));
+		container.appendChild($$("div", {"className": "seconds"}, [
+			$$("div", {"className": "digit-group"}, this.seconds),
+			this.createSpacing("s")
+		]));
+
+		this.shadowRoot.appendChild(container);
+
+		if (time != null) {
+			let timeSinceEnd = Date.now() - this.getEndTimeObj().getTime();
+			if (timeSinceEnd < 0) {
+				timeSinceEnd = 0;
+			}
+
+			if (timeSinceEnd > 0) {
+				let text = document.createElement("div");
+				text.classList.add("end-container");
+
+				let readableTime = [];
+
+				const msInYear = 1000 * 60 * 60 * 24 * 365;
+				const msInMonth = 1000 * 60 * 60 * 24 * 30;
+				const msInDay = 1000 * 60 * 60 * 24;
+				const msInHour = 1000 * 60 * 60;
+				const msInMinute = 1000 * 60;
+				const msInSecond = 1000;
+
+				let hasAdded = false;
+
+				if (hasAdded || timeSinceEnd >= msInYear) {
+					const years = Math.floor(timeSinceEnd / msInYear);
+					readableTime.push(`${years}y`);
+					timeSinceEnd -= years * msInYear;
+					hasAdded = true
 				}
+
+				if (hasAdded || timeSinceEnd >= msInMonth) {
+					const months = Math.floor(timeSinceEnd / msInMonth);
+					readableTime.push(`${months}mo`);
+					timeSinceEnd -= months * msInMonth;
+					hasAdded = true;
+				}
+
+				if (hasAdded || timeSinceEnd >= msInDay) {
+					const days = Math.floor(timeSinceEnd / msInDay);
+					readableTime.push(`${days}d`);
+					timeSinceEnd -= days * msInDay;
+					hasAdded = true;
+				}
+
+				if (hasAdded || timeSinceEnd >= msInHour) {
+					const hours = Math.floor(timeSinceEnd / msInHour);
+					readableTime.push(`${hours}h`);
+					timeSinceEnd -= hours * msInHour;
+					hasAdded = true;
+				}
+
+				if (hasAdded || timeSinceEnd >= msInMinute) {
+					const minutes = Math.floor(timeSinceEnd / msInMinute);
+					readableTime.push(`${minutes}m`);
+					timeSinceEnd -= minutes * msInMinute;
+					hasAdded = true;
+				}
+
+				if (hasAdded || timeSinceEnd >= msInSecond) {
+					const seconds = Math.floor(timeSinceEnd / msInSecond);
+					readableTime.push(`${seconds}s`);
+					hasAdded = true;
+				}
+
+				readableTime = readableTime.slice(0, 3);
+
+				text.textContent = `Countdown ended: ${readableTime.join(" ")} ago`;
+				this.shadowRoot.appendChild(text);
 			}
-			return digits;
 		}
 
-		getTime() {
-			const dateString = this.getAttribute("data-date");
-			const date = new Date(dateString);
 
-			if (isNaN(date.getTime())) {
-				return null;
+		//this.debug = document.createElement("div");
+		//this.debug.classList.add("debug");
+		//this.shadowRoot.appendChild(this.debug);
+	}
+
+	createDigitsFor(type, totalDigits=2) {
+		let maxFirst = maxDigitFirst[type];
+
+		let digits = [];
+
+		//var currentTime = time[["days", "hours", "minutes", "seconds"].indexOf(type)];
+
+		for(let i = 0; i < totalDigits; i++) {
+			if(this.finished) {
+				digits.push(this.createDigits(1));
+			} else {
+				digits.push(this.createDigits(i == 0 ? maxFirst : 10));
+			}
+		}
+		return digits;
+	}
+
+	getEndTimeObj() {
+		const dateString = this.getAttribute("data-date");
+		let date = new Date(dateString);
+		if(!isNaN(date.getTime())) {
+			return date;
+		}
+		if (/^[0-9]+$/.test(dateString) && !isNaN(parseInt(dateString, 10))) {
+			const timestamp = parseInt(dateString, 10);
+			// Yes i know its not a smart idea to check the length of the string,
+			// in the distant future when it breaks i will fix this, if im still alive
+			// This breaks after 2286-11-20
+			return new Date(dateString.length === 10 ? timestamp * 1000 : timestamp);
+		}
+
+		return null;
+	}
+
+	getTime() {
+		const date = this.getEndTimeObj();
+		if(date == null) {
+			return null;
+		}
+
+		const now = new Date();
+		const diff = date.getTime() - now.getTime();
+
+		this.finished = diff <= 0;
+		return getTimeDiffArr(diff);
+	}
+
+	createSpacing(text) {
+		let container = document.createElement("div");
+		container.classList.add("spacing");
+		container.textContent = text;
+		return container;
+	}
+	// if input is 5 then it returns [0, 1, 2, 3, 4]
+	createDigits(num) {
+		const digitsInt = [];
+		for(let i = 0; i < num; i++) {
+			digitsInt.push(i);
+		}
+		let digits = [];
+		let container = document.createElement("div");
+		container.classList.add("digits");
+		for(const digit of digitsInt) {
+			digits.push(document.createElement("div"));
+			digits[digit].classList.add("digit");
+			digits[digit].textContent = digit;
+			container.appendChild(digits[digit]);
+		}
+		return container;
+	}
+
+	getDigits(num) {
+		var digits = [];
+		while(num > 0) {
+			digits.push(num % 10);
+			num = floor(num / 10);
+		}
+		return digits.reverse();
+	}
+
+	connectedCallback() {
+		if(this.finished) {
+			return;
+		}
+		const date = this.getEndTimeObj();
+
+		const setDigits = (digitsElm, numberToSet, length=2) => {
+			let digits = this.getDigits(numberToSet);
+			while(digits.length < length) {
+				digits.unshift(0);
 			}
 
+			var i = 0;
+			for(const digit of digitsElm) {
+				// more optimized to use translateY, since it doesn't have to repaint the whole element
+				//digit.style.marginTop = "-" + (digits[i]*2.375/2) + "em";
+				digit.style.transform = `translateY(-${digits[i]*(2.375/2)}em)`;
+				i++;
+			}
+		}
+
+		const updateCountdown = () => {
 			const now = new Date();
 			const diff = date.getTime() - now.getTime();
 
-			this.finished = diff <= 0;
-			return getTimeDiffArr(diff);
-		}
+			if (diff < 0) {
+				diff = 0;
 
-		createSpacing(text) {
-			var container = document.createElement("div");
-			container.classList.add("spacing");
-			container.textContent = text;
-			return container;
-		}
-		// if input is 5 then it returns [0, 1, 2, 3, 4]
-		createDigits(num) {
-			const digitsInt = [];
-			for(let i = 0; i < num; i++) {
-				digitsInt.push(i);
-			}
-			var digits = [];
-			var container = document.createElement("div");
-			container.classList.add("digits");
-			for(const digit of digitsInt) {
-				digits.push(document.createElement("div"));
-				digits[digit].classList.add("digit");
-				digits[digit].textContent = digit;
-				container.appendChild(digits[digit]);
-			}
-			return container;
-		}
-
-		getDigits(num) {
-			var digits = [];
-			while(num > 0) {
-				digits.push(num % 10);
-				num = floor(num / 10);
-			}
-			return digits.reverse();
-		}
-
-		connectedCallback() {
-			if(this.finished) {
-				return;
-			}
-			const dateString = this.getAttribute("data-date");
-			const date = new Date(dateString);
-
-			const setDigits = (digitsElm, numberToSet, length=2) => {
-				var digits = this.getDigits(numberToSet);
-				while(digits.length < length) {
-					digits.unshift(0);
-				}
-
-				var i = 0;
-				for(const digit of digitsElm) {
-					// more optimized to use translateY, since it doesn't have to repaint the whole element
-					//digit.style.marginTop = "-" + (digits[i]*2.375/2) + "em";
-					digit.style.transform = `translateY(-${digits[i]*(2.375/2)}em)`;
-					i++;
-				}
+				clearInterval(this.interval);
+				this.container.classList.add("finished");
+				this.finished = true;
 			}
 
-			const updateCountdown = () => {
-				const now = new Date();
-				const diff = date.getTime() - now.getTime();
+			const diffs = getTimeDiffArr(diff);
 
-				if (diff < 0) {
-					diff = 0;
+			setDigits(this.days, diffs[DAYS], 3);
+			setDigits(this.hours, diffs[HOURS]);
+			setDigits(this.minutes, diffs[MINUTES]);
+			setDigits(this.seconds, diffs[SECONDS]);
 
-					clearInterval(this.interval);
-					this.container.classList.add("finished");
-					this.finished = true;
-				}
+			//this.debug.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+		};
 
-				const diffs = getTimeDiffArr(diff);
-
-				setDigits(this.days, diffs[DAYS], 3);
-				setDigits(this.hours, diffs[HOURS]);
-				setDigits(this.minutes, diffs[MINUTES]);
-				setDigits(this.seconds, diffs[SECONDS]);
-
-				//this.debug.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-			};
-
-			updateCountdown();
-			this.interval = setInterval(updateCountdown, 1000);
-		}
+		updateCountdown();
+		this.interval = setInterval(updateCountdown, 1000);
 	}
+}
 
-	customElements.define("countdown-timer", CountdownTimer);
+customElements.define("countdown-timer", CountdownTimer);
 
 })();
