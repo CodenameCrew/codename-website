@@ -74,6 +74,10 @@ div.compact {
         display: block;
     }
 
+    .horizontal-stack {
+        display: block !important;
+    }
+
     div.vertical-stack {
         width: 100%;
     }
@@ -168,7 +172,7 @@ div.compact {
 
     &.mods {
         flex-grow: 0;
-        width: 565px;
+        width: 40%;
         //display: table;
         padding: 0;
     }
@@ -410,6 +414,17 @@ div.compact {
 .vertical-stack {
     width: 60%;
     height: min-content;
+}
+
+.horizontal-stack {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.horizontal-stack div.content {
+    flex: 2;
+    margin-bottom: 0 !important;
 }
 
 .donators-list {
