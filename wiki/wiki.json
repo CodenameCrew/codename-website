@@ -4,6 +4,7 @@
     ["differences", "Differences between other FNF engines"],
     ["faq", "FAQ"],
     ["troubleshooting", "Troubleshooting"],
+    ["tips", "Tips & Tricks"],
     ["modding/index", "Modding The Engine", [
         ["songs/index", "Creating songs", [
             ["editor-features", "Chart Editor Features"],
