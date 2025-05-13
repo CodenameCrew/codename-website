@@ -105,17 +105,13 @@
 						<i>You can find the engine source by going to the <i class="fa fa-github"></i> <a href="https://github.com/CodenameCrew/CodenameEngine">Engine&nbsp;repository</a></i>
 					</div>
 				</div>
-	
+
 				<div class="discordWidget">
 					<div class="discordWidget-header">
 						<h2 style="text-align: center; margin: 0; transform: translateY(50%);">Discord Server</h2>
 					</div>
 					<div class="discordWidget-content">
 						<span>Members online</span>
-						<div class="discordWidget-user">
-							<img style="margin-right: 8px;" ;="" src="">
-							<span></span>
-						</div>
 					</div>
 					<div class="discordWidget-footer">
 						<span>Want to chat?</span>
@@ -944,15 +940,23 @@ go experience it please &lt;3</p>
 	<script>
 		const widgetContent = document.querySelector(".discordWidget-content");
 		const widgetFooter = document.querySelector(".discordWidget-footer");
-		const userTemplate = document.querySelector(".discordWidget-user");
-		userTemplate.remove();
 		fetch("https://discord.com/api/guilds/860561967383445535/widget.json").then(response => response.json()).then(data => {
 			widgetFooter.querySelector("a").href = data.instant_invite;
 			for (const member of data.members) {
-				const user = userTemplate.cloneNode(true);
-				user.querySelector("img").src = member.avatar_url + "?size=16";
-				user.querySelector("span").innerText = member.username;
-				user.querySelector("img").style.border = "solid var(--discord-" + member.status + ") 2px";
+				const user = document.createElement("div");
+				user.classList.add("discordWidget-user");
+
+				const avatar = document.createElement("img");
+				avatar.classList.add("avatar");
+				avatar.src = member.avatar_url + "?size=16";
+				avatar.setAttribute("data-status", member.status);
+				user.appendChild(avatar);
+
+				const username = document.createElement("span");
+				username.classList.add("username");
+				username.innerText = member.username;
+				user.appendChild(username);
+
 				widgetContent.appendChild(user);
 			}
 		})
@@ -963,7 +967,7 @@ go experience it please &lt;3</p>
 			if (main && discord) {
 				discord.style.height = `${main.offsetHeight}px`;
 				const mainStyles = window.getComputedStyle(main);
-  				discord.style.marginTop = mainStyles.marginTop;
+				discord.style.marginTop = mainStyles.marginTop;
 			}
 		}
 
