@@ -39,5 +39,5 @@ FlxG.switchState(new ModState("MyCustomState")); // assuming we have made a new 
 ```
 or this code
 ```haxe
-openSubstate(new ModSubState("MyCustomSubstate")) // assuming we have made a new Script ./data/states/MyCustomSubstate.hx
+openSubState(new ModSubState("MyCustomSubstate")) // assuming we have made a new Script ./data/states/MyCustomSubstate.hx
 ```
