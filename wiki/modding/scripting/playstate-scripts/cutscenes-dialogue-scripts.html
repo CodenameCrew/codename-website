@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="en"><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cutscenes/Dialogue Scripts - Codename Engine Wiki</title>
+	<link rel="stylesheet" href="/style.css">
+	<link rel="stylesheet" href="/style_v2.css">
+	<link rel="stylesheet" href="/wiki.css">
+
+	<meta name="title" content="Cutscenes/Dialogue Scripts - Codename Engine Wiki">
+	<meta name="description" content="This page explains how to use Cutscenes/Dialogue Scripts in your mod!">
+	<meta property="og:description" content="This page explains how to use Cutscenes/Dialogue Scripts in your mod!">
+	<meta property="twitter:description" content="This page explains how to use Cutscenes/Dialogue Scripts in your mod!">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://codename-engine.com/">
+	<meta property="og:title" content="Cutscenes/Dialogue Scripts - Codename Engine Wiki">
+	<meta property="og:image" content="https://codename-engine.com/img/banner.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://codename-engine.com/">
+	<meta property="twitter:title" content="Cutscenes/Dialogue Scripts - Codename Engine Wiki">
+	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png">
+
+	<meta name="theme-color" content="#b265bd">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<meta name="apple-mobile-web-app-title" content="Codename">
+	<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+	<div class="header" id="main">
+		<header>
+    <a href="/">
+        <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
+        <img src="/img/logo-banner-mini.png" alt="Codename Logo" class="mobile">
+    </a>
+    <h2 class="header-title">Cutscenes/Dialogue Scripts</h2>
+    <div>
+        <a href="/api-docs/">API</a><a href="/wiki/">Wiki</a><a href="/tools/">Tools</a>
+    </div>
+</header>
+	</div>
+	<div class="container">
+		<div class="sidebar-wrapper">
+			<input type="checkbox" class="sidebar-button">
+			<span class="sidebar-button-front">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+					<rect width="100" height="20" rx="10"></rect>
+					<rect y="30" width="100" height="20" rx="10"></rect>
+					<rect y="60" width="100" height="20" rx="10"></rect>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path stroke="#000" d="M195 195a64 64 0 0 1 91 0l226 227 226-227a64 64 0 0 1 91 91L602 512l227 226a64 64 0 0 1-91 91L512 602 286 829a64 64 0 0 1-91-91l227-226-227-226a64 64 0 0 1 0-91z"></path></svg>
+			</span>
+			<div class="sidebar">
+				<ul class="sidebar-unordered-list">
+					<li class="sidebar-list-item even"><a href="/wiki/" class="even">Home</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/navigation" class="odd">How to navigate the engine</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/differences" class="even">Differences between other FNF engines</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/faq" class="odd">FAQ</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/troubleshooting" class="even">Troubleshooting</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/modding/songs/" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/songs/editor-features" class="odd">Chart Editor Features</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/songs/events" class="even">Chart Events</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/songs/displaying-songs" class="odd">Displaying Songs</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/weeks/" class="even">Creating weeks</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/weeks/week-characters" class="odd">Character Creation</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/characters/" class="even">Creating characters</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/making-custom-icons" class="even">Making Custom Icons</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/cutscenes-dialogues" class="odd">Cutscenes/Dialogues</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/note-splashes" class="even">Note Splashes</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/" class="odd">Scripting</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/" class="even">PlayState Scripts</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/gameplay-scripts" class="odd">Gameplay Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts" class="even">Events/Notetype Scripts</a></li>
+<li class="sidebar-list-item odd selected"><a href="#main" class="odd selected">Cutscenes/Dialogue Scripts</a><ul class="sidebar-unordered-list odd pagination">
+<li><a href="#cutscenes">Cutscenes</a></li>
+<li><a href="#dialogues">Dialogues</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/character-stage-scripts" class="even">Character/Stage Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/pause-gameover-scripts" class="odd">Pause/Game Over Scripts</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/state-substate-scripts" class="even">State/Substate Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/global-scripts" class="odd">Global Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/shaders" class="even">Shaders</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/hxvlc" class="odd">Using hxvlc for videos</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/custom-options" class="even">Custom Options</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/custom-classes" class="odd">Custom Classes</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/3d-rendering" class="even">3D rendering - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/script-calls" class="odd">All of the script calls - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/script-snippets" class="even">Useful script snippets for modders - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/scripted-assets-libraries" class="odd">Scripted Assets Libraries - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/ndll-scripting" class="even">NDLL Scripting - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/custom-transitions" class="odd">Custom Transitions</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/hardcoding/" class="even">Hardcoding - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="content">
+			<h1>Cutscenes/Dialogue Scripts</h1>
+<p>Cutscenes/Dialogue Scripts make Scripted Cutscenes/Dialogues possible!<br>
+It is highly suggested to take a look at the <a href="../../cutscenes-dialogues">Cutscenes and Dialogues</a> page before starting here!</p>
+<p>For the both of them: you can start them manually with also with custom prefix through other scripts using the <code class="inline-code">startCutscene</code> PlayState function or other ways that will be said down below.<br>
+For more advanced users: if you even want to avoid using the <code class="inline-code">startCutscene</code> function you can play with classes like <code class="inline-syntax inline-code"><span class="hljs-title class_">VideoCutscene</span></code>, <code class="inline-syntax inline-code"><span class="hljs-title class_">ScriptedCutscene</span></code> and etc; check the source code!<br></p>
+<h2 id="cutscenes">Cutscenes</h2>
+<p>You can automatically start a scripted cutscene by placing the script in <code class="inline-code">./song/YOUR SONG/cutscene.hx</code>.</p>
+<p>The cutscenes code is rather simple to recreate, you can find the most simple examples in Tankman's songs and a bit of advanced ones inside Roses and Thorns: if you checked Roses you can also understand that the game automatically detects for scripts that are named as <code class="inline-code">end-cutscene.hx</code> like with any other cutscenes as it was already said in <a href="../../cutscenes-dialogues">Cutscenes and Dialogues</a>.</p>
+<p>The parent of the script is the Scripted Cutscene's instance itself (the class is named <code class="inline-syntax inline-code"><span class="hljs-title class_">ScriptedCutscene</span></code>) which is a substate.<br>
+The code has SOME functions that can be found in the substates behavior referenced in the <a href="../script-calls">All of the script calls</a> page, such as <code class="inline-code">create</code>, <code class="inline-code">destroy</code>, <code class="inline-code">stepHit</code> and more.<br>
+<em>(I'd recommend to actually mainly use <code class="inline-code">destroy</code> to for example destroy some eventual sprites, stop some eventual timers or such as the cutscene COULD get skipped and so end/finish prematurely)</em></p>
+<p>Important functions to use when coding the scripted cutscene:</p>
+<ul>
+<li><code class="inline-syntax inline-code"><span class="hljs-title function_">close</span>();</code> - Closes the scripted cutscene.</li>
+<li><code class="inline-syntax inline-code"><span class="hljs-title function_">startVideo</span>(<span class="hljs-attr">path</span>:<span class="hljs-title class_">String</span>, ?<span class="hljs-attr">callback</span>:<span class="hljs-title class_">Void</span>-&gt;<span class="hljs-title class_">Void</span>);</code> - Starts a Video Cutscene and uses an optional <code class="inline-code">callback</code> whenever it ended. You can check if it's done through the boolean variable <code class="inline-code">isVideoPlaying</code>.</li>
+<li><code class="inline-syntax inline-code"><span class="hljs-title function_">startDialogue</span>(<span class="hljs-attr">path</span>:<span class="hljs-title class_">String</span>, ?<span class="hljs-attr">callback</span>:<span class="hljs-title class_">Void</span>-&gt;<span class="hljs-title class_">Void</span>);</code> - Starts a Dialogue Cutscene and uses an optional <code class="inline-code">callback</code> whenever it ended. You can check if it's done through the boolean variable <code class="inline-code">isDialoguePlaying</code>.</li>
+</ul>
+<h2 id="dialogues">Dialogues</h2>
+<p><em>Before starting: you can check every calls (for characters and boxes as well) in the <a href="../script-calls">All of the script calls</a> page!</em></p>
+<p>Dialogue Scripts behave differently than Scripted Cutscenes: the main difference is that they get initialized when a dialogue cutscene also gets started.<br>
+To start one you must place a script with the same name of the dialogue's xml file (just with different extensions obliviously).</p>
+<p>The parent of the script is the Dialogue Cutscene's instance itself (the class is named <code class="inline-syntax inline-code"><span class="hljs-title class_">DialogueCutscene</span></code>, you can also check every useable variable and function in there!) which is a substate.<br>
+By default once the Dialogue Cutscene substate opens, it temporarily pauses already existing timers, tweens and such; mess with the parentDisabler variable (uses the <code class="inline-syntax inline-code"><span class="hljs-title class_">FunkinParentDisabler</span></code> class) in the script if you want them to behave differently!</p>
+<p>A <em>kinda</em> advanced example of scripted dialogue can be found in the Week 6 Roses song where the dialogue waits 1 second before appearing to show angry senpai and play the <em>spooky</em> sound:</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">next</span>(<span class="hljs-params">first:Bool</span>) {
+    <span class="hljs-keyword">if</span>(first &amp;&amp; canProceed) {
+        canProceed = <span class="hljs-literal">false</span>;
+        dialogueLines[<span class="hljs-number">0</span>].<span class="hljs-property">playSound</span>.<span class="hljs-title function_">play</span>();
+        <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxTimer</span>().<span class="hljs-title function_">start</span>(<span class="hljs-number">1</span>, (_) -&gt; <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">next</span>(<span class="hljs-literal">true</span>));
+    }
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">lastLine</span> == <span class="hljs-literal">null</span>) canProceed = <span class="hljs-literal">true</span>;  <span class="hljs-comment">// If its not null means the dialogue is not at the first one!  - Nex</span>
+}
+</code></pre>
+<h3>Dialogue Character</h3>
+<p>These scripts use a <code class="inline-syntax inline-code"><span class="hljs-title class_">DialogueCharacter</span></code> class instance as parent (so you can also check the variables and such easily!).</p>
+<p>There's not much to say besides that the parent, and so the actual character, obliviously behaves like a <code class="inline-syntax inline-code"><span class="hljs-title class_">FunkinSprite</span></code>.</p>
+<p>An example of scripted dialogue character can be found in Senpai where every time it plays the <code class="hljs-string inline-code">angry-show</code> animation, it's going to cancel the hide tween and in the case of another animation it immediately completes the tween, making Senpai looks like as if it disappears instantly:</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">postHide</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">if</span>(curTween != <span class="hljs-literal">null</span>) {
+        <span class="hljs-keyword">if</span>(animation.<span class="hljs-property">curAnim</span>?.<span class="hljs-property">name</span> == <span class="hljs-string">'angry-show'</span>) curTween.<span class="hljs-title function_">cancel</span>();
+        <span class="hljs-keyword">else</span> curTween.<span class="hljs-property">percent</span> = <span class="hljs-number">1</span>;
+    }
+}
+</code></pre>
+<h3>Dialogue Box</h3>
+<p>These scripts use a <code class="inline-syntax inline-code"><span class="hljs-title class_">DialogueBox</span></code> class instance as parent (so you can also check the variables and such easily!).</p>
+<p>There's not much to say here too and like the dialogue characters, the parent and so the actual box, obliviously behaves like a <code class="inline-syntax inline-code"><span class="hljs-title class_">FunkinSprite</span></code>.<br>
+But also it's important to remember that on every line, in the xml, it's possible to place a <code class="inline-code">callback</code> attribute on any line (like already said in the <a href="../../cutscenes-dialogues">Cutscenes and Dialogues</a> page) that allows to call any function inside of this dialogue box's script as soon as that specific line gets shown on screen.</p>
+<p>A big example of scripted dialogue box can be found in Week 6 with the Hating Simulator's pixel dialogue box that makes a background fade with a pixel-ish tween and a moving pixel hand appear on the bottom right part of the box:</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">var</span> <span class="hljs-attr">loopedTimer</span>:<span class="hljs-title class_">FlxTimer</span>;
+<span class="hljs-keyword">var</span> <span class="hljs-attr">bgFade</span>:<span class="hljs-title class_">FlxSprite</span>;
+<span class="hljs-keyword">var</span> <span class="hljs-attr">hand</span>:<span class="hljs-title class_">FlxSprite</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">postCreate</span>(<span class="hljs-params"></span>) {
+    bgFade = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxSprite</span>().<span class="hljs-title function_">makeSolid</span>(<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">width</span> + <span class="hljs-number">100</span>, <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">height</span> + <span class="hljs-number">100</span>, <span class="hljs-number">0xFFB3DFd8</span>);
+    bgFade.<span class="hljs-title function_">screenCenter</span>();
+    bgFade.<span class="hljs-property">scrollFactor</span>.<span class="hljs-title function_">set</span>();
+    bgFade.<span class="hljs-property">alpha</span> = <span class="hljs-number">0</span>;
+    cutscene.<span class="hljs-title function_">insert</span>(<span class="hljs-number">0</span>, bgFade);
+
+    loopedTimer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxTimer</span>().<span class="hljs-title function_">start</span>(<span class="hljs-number">0.83</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">tmr:FlxTimer</span>)
+    {
+        bgFade.<span class="hljs-property">alpha</span> += (<span class="hljs-number">1</span> / <span class="hljs-number">5</span>) * <span class="hljs-number">0.7</span>;
+        <span class="hljs-keyword">if</span> (bgFade.<span class="hljs-property">alpha</span> &gt; <span class="hljs-number">0.7</span>)
+            bgFade.<span class="hljs-property">alpha</span> = <span class="hljs-number">0.7</span>;
+    }, <span class="hljs-number">5</span>);
+
+    hand = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxSprite</span>(<span class="hljs-number">0</span>, <span class="hljs-number">600</span>).<span class="hljs-title function_">loadGraphic</span>(<span class="hljs-title class_">Paths</span>.<span class="hljs-title function_">image</span>(<span class="hljs-string">'stages/school/ui/hand_textbox'</span>));
+    hand.<span class="hljs-property">scale</span>.<span class="hljs-title function_">set</span>(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>);
+    hand.<span class="hljs-title function_">updateHitbox</span>();
+}
+
+<span class="hljs-keyword">var</span> <span class="hljs-attr">finished</span>:<span class="hljs-title class_">Bool</span> = <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">close</span>(<span class="hljs-params">event</span>) {
+    <span class="hljs-keyword">if</span>(finished) <span class="hljs-keyword">return</span>;
+    <span class="hljs-keyword">else</span> event.<span class="hljs-property">cancelled</span> = <span class="hljs-literal">true</span>;
+    cutscene.<span class="hljs-property">canProceed</span> = <span class="hljs-literal">false</span>;
+
+    cutscene.<span class="hljs-property">curMusic</span>?.<span class="hljs-title function_">fadeOut</span>(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">for</span>(c <span class="hljs-keyword">in</span> cutscene.<span class="hljs-property">charMap</span>) c.<span class="hljs-property">visible</span> = <span class="hljs-literal">false</span>;
+
+    loopedTimer.<span class="hljs-title function_">cancel</span>();
+    loopedTimer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxTimer</span>().<span class="hljs-title function_">start</span>(<span class="hljs-number">0.2</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">tmr:FlxTimer</span>)
+    {
+        <span class="hljs-keyword">if</span> (tmr.<span class="hljs-property">elapsedLoops</span> &lt;= <span class="hljs-number">5</span>) {
+            cutscene.<span class="hljs-property">dialogueBox</span>.<span class="hljs-property">alpha</span> -= <span class="hljs-number">1</span> / <span class="hljs-number">5</span>;
+            cutscene.<span class="hljs-property">dialogueBox</span>.<span class="hljs-property">text</span>.<span class="hljs-property">alpha</span> -= <span class="hljs-number">1</span> / <span class="hljs-number">5</span>;
+            bgFade.<span class="hljs-property">alpha</span> -= (<span class="hljs-number">1</span> / <span class="hljs-number">5</span>) * <span class="hljs-number">0.7</span>;
+            hand.<span class="hljs-property">alpha</span> -= <span class="hljs-number">1</span> / <span class="hljs-number">5</span>;
+        } <span class="hljs-keyword">else</span> {
+            finished = <span class="hljs-literal">true</span>;
+            cutscene.<span class="hljs-title function_">close</span>();
+        }
+    }, <span class="hljs-number">6</span>);
+}
+
+<span class="hljs-keyword">var</span> <span class="hljs-attr">time</span>:<span class="hljs-title class_">Float</span> = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">elapsed:<span class="hljs-built_in">Float</span></span>) {
+    <span class="hljs-keyword">if</span>(hand.<span class="hljs-property">visible</span> = dialogueEnded) {
+        hand.<span class="hljs-property">x</span> = <span class="hljs-number">1060</span> + <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">sin</span>((time += elapsed) * <span class="hljs-title class_">Math</span>.<span class="hljs-property">PI</span> * <span class="hljs-number">2</span>) * <span class="hljs-number">12</span>;
+        hand.<span class="hljs-property">x</span> -= hand.<span class="hljs-property">x</span> % hand.<span class="hljs-property">scale</span>.<span class="hljs-property">x</span>;
+        hand.<span class="hljs-property">y</span> -= hand.<span class="hljs-property">y</span> % hand.<span class="hljs-property">scale</span>.<span class="hljs-property">y</span>;
+    }
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">postPlayBubbleAnim</span>(<span class="hljs-params"></span>) {
+    cutscene.<span class="hljs-title function_">remove</span>(hand);
+    <span class="hljs-keyword">if</span>(active &amp;&amp; visible)
+        cutscene.<span class="hljs-title function_">add</span>(hand);
+}
+</code></pre>
+<h3>Result of the two Dialogue example scripts:</h3>
+<video height="500" autoplay="" muted="" loop="">
+  <source src="./Week 6 Dialogue.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+			<div class="info">
+				<div class="written">Written by: Nex_isDumb</div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-10-14T16:36:06.142Z">2024-10-14</span></div>
+
+				<div class="github-edit-button">
+					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts.md">Edit this page on GitHub</a>
+				</div>
+			</div>
+
+			<div class="giscus"></div>
+			<div class="giscus-frame"></div>
+
+			<script src="https://giscus.app/client.js" data-repo="CodenameCrew/codename-website" data-repo-id="R_kgDOMm2E8w" data-category="Website" data-category-id="DIC_kwDOMm2E884Cio1F" data-mapping="specific" data-term="wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="https://codename-engine.com/giscus-theme.css" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
+			</script>
+		</div>
+	</div>
+
+	<script src="/wiki.js"></script>
+
+</body></html>

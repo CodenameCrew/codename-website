@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en"><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/style.css">
+	<link rel="stylesheet" href="/style_v2.css">
+	<link rel="stylesheet" href="/tools.css">
+	<title>Event Packer - Codename Engine Tools</title>
+
+	<meta name="title" content="Event Packer - Codename Engine Tools">
+	<meta name="keywords" content="codename engine, codename, engine, game, modding, mods, website, documentation, wiki, tools, tool, codenameengine, cne, funkin, fnf, fnf engine, fnf engines, friday night funkin, gamebanana fnf, event packer, event converter, event generator, event generator">
+
+	<meta name="description" content="Pack the files for a event into a small file">
+	<meta property="og:description" content="Pack the files for a event into a small file">
+	<meta property="twitter:description" content="Pack the files for a event into a small file">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://codename-engine.com/">
+	<meta property="og:title" content="Event Packer - Codename Engine Tools">
+	<meta property="og:image" content="https://codename-engine.com/img/banner.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://codename-engine.com/">
+	<meta property="twitter:title" content="Event Packer - Codename Engine Tools">
+	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png">
+
+	<meta name="theme-color" content="#b265bd">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<meta name="apple-mobile-web-app-title" content="Event Packer">
+	<link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="event-packer">
+	<div class="header">
+		<header>
+    <a href="/">
+        <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
+        <img src="/img/logo-banner-mini.png" alt="Codename Logo" class="mobile">
+    </a>
+    <h2 class="header-title">Event Packer</h2>
+    <div>
+        <a href="/api-docs/">API</a><a href="/wiki/">Wiki</a><a href="/tools/">Tools</a>
+    </div>
+</header>
+	</div>
+	<div class="container">
+		<div class="content">
+			<h1 style="text-align: center;">Event Packer</h1>
+			<form id="event-packer-form">
+				<div class="inputs">
+					<div class="file-input">
+						<label for="event-file">Event File (.hx/.hscript/.hxs/.hsc)<span class="required">*</span>
+							<input type="file" id="event-file" file="event-file" placeholder="Event File" required="" accept=".hx,.hscript,.hxs,.hsc">
+						</label>
+					</div>
+
+					<div class="file-input">
+						<label for="event-params">Event Params (.json)<span class="required">*</span>
+							<input type="file" id="event-params" file="event-params" placeholder="Event Params" required="" accept=".json">
+						</label>
+					</div>
+
+					<div class="file-input">
+						<label for="event-image">Event Icon (.png)
+							<input type="file" id="event-image" file="event-image" placeholder="Event Icon" accept=".png">
+						</label>
+					</div>
+				</div>
+
+				<div class="submit-button">
+					<button type="submit">Pack</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="/tools/event-packer/index.js"></script>
+
+</body></html>
