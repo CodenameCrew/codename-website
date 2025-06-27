@@ -1,6 +1,7 @@
 @use "root/_style-vars.scss";
 
-html, body {
+html,
+body {
   background: var(--background-primary-color);
   background-image: linear-gradient(transparent, transparent);
   background-repeat: repeat;
@@ -24,8 +25,56 @@ a {
   }
 }
 
-*, *::before,*::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+footer {
+  max-width: 100%;
+  background: var(--background-secondary-color);
+  padding: 1em 15vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-color);
+  font-size: 0.8em;
+  text-align: center;
+
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  p {
+    margin-right: 1em;
+  }
+
+  img {
+    width: 2em;
+  }
+
+  a {
+    height: auto;
+    color: var(--text-color);
+    text-decoration: none;
+    /*margin-left: 0.2em;*/
+    font-weight: bold;
+    padding: 1em;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 999em;
+    }
+  }
+
+  a:has(img) {
+    padding: 10px 7.5px;
+  }
 }
 
 header {
@@ -98,7 +147,10 @@ br {
 }
 
 .header {
-  position: relative;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
   z-index: 5;
   background: url("img/top-bar-bg.png");
   background-position: center center;
@@ -173,6 +225,7 @@ pre {
 }
 
 .container {
+  margin-top: 75px !important;
   display: flex;
   flex-direction: row;
   width: auto;
@@ -265,7 +318,7 @@ header {
   transform: translateX(-50%);
 }
 
-@media screen and (max-width: 35.5em) {
+@media screen and (max-width: 50.5em) {
   .container {
     width: 100%;
     overflow: hidden;
@@ -303,6 +356,50 @@ header {
   img {
     max-width: 60%;
   }
+}
+
+.discordWidget {
+  background-color: var(--background-secondary-color);
+  flex: 1;
+  user-select: none;
+  border: solid rgba(0, 0, 0, 0.2) 2px !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.discordWidget-content {
+  padding: 20px;
+  overflow-y: scroll;
+  width: 100%;
+  background-color: var(--list-background-color);
+  height: calc(100% - 70px - 65px);
+}
+
+.discordWidget-header {
+  width: 100%;
+  height: 70px;
+  border-bottom: solid rgba(0, 0, 0, 0.2) 2px !important;
+  background-color: var(--background-secondary-color);
+}
+
+.discordWidget-user {
+  width: 100%;
+  height: 20px;
+
+  align-items: center;
+  margin: 6px 0;
+  padding-left: 10px;
+  display: flex;
+}
+
+.discordWidget-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  height: 65px;
+  background-color: var(--background-secondary-color);
 }
 
 .hljs {

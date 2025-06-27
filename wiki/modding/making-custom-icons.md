@@ -8,7 +8,7 @@ title: Making Custom Icons
 
 To start making your icon you need to see whenever it is animated or not
 
-**Note:** If your icon doesn't need to be scaled nor flipped nor be antialiased nor to be animted you can just put your icon direcly in to ``./images/icons/`` and just named ``iconName.png`` (Replace it with your actual icon name btw)
+**Note:** If your icon doesn't need to be scaled nor flipped nor be antialiased nor to be animated you can just put your icon direcly in to ``./images/icons/`` and just named ``iconName.png`` (Replace it with your actual icon name btw)
 And if you followed that note you dont need to read the rest since it needs and icon data which the old format doesnt have :P
 
 Make a folder in ``./images/icons`` with the name of your icon and place it the png (and the xml if its animated) and then create a file named ``data.xml`` if you don't need to change specifications about the icon like default scale, facing direction and antialiasing.

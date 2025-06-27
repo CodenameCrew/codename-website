@@ -5,6 +5,7 @@
 	<link href='https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' rel='stylesheet' type='text/css' />
 
 	<link href="/style.css" rel="stylesheet" />
+	<link href="/style_v2.css" rel="stylesheet" />
 	<link href="/api-docs.css" rel="stylesheet" />
 	<script>var dox={
 		rootPath:"::api.config.rootPath::",

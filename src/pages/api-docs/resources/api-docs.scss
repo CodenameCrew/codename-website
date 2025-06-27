@@ -3,6 +3,7 @@
 }
 
 .viewsource {
+  position: initial;
   width: 100%;
   display: inline;
   //position: absolute;
@@ -12,6 +13,7 @@
   position: relative;
   float: right;
   padding: 0.2em 0.4em;
+  pointer-events: auto;
 }
 
 li.expandable>ul {
@@ -59,6 +61,7 @@ a.treeLink {
   padding-bottom: 0.5em;
   border-bottom: solid thin rgba(255, 255, 255, 0.4);
   //position: relative;
+  pointer-events: none;
 }
 
 .fields {
