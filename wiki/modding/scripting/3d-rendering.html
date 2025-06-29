@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en"><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>3D rendering - Codename Engine Wiki</title>
+	<link rel="stylesheet" href="/style.css">
+	<link rel="stylesheet" href="/style_v2.css">
+	<link rel="stylesheet" href="/wiki.css">
+
+	<meta name="title" content="3D rendering - Codename Engine Wiki">
+	<meta name="description" content="This page explains how to use 3D rendering in your mod!">
+	<meta property="og:description" content="This page explains how to use 3D rendering in your mod!">
+	<meta property="twitter:description" content="This page explains how to use 3D rendering in your mod!">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://codename-engine.com/">
+	<meta property="og:title" content="3D rendering - Codename Engine Wiki">
+	<meta property="og:image" content="https://codename-engine.com/img/banner.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://codename-engine.com/">
+	<meta property="twitter:title" content="3D rendering - Codename Engine Wiki">
+	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png">
+
+	<meta name="theme-color" content="#b265bd">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<meta name="apple-mobile-web-app-title" content="Codename">
+	<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+	<div class="header" id="main">
+		<header>
+    <a href="/">
+        <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
+        <img src="/img/logo-banner-mini.png" alt="Codename Logo" class="mobile">
+    </a>
+    <h2 class="header-title">3D rendering</h2>
+    <div>
+        <a href="/api-docs/">API</a><a href="/wiki/">Wiki</a><a href="/tools/">Tools</a>
+    </div>
+</header>
+	</div>
+	<div class="container">
+		<div class="sidebar-wrapper">
+			<input type="checkbox" class="sidebar-button">
+			<span class="sidebar-button-front">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+					<rect width="100" height="20" rx="10"></rect>
+					<rect y="30" width="100" height="20" rx="10"></rect>
+					<rect y="60" width="100" height="20" rx="10"></rect>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path stroke="#000" d="M195 195a64 64 0 0 1 91 0l226 227 226-227a64 64 0 0 1 91 91L602 512l227 226a64 64 0 0 1-91 91L512 602 286 829a64 64 0 0 1-91-91l227-226-227-226a64 64 0 0 1 0-91z"></path></svg>
+			</span>
+			<div class="sidebar">
+				<ul class="sidebar-unordered-list">
+					<li class="sidebar-list-item even"><a href="/wiki/" class="even">Home</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/navigation" class="odd">How to navigate the engine</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/differences" class="even">Differences between other FNF engines</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/faq" class="odd">FAQ</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/troubleshooting" class="even">Troubleshooting</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/modding/songs/" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/songs/editor-features" class="odd">Chart Editor Features</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/songs/events" class="even">Chart Events</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/songs/displaying-songs" class="odd">Displaying Songs</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/weeks/" class="even">Creating weeks</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/weeks/week-characters" class="odd">Character Creation</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/characters/" class="even">Creating characters</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/making-custom-icons" class="even">Making Custom Icons</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/cutscenes-dialogues" class="odd">Cutscenes/Dialogues</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/note-splashes" class="even">Note Splashes</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/" class="odd">Scripting</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/" class="even">PlayState Scripts</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/gameplay-scripts" class="odd">Gameplay Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts" class="even">Events/Notetype Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts" class="odd">Cutscenes/Dialogue Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/character-stage-scripts" class="even">Character/Stage Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/pause-gameover-scripts" class="odd">Pause/Game Over Scripts</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/state-substate-scripts" class="even">State/Substate Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/global-scripts" class="odd">Global Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/shaders" class="even">Shaders</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/hxvlc" class="odd">Using hxvlc for videos</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/custom-options" class="even">Custom Options</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/custom-classes" class="odd">Custom Classes</a></li>
+<li class="sidebar-list-item even selected"><a href="#main" class="even selected">3D rendering - <span style="color: #FF0000;">UNFINISHED</span></a><ul class="sidebar-unordered-list even pagination">
+</ul>
+</li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/script-calls" class="odd">All of the script calls - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/script-snippets" class="even">Useful script snippets for modders - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/scripted-assets-libraries" class="odd">Scripted Assets Libraries - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/ndll-scripting" class="even">NDLL Scripting - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/custom-transitions" class="odd">Custom Transitions</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/hardcoding/" class="even">Hardcoding - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="content">
+			<h1>3D rendering</h1>
+<p>coming soon, its in the engine, but not yet documented</p>
+
+
+			<div class="info">
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-09-11T15:57:10.000Z">2024-09-11</span></div>
+
+				<div class="github-edit-button">
+					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/modding/scripting/3d-rendering.md">Edit this page on GitHub</a>
+				</div>
+			</div>
+
+			<div class="giscus"></div>
+			<div class="giscus-frame"></div>
+
+			<script src="https://giscus.app/client.js" data-repo="CodenameCrew/codename-website" data-repo-id="R_kgDOMm2E8w" data-category="Website" data-category-id="DIC_kwDOMm2E884Cio1F" data-mapping="specific" data-term="wiki/modding/scripting/3d-rendering" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="https://codename-engine.com/giscus-theme.css" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
+			</script>
+		</div>
+	</div>
+
+	<script src="/wiki.js"></script>
+
+</body></html>

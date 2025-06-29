@@ -1,0 +1,2 @@
+(()=>{"use strict";var e=[document.getElementById("last-updated")];e.length>0&&window.Intl&&e.forEach((e=>{var t=e.getAttribute("data-time");e.textContent=((e,t="en")=>{const n="number"==typeof e?e:e.getTime(),a=Math.round((n-Date.now())/1e3),o=[60,3600,86400,604800,2592e3,31536e3,1/0],r=o.findIndex((e=>e>Math.abs(a))),d=r?o[r-1]:1;return new Intl.RelativeTimeFormat(t,{numeric:"auto"}).format(Math.floor(a/d),["second","minute","hour","day","week","month","year"][r])})(new Date(t))}))})();
+//# sourceMappingURL=wiki.js.map
