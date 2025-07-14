@@ -69,6 +69,21 @@ The ``event`` in question has the following parameters:
 
 ### <syntax lang="haxe">onVocalsResync()</syntax>
 
+## <h2 id="character-scripts">Character Scripts</h2>
+
+### <syntax lang="haxe">onCharacterXMLParsed(event:CharacterXMLEvent)</syntax>, <syntax lang="haxe">onCharacterNodeParsed(event:CharacterNodeEvent)</syntax>
+
+### <syntax lang="haxe">onDance(event:DanceEvent)</syntax>
+
+### <syntax lang="haxe">onPlaySingAnim(event:DirectionAnimEvent)</syntax>
+
+### <syntax lang="haxe">onPlayAnim(event:PlayAnimEvent)</syntax>
+
+### <syntax lang="haxe">onGetCamPos(event:PointEvent)</syntax>
+
+### <syntax lang="haxe">destroy()</syntax>
+
+
 ## <h2 id="dialogue-scripts" sidebar="Dialogue Scripts">Dialogue Scripts <small>(mostly substate like behavior)</small></h2>
 
 ### <syntax lang="haxe">structureLoaded(event:DialogueStructureEvent)</syntax>
