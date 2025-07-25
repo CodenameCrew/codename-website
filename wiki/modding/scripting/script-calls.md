@@ -1,7 +1,7 @@
 ---
 author: Frakits & Nex_isDumb
 desc: This page contains a list of all script calls
-lastUpdated: 2024-10-14T16:54:14.259Z
+lastUpdated: 2025-07-15T00:00:52.664Z
 title: All script calls
 ---
 # List of all script calls
@@ -68,6 +68,21 @@ The ``event`` in question has the following parameters:
 ### <syntax lang="haxe">onGameOver(event:GameOverEvent)</syntax>, <syntax lang="haxe">onPostGameOver(event:GameOverEvent)</syntax>
 
 ### <syntax lang="haxe">onVocalsResync()</syntax>
+
+## <h2 id="character-scripts">Character Scripts</h2>
+
+### <syntax lang="haxe">onCharacterXMLParsed(event:CharacterXMLEvent)</syntax>, <syntax lang="haxe">onCharacterNodeParsed(event:CharacterNodeEvent)</syntax>
+
+### <syntax lang="haxe">onDance(event:DanceEvent)</syntax>
+
+### <syntax lang="haxe">onPlaySingAnim(event:DirectionAnimEvent)</syntax>
+
+### <syntax lang="haxe">onPlayAnim(event:PlayAnimEvent)</syntax>
+
+### <syntax lang="haxe">onGetCamPos(event:PointEvent)</syntax>
+
+### <syntax lang="haxe">destroy()</syntax>
+
 
 ## <h2 id="dialogue-scripts" sidebar="Dialogue Scripts">Dialogue Scripts <small>(mostly substate like behavior)</small></h2>
 
