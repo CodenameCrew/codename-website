@@ -1,7 +1,7 @@
 ---
 author: Frakits & Ne_Eo & Nex_isDumb
 desc: How to make custom stages.
-lastUpdated: 2024-09-20T15:19:41.000Z
+lastUpdated: 2025-07-26T07:53:30.411Z
 title: Creating Stages
 ---
 # Creating Stages
@@ -10,12 +10,12 @@ Stages are defined via XML files, similar to <a href="../characters/">Creating c
 The default stage XML looks something like this:
 ```xml
 <stage zoom="0.9" name="stage" folder="stages/default/" startCamPosY="600" startCamPosX="1000">
-    <sprite name="bg" x="-600" y="-200" sprite="stageback" scroll="0.9"/>
-    <sprite name="stageFront" x="-600" y="600" sprite="stagefront" scroll="0.9"/>
-    <girlfriend/>
-    <dad/>
-    <boyfriend/>
-    <sprite name="stageCurtains" x="-500" y="-300" sprite="stagecurtains" scroll="1.3"/>
+    <sprite name="bg" x="-600" y="-200" sprite="stageback" scroll="0.9" />
+    <sprite name="stageFront" x="-600" y="600" sprite="stagefront" scroll="0.9" />
+    <girlfriend />
+    <dad />
+    <boyfriend />
+    <sprite name="stageCurtains" x="-500" y="-300" sprite="stagecurtains" scroll="1.3" />
 </stage>
 ```
 There's a lot to pack but we will explain what's going on here.
@@ -38,7 +38,7 @@ As for the other nodes, there's about *7 types* of them *(and more if you script
 The sprite node defines the basic sprites in a stage.
 
 ```xml
-<sprite name="bg" x="-600" y="-200" sprite="stageback" scroll="0.9"/>
+<sprite name="bg" x="-600" y="-200" sprite="stageback" scroll="0.9" />
 ```
 The options are:
 - ``name`` which defines the internal name used for scripting.
@@ -63,8 +63,8 @@ Other options include:
 You can also define animations by giving it a child node called <syntax lang="xml">&lt;anim&gt;</syntax>. A sprite node with an animation node looks something like this:
 ```xml
 <sprite name="dancer1" sprite="limoDancer" type="beat">
-    <anim name="danceLeft" anim="bg dancer sketch PINK" loop="false"/>
-    <anim name="danceRight" anim="bg dancer sketch PINK" loop="false"/>
+    <anim name="danceLeft" anim="bg dancer sketch PINK" loop="false" />
+    <anim name="danceRight" anim="bg dancer sketch PINK" loop="false" />
 </sprite>
 ```
 An <syntax lang="xml">&lt;anim&gt;</syntax> node can define these options:
@@ -80,8 +80,8 @@ An <syntax lang="xml">&lt;anim&gt;</syntax> node can define these options:
 Defining advanced properties is also possible. Like this:
 ```xml
 <sprite name="clouds" sprite="clouds">
-    <property name="moves" type="bool" value="true">
-    <property name="velocity.x" type="float" value="40.0">
+    <property name="moves" type="bool" value="true" />
+    <property name="velocity.x" type="float" value="40.0" />
 </sprite>
 ```
 
@@ -90,7 +90,7 @@ Solid nodes are sprites that is, unlike a Sprite Node, composed of only one sele
 Creating one of these looks something like this:
 
 ```xml
-<solid name="void" color="#FFFFFF" width="1280" height="720">
+<solid name="void" color="#FFFFFF" width="1280" height="720" />
 ```
 *(there's a difference between using <syntax lang="xml">&lt;solid&gt;</syntax> and <syntax lang="xml">&lt;box&gt;</syntax>, while <syntax lang="xml">&lt;solid&gt;</syntax> offers more performance, it might break with shaders and other stuff, so if that happens, use <syntax lang="xml">&lt;box&gt;</syntax> instead)*
 
@@ -103,7 +103,7 @@ Accepted parameters:
 ## <h2 id="character-node" sidebar="Character nodes">Character nodes (<syntax lang="xml">&lt;boyfriend&gt;</syntax>, <syntax lang="xml">&lt;bf&gt;</syntax>, <syntax lang="xml">&lt;player&gt;</syntax>, <syntax lang="xml">&lt;girlfriend&gt;</syntax>, <syntax lang="xml">&lt;gf&gt;</syntax>, <syntax lang="xml">&lt;dad&gt;</syntax>, <syntax lang="xml">&lt;opponent&gt;</syntax>, <syntax lang="xml">&lt;character&gt;</syntax>, <syntax lang="xml">&lt;char&gt;</syntax>)</h2>
 Character nodes are used to position characters in the stage. A Character node looks something like this:
 ```xml
-<boyfriend x="200" y="400"/>
+<boyfriend x="200" y="400" />
 ```
 Accepted parameters are:
 - ``x`` and ``y`` for positioning.
@@ -116,20 +116,20 @@ Accepted parameters are:
 For the <syntax lang="xml">&lt;character&gt;</syntax> and <syntax lang="xml">&lt;char&gt;</syntax> nodes only use them if you want to change a specific character *(ex. if you want to change pico's positions)*
 
 ```xml
-<character name="pico" x="400" y="200">
+<character name="pico" x="400" y="200" />
 ```
 
 Keep in mind that where you put these nodes is important as the character will be layered depending on that.
 ```xml
 <boyfriend/>
-<sprite name="stageCurtains" x="-500" y="-300" sprite="stagecurtains" scroll="1.3"/>
+<sprite name="stageCurtains" x="-500" y="-300" sprite="stagecurtains" scroll="1.3" />
 ```
 *(this will put boyfriend behind the <code class="hljs-string">stageCurtains</code> sprite)*
 
 ## <h2 id="ratings-node" sidebar="Rating sprites node">Ratings sprites node (<syntax lang="xml">&lt;ratings&gt;</syntax>, <syntax lang="xml">&lt;combo&gt;</syntax>)</h2>
 This node is only used to position the rating sprites and does nothing else *(atm)*. Positioning in nodes doesn't matter here.
 ```xml
-<ratings x="200" y="400">
+<ratings x="200" y="400" />
 ```
 The only parameters are ``x`` and ``y``.
 
