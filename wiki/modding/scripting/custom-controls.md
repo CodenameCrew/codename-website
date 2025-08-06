@@ -90,6 +90,6 @@ You may notice that if you change a strumline's key count the bindings will not 
 
 This can be easily solved by setting up controls in a specific way inside the controls xml.
 
-Add you need to do is have the `name` property of the controls to be set to `keyCount`k`strumID` for each one, for example `name="5k0"` will be for the first strum when the key count is 5.
+All you need to do is have the `name` property of the controls to be set to `keyCount`k`strumID` for each one, for example `name="5k0"` will be for the first strum when the key count is 5.
 
 If you've named it correctly you should have the bindings automatically set for that key count!
