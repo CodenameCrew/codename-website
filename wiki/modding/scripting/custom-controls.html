@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="en"><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Custom Controls - Codename Engine Wiki</title>
+	<link rel="stylesheet" href="/style.css">
+	<link rel="stylesheet" href="/style_v2.css">
+	<link rel="stylesheet" href="/wiki.css">
+
+	<meta name="title" content="Custom Controls - Codename Engine Wiki">
+	<meta name="description" content="This page explains how to create custom controls for your mod!">
+	<meta property="og:description" content="This page explains how to create custom controls for your mod!">
+	<meta property="twitter:description" content="This page explains how to create custom controls for your mod!">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://codename-engine.com/">
+	<meta property="og:title" content="Custom Controls - Codename Engine Wiki">
+	<meta property="og:image" content="https://codename-engine.com/img/banner.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://codename-engine.com/">
+	<meta property="twitter:title" content="Custom Controls - Codename Engine Wiki">
+	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png">
+
+	<meta name="theme-color" content="#b265bd">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<meta name="apple-mobile-web-app-title" content="Codename">
+	<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+	<div class="header" id="main">
+		<header>
+    <a href="/">
+        <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
+        <img src="/img/logo-banner-mini.png" alt="Codename Logo" class="mobile">
+    </a>
+    <h2 class="header-title">Custom Controls</h2>
+    <div>
+        <a href="/api-docs/">API</a><a href="/wiki/">Wiki</a><a href="/tools/">Tools</a>
+    </div>
+</header>
+	</div>
+	<div class="container">
+		<div class="sidebar-wrapper">
+			<input type="checkbox" class="sidebar-button">
+			<span class="sidebar-button-front">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+					<rect width="100" height="20" rx="10"></rect>
+					<rect y="30" width="100" height="20" rx="10"></rect>
+					<rect y="60" width="100" height="20" rx="10"></rect>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path stroke="#000" d="M195 195a64 64 0 0 1 91 0l226 227 226-227a64 64 0 0 1 91 91L602 512l227 226a64 64 0 0 1-91 91L512 602 286 829a64 64 0 0 1-91-91l227-226-227-226a64 64 0 0 1 0-91z"></path></svg>
+			</span>
+			<div class="sidebar">
+				<ul class="sidebar-unordered-list">
+					<li class="sidebar-list-item even"><a href="/wiki/" class="even">Home</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/navigation" class="odd">How to navigate the engine</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/differences" class="even">Differences between other FNF engines</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/faq" class="odd">FAQ</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/troubleshooting" class="even">Troubleshooting</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/modding/songs/" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/songs/editor-features" class="odd">Chart Editor Features</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/songs/events" class="even">Chart Events</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/songs/displaying-songs" class="odd">Displaying Songs</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/weeks/" class="even">Creating weeks</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/weeks/week-characters" class="odd">Character Creation</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/characters/" class="even">Creating characters</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/making-custom-icons" class="even">Making Custom Icons</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/cutscenes-dialogues" class="odd">Cutscenes/Dialogues</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/note-splashes" class="even">Note Splashes</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/" class="odd">Scripting</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/" class="even">PlayState Scripts</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/gameplay-scripts" class="odd">Gameplay Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts" class="even">Events/Notetype Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts" class="odd">Cutscenes/Dialogue Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/character-stage-scripts" class="even">Character/Stage Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/pause-gameover-scripts" class="odd">Pause/Game Over Scripts</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/state-substate-scripts" class="even">State/Substate Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/global-scripts" class="odd">Global Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/shaders" class="even">Shaders</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/hxvlc" class="odd">Using hxvlc for videos</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/custom-options" class="even">Custom Options</a></li>
+<li class="sidebar-list-item odd selected"><a href="#main" class="odd selected">Custom Controls</a><ul class="sidebar-unordered-list odd pagination">
+<li><a href="#properties">Properties</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/custom-classes" class="even">Custom Classes</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/3d-rendering" class="odd">3D rendering - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/script-calls" class="even">All of the script calls - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/script-snippets" class="odd">Useful script snippets for modders - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/scripted-assets-libraries" class="even">Scripted Assets Libraries - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/ndll-scripting" class="odd">NDLL Scripting - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/custom-transitions" class="even">Custom Transitions</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/hardcoding/" class="odd">Hardcoding - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="content">
+			<h1>Custom Controls</h1>
+<p>Custom controls can be easily added to your own mod and automatically setup inside the controls menu! (so you don't have to code it yourself)</p>
+<p>To get started, put a file in <code class="inline-code">./data/config</code> called <code class="inline-code">controls.xml</code>.</p>
+<p>Here is an example xml that you can copy from:</p>
+<pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">controls</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">category</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"TEST CATEGORY"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">control</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"dodge"</span> <span class="hljs-attr">saveName</span>=<span class="hljs-string">"dodge"</span> <span class="hljs-attr">menuName</span>=<span class="hljs-string">"DODGE"</span> <span class="hljs-attr">keyP1</span>=<span class="hljs-string">"SPACE"</span> <span class="hljs-attr">keyP2</span>=<span class="hljs-string">""</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">category</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">category</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"SIX KEY"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">control</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"6k0"</span> <span class="hljs-attr">saveName</span>=<span class="hljs-string">"control_6k0"</span> <span class="hljs-attr">menuName</span>=<span class="hljs-string">"LEFT"</span> <span class="hljs-attr">keyP1</span>=<span class="hljs-string">"S"</span> <span class="hljs-attr">keyP2</span>=<span class="hljs-string">""</span> <span class="hljs-attr">menuIcon</span>=<span class="hljs-string">"game/notes/default"</span> <span class="hljs-attr">menuAnim</span>=<span class="hljs-string">"purple0"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">control</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"6k1"</span> <span class="hljs-attr">saveName</span>=<span class="hljs-string">"control_6k1"</span> <span class="hljs-attr">menuName</span>=<span class="hljs-string">"UP"</span> <span class="hljs-attr">keyP1</span>=<span class="hljs-string">"D"</span> <span class="hljs-attr">keyP2</span>=<span class="hljs-string">""</span> <span class="hljs-attr">menuIcon</span>=<span class="hljs-string">"game/notes/default"</span> <span class="hljs-attr">menuAnim</span>=<span class="hljs-string">"green0"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">control</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"6k2"</span> <span class="hljs-attr">saveName</span>=<span class="hljs-string">"control_6k2"</span> <span class="hljs-attr">menuName</span>=<span class="hljs-string">"RIGHT"</span> <span class="hljs-attr">keyP1</span>=<span class="hljs-string">"F"</span> <span class="hljs-attr">keyP2</span>=<span class="hljs-string">""</span> <span class="hljs-attr">menuIcon</span>=<span class="hljs-string">"game/notes/default"</span> <span class="hljs-attr">menuAnim</span>=<span class="hljs-string">"red0"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">control</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"6k3"</span> <span class="hljs-attr">saveName</span>=<span class="hljs-string">"control_6k3"</span> <span class="hljs-attr">menuName</span>=<span class="hljs-string">"LEFT"</span> <span class="hljs-attr">keyP1</span>=<span class="hljs-string">"J"</span> <span class="hljs-attr">keyP2</span>=<span class="hljs-string">"LEFT"</span> <span class="hljs-attr">menuIcon</span>=<span class="hljs-string">"game/notes/default"</span> <span class="hljs-attr">menuAnim</span>=<span class="hljs-string">"purple0"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">control</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"6k4"</span> <span class="hljs-attr">saveName</span>=<span class="hljs-string">"control_6k4"</span> <span class="hljs-attr">menuName</span>=<span class="hljs-string">"DOWN"</span> <span class="hljs-attr">keyP1</span>=<span class="hljs-string">"K"</span> <span class="hljs-attr">keyP2</span>=<span class="hljs-string">"DOWN"</span> <span class="hljs-attr">menuIcon</span>=<span class="hljs-string">"game/notes/default"</span> <span class="hljs-attr">menuAnim</span>=<span class="hljs-string">"blue0"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">control</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"6k5"</span> <span class="hljs-attr">saveName</span>=<span class="hljs-string">"control_6k5"</span> <span class="hljs-attr">menuName</span>=<span class="hljs-string">"RIGHT"</span> <span class="hljs-attr">keyP1</span>=<span class="hljs-string">"L"</span> <span class="hljs-attr">keyP2</span>=<span class="hljs-string">"RIGHT"</span> <span class="hljs-attr">menuIcon</span>=<span class="hljs-string">"game/notes/default"</span> <span class="hljs-attr">menuAnim</span>=<span class="hljs-string">"red0"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">category</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">controls</span>&gt;</span>
+</code></pre>
+<p><img src="./Custom Controls.png" alt="Image showing the custom controls based on the example above"></p>
+<p>You want to start by creating a <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">category</span>&gt;</span></code> node, which will include any options inside that section while in the menu (as shown in the screenshot)</p>
+<p>The <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">category</span>&gt;</span></code> only has one available property:</p>
+<ul>
+<li><code class="inline-code">name</code> - This is the name that will appear for the category in the controls menu</li>
+</ul>
+<p>Each <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">control</span>&gt;</span></code> node can then be added as a subnode of the category</p>
+<h2 id="properties">Here's the list of properties for each control:</h2>
+<ul>
+<li><code class="inline-code">name</code> - This name is what will be used to access the control later</li>
+<li><code class="inline-code">saveName</code> - This is the name used with <code class="inline-code">FlxG.save.data</code> for the control to be stored in, make sure to name this carefully and not break any other save data!</li>
+<li><code class="inline-code">menuName</code> - This is the name that will be displayed inside the menu</li>
+<li><code class="inline-code">keyP1</code>, <code class="inline-code">keyP2</code> - These are what the control key binding will default to, this name will need to be matching with a <code class="inline-code">FlxKey</code> name to correctly set, and can be set to <code class="inline-code">""</code> to default to none. The <code class="inline-code">P1</code> and <code class="inline-code">P2</code> determine which player uses the binding in co-op mode (when checking <code class="inline-code">.controls</code> on the <code class="inline-code">StrumLine</code>) or when checking directly through <code class="inline-code">controlsP1</code> or <code class="inline-code">controlsP2</code>, and will act as 2 bindings by default just like any other control.</li>
+<li><code class="inline-code">menuIcon</code> - This is an image path to a custom control icon that can be used in the menu, must be a sparrow xml spritesheet! (optional)</li>
+<li><code class="inline-code">menuAnim</code> - This is the animation prefix for the spritesheet set by <code class="inline-code">menuIcon</code> (optional, but required if using <code class="inline-code">menuIcon</code>)</li>
+</ul>
+<p>Accessing in scripts:</p>
+<p>The control state can be checked multiple ways, typically just by calling <code class="inline-code">controls</code> (assuming that you're in a <code class="inline-code">MusicBeatState</code>), and then calling the member functions <code class="inline-code">getJustPressed(name)</code>, <code class="inline-code">getJustReleased(name)</code>, or <code class="inline-code">getPressed(name)</code>.</p>
+<p>Per player controls can be accessed with <code class="inline-code">controlsP1</code> and <code class="inline-code">controlsP2</code>, and per strumline controls can be accessed with <code class="inline-code">.controls</code> on any <code class="inline-code">StrumLine</code> (example: <code class="inline-code">strumLines.members[0].controls</code>), which will change between <code class="inline-code">P1</code>/<code class="inline-code">P2</code> controls when using co-op mode (only while in <code class="inline-code">PlayState</code>).</p>
+<p>Example usage of accessing a control inside of a script:</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">elapsed</span>) {
+    <span class="hljs-comment">//global</span>
+    <span class="hljs-keyword">if</span> (controls.<span class="hljs-title function_">getJustPressed</span>(<span class="hljs-string">"dodge"</span>)) {
+        <span class="hljs-title function_">trace</span>(<span class="hljs-string">"dodge!"</span>);
+    }
+    <span class="hljs-keyword">if</span> (controls.<span class="hljs-title function_">getJustReleased</span>(<span class="hljs-string">"dodge"</span>)) {
+        <span class="hljs-title function_">trace</span>(<span class="hljs-string">"released dodge!"</span>);
+    }
+    <span class="hljs-keyword">if</span> (controls.<span class="hljs-title function_">getPressed</span>(<span class="hljs-string">"dodge"</span>)) {
+        <span class="hljs-title function_">trace</span>(<span class="hljs-string">"holding dodge!"</span>);
+    }
+
+    <span class="hljs-comment">//per player</span>
+    <span class="hljs-keyword">if</span> (controlsP1.<span class="hljs-title function_">getJustPressed</span>(<span class="hljs-string">"dodge"</span>)) {
+        <span class="hljs-title function_">trace</span>(<span class="hljs-string">"p1 dodge!"</span>);
+    }
+    <span class="hljs-keyword">if</span> (controlsP2.<span class="hljs-title function_">getJustPressed</span>(<span class="hljs-string">"dodge"</span>)) {
+        <span class="hljs-title function_">trace</span>(<span class="hljs-string">"p2 dodge!"</span>);
+    }
+
+    <span class="hljs-comment">//per strumline (changes on co-op mode)</span>
+    <span class="hljs-keyword">if</span> (strumLines.<span class="hljs-property">members</span>[<span class="hljs-number">0</span>].<span class="hljs-property">controls</span>.<span class="hljs-title function_">getJustPressed</span>(<span class="hljs-string">"dodge"</span>)) {
+        <span class="hljs-title function_">trace</span>(<span class="hljs-string">"strumline0 dodge!"</span>);
+    }
+    <span class="hljs-keyword">if</span> (strumLines.<span class="hljs-property">members</span>[<span class="hljs-number">1</span>].<span class="hljs-property">controls</span>.<span class="hljs-title function_">getJustPressed</span>(<span class="hljs-string">"dodge"</span>)) {
+        <span class="hljs-title function_">trace</span>(<span class="hljs-string">"strumline1 dodge!"</span>);
+    }
+}
+</code></pre>
+<h2>Multikey Control Bindings</h2>
+<p>You may notice that if you change a strumline's key count the bindings will not work by default.</p>
+<p>This can be easily solved by setting up controls in a specific way inside the controls xml.</p>
+<p>All you need to do is have the <code class="inline-code">name</code> property of the controls to be set to <code class="inline-code">keyCount</code>k<code class="inline-code">strumID</code> for each one, for example <code class="inline-code">name="5k0"</code> will be for the first strum when the key count is 5.</p>
+<p>If you've named it correctly you should have the bindings automatically set for that key count!</p>
+
+
+			<div class="info">
+				<div class="written">Written by: TheZoroForce240</div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2025-08-05T18:51:29.793Z">2025-08-05</span></div>
+
+				<div class="github-edit-button">
+					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/modding/scripting/custom-controls.md">Edit this page on GitHub</a>
+				</div>
+			</div>
+
+			<div class="giscus"></div>
+			<div class="giscus-frame"></div>
+
+			<script src="https://giscus.app/client.js" data-repo="CodenameCrew/codename-website" data-repo-id="R_kgDOMm2E8w" data-category="Website" data-category-id="DIC_kwDOMm2E884Cio1F" data-mapping="specific" data-term="wiki/modding/scripting/custom-controls" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="https://codename-engine.com/giscus-theme.css" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
+			</script>
+		</div>
+	</div>
+
+	<script src="/wiki.js"></script>
+
+</body></html>

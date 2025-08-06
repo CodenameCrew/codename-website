@@ -65,6 +65,10 @@
   <priority>0.65</priority>
 </url>
 <url>
+  <loc>https://codename-engine.com/wiki/modding/scripting/custom-controls</loc>
+  <priority>0.65</priority>
+</url>
+<url>
   <loc>https://codename-engine.com/wiki/modding/scripting/custom-options</loc>
   <priority>0.65</priority>
 </url>
