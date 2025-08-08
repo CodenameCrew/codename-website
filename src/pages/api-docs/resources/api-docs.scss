@@ -14,6 +14,7 @@
   float: right;
   padding: 0.2em 0.4em;
   pointer-events: auto;
+  z-index: 100;
 }
 
 li.expandable>ul {
@@ -84,6 +85,10 @@ code, code a {
 }
 code {
   color: white !important;
+}
+
+.anchor {
+  width: auto;
 }
 
 .anchor > code, .field > h3 > code {
