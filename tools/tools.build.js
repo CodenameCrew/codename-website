@@ -16,8 +16,8 @@ const tools = [
 		desc: "Tool to pack events for the engine"
 	},
 	{
-		link: "https://neeeoo.github.io/funkin-packer/",
-		title: "Funkin Packer",
+		link: "https://kitzsh.github.io/tex-packer-ex/",
+		title: "Texture Packer EX",
 		desc: "Tool to pack and repack spritesheets",
 		external: true,
 	},
