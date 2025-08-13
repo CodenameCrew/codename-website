@@ -108,6 +108,7 @@
 <li class="sidebar-list-item even selected"><a href="#main" class="even selected">All of the script calls - <span style="color: #FF0000;">UNFINISHED</span></a><ul class="sidebar-unordered-list even pagination">
 <li><a href="#all-states-substates">All states/substates</a></li>
 <li><a href="#playstate-hx">PlayState.hx</a></li>
+<li><a href="#character-scripts">Character Scripts</a></li>
 <li><a href="#dialogue-scripts">Dialogue Scripts</a></li>
 <li><a href="#dialogue-character-scripts">Dialogue Character Scripts</a></li>
 <li><a href="#dialogue-box-scripts">Dialogue Box Scripts</a></li>
@@ -168,6 +169,13 @@
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onGamePause</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CancellableEvent</span>)</code></h3>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onGameOver</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">GameOverEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostGameOver</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">GameOverEvent</span>)</code></h3>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onVocalsResync</span>()</code></h3>
+<h2 id="character-scripts">Character Scripts</h2>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onCharacterXMLParsed</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CharacterXMLEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onCharacterNodeParsed</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CharacterNodeEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onDance</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DanceEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onPlaySingAnim</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DirectionAnimEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onPlayAnim</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">PlayAnimEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onGetCamPos</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">PointEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">destroy</span>()</code></h3>
 <h2 id="dialogue-scripts">Dialogue Scripts <small>(mostly substate like behavior)</small></h2>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">structureLoaded</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DialogueStructureEvent</span>)</code></h3>
 <p>The <code class="inline-code">event</code> replaces the <code class="inline-syntax inline-code"><span class="hljs-title function_">create</span>()</code> call on normal dialogues scripts.</p>
@@ -227,7 +235,7 @@ Doing so, <code class="inline-code">onPostFinish</code> won't be called.</p>
 
 			<div class="info">
 				<div class="written">Written by: Frakits &amp; Nex_isDumb</div>
-				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-10-14T16:54:14.259Z">2024-10-14</span></div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2025-07-15T00:00:52.664Z">2025-07-15</span></div>
 
 				<div class="github-edit-button">
 					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/modding/scripting/script-calls.md">Edit this page on GitHub</a>
