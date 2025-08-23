@@ -1,5 +1,37 @@
 @use "sass:color";
 
+:root {
+    --discord-dnd: hsl(358.16 calc(1*68.776%)53.529% /1);
+    --discord-idle: hsl(37.792 calc(1*78.571%)38.431% /1);
+    --discord-online: hsl(142.703 calc(1*60.656%)35.882% /1);
+}
+
+.discordWidget-user {
+    //.username {
+    //    text-overflow: ellipsis;
+    //    white-space: nowrap;
+    //    overflow: hidden;
+    //}
+
+    .avatar {
+        margin-right: 8px;
+        border: solid white 2px;
+        box-sizing: content-box;
+
+        &[data-status="online"] {
+            border-color: var(--discord-online);
+        }
+
+        &[data-status="idle"] {
+            border-color: var(--discord-idle);
+        }
+
+        &[data-status="dnd"] {
+            border-color: var(--discord-dnd);
+        }
+    }
+}
+
 .content {
     margin: 0;
     padding: 0!important;
@@ -72,6 +104,10 @@ div.compact {
         width: 100%;
         overflow: hidden;
         display: block;
+    }
+
+    .horizontal-stack {
+        display: block !important;
     }
 
     div.vertical-stack {
@@ -168,7 +204,7 @@ div.compact {
 
     &.mods {
         flex-grow: 0;
-        width: 565px;
+        width: 40%;
         //display: table;
         padding: 0;
     }
@@ -201,6 +237,7 @@ div.compact {
 
     a {
         text-decoration: none;
+        position: initial;
     }
 
     &:hover {
@@ -296,8 +333,8 @@ div.compact {
 
     .last-updated {
         position: absolute;
-        bottom: 10px;
         left: 10px;
+        bottom: 10px;
     }
 
     h3 {
@@ -410,6 +447,17 @@ div.compact {
 .vertical-stack {
     width: 60%;
     height: min-content;
+}
+
+.horizontal-stack {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.horizontal-stack div.content {
+    flex: 2;
+    margin-bottom: 0 !important;
 }
 
 .donators-list {

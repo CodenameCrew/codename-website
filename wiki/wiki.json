@@ -35,6 +35,7 @@
             ["shaders", "Shaders"],
             ["hxvlc", "Using hxvlc for videos"],
             ["custom-options", "Custom Options"],
+            ["custom-controls", "Custom Controls"],
             ["custom-classes", "Custom Classes"],
             ["3d-rendering", "3D rendering - UNFINISHED"],
             ["script-calls", "All of the script calls - UNFINISHED"],

@@ -44,6 +44,7 @@ console.log("Building pages...");
 copyDir("./src/img/", exportPath + "/img/");
 
 compileSass("./src/style.scss", exportPath + "/style.css");
+compileSass("./src/style_v2.scss", exportPath + "/style_v2.css");
 compileSass("./src/pages/wiki.scss", exportPath + "/wiki.css");
 compileSass("./src/pages/index.scss", exportPath + "/index.css");
 compileSass("./src/giscus-theme.scss", exportPath + "/giscus-theme.css");

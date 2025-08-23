@@ -3,6 +3,7 @@ var fs = require('fs');
 var { fixHtmlRefs, copyDir, parseTemplate, htmlToString } = require("../utils.js");
 
 var header = fs.readFileSync("./src/pages/templates/header.html", 'utf8');
+var footer = fs.readFileSync("./src/pages/templates/footer.html", 'utf8');
 var donatorsData = JSON.parse(fs.readFileSync("./donators.json", 'utf8'));
 
 function sortByTime(a, b) {
@@ -148,6 +149,7 @@ function buildHtml(_pageDir, _exportPath) {
 		pageTitle: "Home",
 		title: "Home",
 		header: header,
+		footer: footer,
 		mods: mods,
 		warnings: warnings,
 		donators: donators,

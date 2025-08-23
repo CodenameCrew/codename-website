@@ -246,6 +246,18 @@
                     "type": "donation"
                 }
             ]
+        },
+        {
+            "name": "LéaNimatics",
+            "profilePicture": "https://storage.ko-fi.com/cdn/useruploads/3110b192-22d1-48ec-9ec5-a858c52d9d7a_e8d30cd2-bce0-462b-876d-16ff22643956.png",
+            "hasMembership": false,
+            "donations": [
+                {
+                    "amount": 5,
+                    "currency": "$",
+                    "type": "donation"
+                }
+            ]
         }
     ]
 }

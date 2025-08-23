@@ -1,4 +1,5 @@
 {
     "livePreview.defaultPreviewPath": "./export/",
-    "livePreview.serverRoot": "./export/"
+    "livePreview.serverRoot": "./export/",
+    "livePreview.autoRefreshPreview": "On Changes to Saved Files"
 }

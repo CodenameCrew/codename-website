@@ -27,7 +27,10 @@ function getGlobals() {
 }
 
 function fixPath(url) {
-	return url.replaceAll(path.sep, path.posix.sep);
+	if (url != undefined && url.startsWith("root/"))
+		return url.replaceAll(path.sep, path.posix.sep);
+	else 
+		return url;
 }
 
 function parseHtml(html) {

@@ -1,13 +1,13 @@
 {
-    "name": "Poldhub",
+    "name": "PoldHub",
     "description": "A totally normal italian mod about a famous streamer...",
     "author": "Prince",
-    "version": "unreleased",
-    "link": "https://gamebanana.com/mods/457415",
-    "source": "https://github.com/NexIsDumb/Poldhub",
+    "version": "Demo v2.0.1",
+    "link": "https://poldhub.github.io/",
+    "source": "https://github.com/PoldHub",
 
-    "lastUpdated": "unreleased",
+    "lastUpdated": "2025-05-13T20:46:02.000Z",
 
-    "tags": ["upcoming", "softcoded", "length-very-long", "difficulty-expert"],
-    "userTags": ["Poldo", "Italian", "Streamer"]
+    "tags": ["admin-pick", "softcoded", "length-very-long", "difficulty-expert"],
+    "userTags": ["Poldo", "Italian", "Streamer", "Metal"]
 }

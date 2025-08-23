@@ -1,3 +1,7 @@
+p {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+}
+
 .sidebar-wrapper {
   width: 40vw;
   display: inline-block;
@@ -75,7 +79,7 @@ ul.pagination li {
       position: absolute;
       left: 0;
       display: inline-block;
-      content: "ff";
+      content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1">');
       color: transparent;
       width: calc(100% - 4px);
       border: unset;
@@ -129,9 +133,20 @@ ul.pagination li {
   }
 }
 
+.arrow_thing {
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+}
+
 @media screen and (max-width: 50.5em) {
   .sidebar-button-front {
     display: flex;
+  }
+
+  .arrow_thing:not(.desktop) {
+    width: 20em;
+    margin-left: auto;
+    display: block;
+    margin-top: -10em;
   }
 
   .sidebar-button {
