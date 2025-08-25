@@ -1,5 +1,5 @@
 ---
-author: Ne_Eo & Frakits & Nex_isDumb & lunarcleint
+author: \[LOSER\] & Frakits & Nex_isDumb & lunarcleint
 desc: This page explains the most commonly asked questions about the engine.
 lastUpdated: 2024-10-12T17:38:10.934Z
 title: FAQ
@@ -44,7 +44,6 @@ Above is a direct quoted response from Yoshman29.
 ## <h2 id="main-owners" sidebar="Main Owners">Who are the main owners of the engine?</h2>
 
 The main owners consists of:
-- [Ne_Eo](https://github.com/NeeEoo)
 - [Lunarcleint](https://github.com/Lunarcleint)
 - [WizardMantis441](https://github.com/WizardMantis441)
 - [Frakits](https://github.com/Frakits)

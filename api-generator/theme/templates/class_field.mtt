@@ -3,7 +3,7 @@
 <div class="field::if (depth == 0 && api.isPlatform(name)) " platform platform-" + name else ""::">
 ::if field.line != null::
 	<a href="::api.getSourceLinkWithLine(type, field.line)::" class="field-source pull-right default-button" target="_blank">
-		<i class="fa fa-github"></i> View in GitHub
+		<i class="fa fa-github"></i> View on GitHub
 	</a>
 ::end::
 

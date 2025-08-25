@@ -116,7 +116,7 @@ Accepted parameters are:
 For the <syntax lang="xml">&lt;character&gt;</syntax> and <syntax lang="xml">&lt;char&gt;</syntax> nodes only use them if you want to change a specific character *(ex. if you want to change pico's positions)*
 
 ```xml
-<character name="pico" x="400" y="200">
+<character name="pico" x="400" y="200"/>
 ```
 
 Keep in mind that where you put these nodes is important as the character will be layered depending on that.
