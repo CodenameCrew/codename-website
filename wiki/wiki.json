@@ -36,7 +36,11 @@
             ["hxvlc", "Using hxvlc for videos"],
             ["custom-options", "Custom Options"],
             ["custom-controls", "Custom Controls"],
-            ["custom-classes", "Custom Classes"],
+            ["custom-classes/index", "Custom Classes", [
+                ["enums", "Enums"],
+                ["property-fields", "Property Fields"],
+                ["static-extension", "Static Extension"]
+            ]],
             ["3d-rendering", "3D rendering - UNFINISHED"],
             ["script-calls", "All of the script calls - UNFINISHED"],
             ["script-snippets", "Useful script snippets for modders - UNFINISHED"],
