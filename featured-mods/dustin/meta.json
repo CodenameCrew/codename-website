@@ -1,12 +1,12 @@
 {
     "name": "Friday Night Dustin'",
     "description": "T H E  V E S S E L S  A R E  R E A D Y. A F T E R  A L L  T H E S E  Y E A R S. A R E  Y O U  R E A D Y ?",
-    "author": "chuf & others",
-    "version": "1.0.0",
+    "author": "ChezzarCat & Mar Mar",
+    "version": "1.1.0",
     "link": "https://gamebanana.com/mods/613322",
     "source": "https://github.com/lunarcleint/dustin-build",
 
     "lastUpdated": "2025-08-09T06:51:35.000Z",
 
-    "tags": ["softcoded", "length-very-long", "difficulty-hard"]
+    "tags": ["admin-pick", "longer-desc", "softcoded", "length-very-long", "difficulty-hard"]
 }
