@@ -6,7 +6,7 @@ title: Property Fields
 ---
 # Property Fields (get/set variables)
 
-Next to variables, properties are the second option for dealing with data on a class. However, unlike variables, they offer more control of which kind of field access should be allowed and how it should be generated.
+Property Fields provide a way to control access to script or class fields, offering more flexibility than simple variables. They are defined by specifying read and write access identifiers within parentheses after the field name.
 
 Here is a basic Property Field usage example:
 

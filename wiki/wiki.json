@@ -23,6 +23,12 @@
         ["cutscenes-dialogues", "Cutscenes/Dialogues"],
         ["note-splashes", "Note Splashes"],
         ["scripting/index", "Scripting", [
+            ["features/index", "Features", [
+                ["custom-classes", "Custom Classes"],
+                ["enums", "Enums"],
+                ["property-fields", "Property Fields"],
+                ["static-extension", "Static Extension"]
+            ]],
             ["playstate-scripts/index", "PlayState Scripts", [
                 ["gameplay-scripts", "Gameplay Scripts"],
                 ["events-notetypes-scripts", "Events/Notetype Scripts"],
@@ -36,11 +42,6 @@
             ["hxvlc", "Using hxvlc for videos"],
             ["custom-options", "Custom Options"],
             ["custom-controls", "Custom Controls"],
-            ["custom-classes/index", "Custom Classes", [
-                ["enums", "Enums"],
-                ["property-fields", "Property Fields"],
-                ["static-extension", "Static Extension"]
-            ]],
             ["3d-rendering", "3D rendering - UNFINISHED"],
             ["script-calls", "All of the script calls - UNFINISHED"],
             ["script-snippets", "Useful script snippets for modders - UNFINISHED"],

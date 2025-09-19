@@ -1,7 +1,7 @@
 ---
 author: Ne_Eo, Frakits & Jamextreme140
 desc: This page explains how to create custom classes for your mod!
-lastUpdated: 2025-09-12T09:36:28.820Z
+lastUpdated: 2025-09-19T04:13:02.526Z
 title: Custom Classes
 ---
 # Custom Classes
@@ -48,9 +48,3 @@ As of writing this, this system is limited and also presents some defects. For e
 - Compiled Classes that do not override a function in their code cannot have that function overridden by custom classes. For example, you can't override the `draw` method in a custom class that extends <syntax lang="haxe">FlxParticle</syntax>, because <syntax lang="haxe">FlxParticle</syntax> does not override `draw`. This will be fixed in the future.
 - private variables and functions has not effect. They can be accessed as public variables.
 - You can only extend a class that is in the packages, `flixel`, `funkin` and `modchart`.
-
-## More HScript Features
-
-- [Enums](./enums.md)
-- [Property Fields](./property-fields.md)
-- [Static Extension](./static-extension.md)

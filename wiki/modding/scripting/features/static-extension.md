@@ -6,7 +6,7 @@ title: Static Extension
 ---
 # Static Extension
 
-Static extensions can be a powerful tool which allows augmenting types without actually changing them.
+Static extensions provide a mechanism to "extend" existing types with new functionality without modifying their original source code. This can be used either with real and custom classes.
 
 Here is a basic Static Extension example:
 
