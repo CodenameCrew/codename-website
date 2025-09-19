@@ -1,26 +1,26 @@
 <!DOCTYPE html><html lang="en"><head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Home - Codename Engine Wiki</title>
+	<title>Scripting Features - Codename Engine Wiki</title>
 	<link rel="stylesheet" href="/style.css">
 	<link rel="stylesheet" href="/style_v2.css">
 	<link rel="stylesheet" href="/wiki.css">
 
-	<meta name="title" content="Home - Codename Engine Wiki">
-	<meta name="description" content="Main Page to the Wiki">
-	<meta property="og:description" content="Main Page to the Wiki">
-	<meta property="twitter:description" content="Main Page to the Wiki">
+	<meta name="title" content="Scripting Features - Codename Engine Wiki">
+	<meta name="description" content="This page explains how to use the following scripting features in your mod!">
+	<meta property="og:description" content="This page explains how to use the following scripting features in your mod!">
+	<meta property="twitter:description" content="This page explains how to use the following scripting features in your mod!">
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://codename-engine.com/">
-	<meta property="og:title" content="Home - Codename Engine Wiki">
+	<meta property="og:title" content="Scripting Features - Codename Engine Wiki">
 	<meta property="og:image" content="https://codename-engine.com/img/banner.png">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://codename-engine.com/">
-	<meta property="twitter:title" content="Home - Codename Engine Wiki">
+	<meta property="twitter:title" content="Scripting Features - Codename Engine Wiki">
 	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png">
 
 	<meta name="theme-color" content="#b265bd">
@@ -42,7 +42,7 @@
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
         <img src="/img/logo-banner-mini.png" alt="Codename Logo" class="mobile">
     </a>
-    <h2 class="header-title">Home</h2>
+    <h2 class="header-title">Scripting Features</h2>
     <div>
         <a href="/api-docs/">API</a><a href="/wiki/">Wiki</a><a href="/tools/">Tools</a>
     </div>
@@ -61,9 +61,7 @@
 			</span>
 			<div class="sidebar">
 				<ul class="sidebar-unordered-list">
-					<li class="sidebar-list-item even selected"><a href="#main" class="even selected">Home</a><ul class="sidebar-unordered-list even pagination">
-</ul>
-</li>
+					<li class="sidebar-list-item even"><a href="/wiki/" class="even">Home</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/navigation" class="odd">How to navigate the engine</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/differences" class="even">Differences between other FNF engines</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/faq" class="odd">FAQ</a></li>
@@ -91,7 +89,9 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/cutscenes-dialogues" class="odd">Cutscenes/Dialogues</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/note-splashes" class="even">Note Splashes</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/" class="odd">Scripting</a><ul class="sidebar-unordered-list odd">
-<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/features/" class="even">Features</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even selected"><a href="#main" class="even selected">Features</a><ul class="sidebar-unordered-list even pagination">
+</ul>
+<ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/features/custom-classes" class="odd">Custom Classes</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/features/enums" class="even">Enums</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/features/property-fields" class="odd">Property Fields</a></li>
@@ -129,36 +129,28 @@
 		</div>
 
 		<div class="content">
-			<h1>Welcome to the Codename Engine Wiki</h1>
-<p>Here is documentation on functions of the engine (gameplay and modding), and how to use them for your mod.</p>
-<h3>Navigation is done via this sidebar!</h3>
-<p><img class="arrow_thing desktop" src="/img/sidebar_pointer(1).png">
-<img class="arrow_thing mobile" src="/img/sidebar_pointer_mobile(1).png"></p>
-<p>Credits:</p>
+			<h1>Scripting Features</h1>
 <ul>
-<li>[LOSER] - some styling and basically making the entire structure of the website.</li>
-<li>Frakits - useless documentation and tons of styling.</li>
-<li>Nex_isDumb - other documentations, keeping the api up to date (mostly) plus few other stuff.</li>
-<li>swordcube - helping hand for documentation.</li>
-<li>Care or _chronicsilly - helped with keeping my sanity.</li>
+<li><a href="./custom-classes">Custom Classes</a></li>
+<li><a href="./enums">Enums</a></li>
+<li><a href="./property-fields">Property Fields</a></li>
+<li><a href="./static-extension">Static Extension</a></li>
 </ul>
-<p>If you wanna see who made a specific page check below at the bottom of the page above the comments.</p>
-<p><strong>PSA</strong>. if you wish to contribute to this website, whether it be a page modification or adding a brand new page, visit the <a href="https://github.com/CodenameCrew/codename-website">GitHub Repository</a> and contribute via pull requests. (contributions are heavily encouraged, as we're not able to cover all possible cases.) You can also click the button below to edit the page on GitHub.</p>
 
 
 			<div class="info">
-				<div class="written">Written by: Frakits &amp; [LOSER]</div>
-				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-10-12T18:34:34.185Z">2024-10-12</span></div>
+				<div class="written">Written by: Jamextreme140</div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2025-09-19T04:11:01.175Z">2025-09-19</span></div>
 
 				<div class="github-edit-button">
-					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/index.md">Edit this page on GitHub</a>
+					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/modding/scripting/features/index.md">Edit this page on GitHub</a>
 				</div>
 			</div>
 
 			<div class="giscus"></div>
 			<div class="giscus-frame"></div>
 
-			<script src="https://giscus.app/client.js" data-repo="CodenameCrew/codename-website" data-repo-id="R_kgDOMm2E8w" data-category="Website" data-category-id="DIC_kwDOMm2E884Cio1F" data-mapping="specific" data-term="wiki/index" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="https://codename-engine.com/giscus-theme.css" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
+			<script src="https://giscus.app/client.js" data-repo="CodenameCrew/codename-website" data-repo-id="R_kgDOMm2E8w" data-category="Website" data-category-id="DIC_kwDOMm2E884Cio1F" data-mapping="specific" data-term="wiki/modding/scripting/features/index" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="https://codename-engine.com/giscus-theme.css" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
 			</script>
 		</div>
 	</div>

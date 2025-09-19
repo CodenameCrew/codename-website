@@ -89,23 +89,29 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/cutscenes-dialogues" class="odd">Cutscenes/Dialogues</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/note-splashes" class="even">Note Splashes</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/" class="odd">Scripting</a><ul class="sidebar-unordered-list odd">
-<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/" class="even">PlayState Scripts</a><ul class="sidebar-unordered-list even">
-<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/gameplay-scripts" class="odd">Gameplay Scripts</a></li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts" class="even">Events/Notetype Scripts</a></li>
-<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts" class="odd">Cutscenes/Dialogue Scripts</a></li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/character-stage-scripts" class="even">Character/Stage Scripts</a></li>
-<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/pause-gameover-scripts" class="odd">Pause/Game Over Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/features/" class="even">Features</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd selected"><a href="#main" class="odd selected">Custom Classes</a><ul class="sidebar-unordered-list odd pagination">
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/state-substate-scripts" class="even">State/Substate Scripts</a></li>
-<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/global-scripts" class="odd">Global Scripts</a></li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/shaders" class="even">Shaders</a></li>
-<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/hxvlc" class="odd">Using hxvlc for videos</a></li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/custom-options" class="even">Custom Options</a></li>
-<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/custom-controls" class="odd">Custom Controls</a></li>
-<li class="sidebar-list-item even selected"><a href="#main" class="even selected">Custom Classes</a><ul class="sidebar-unordered-list even pagination">
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/features/enums" class="even">Enums</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/features/property-fields" class="odd">Property Fields</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/features/static-extension" class="even">Static Extension</a></li>
 </ul>
 </li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/" class="odd">PlayState Scripts</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/gameplay-scripts" class="even">Gameplay Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts" class="odd">Events/Notetype Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts" class="even">Cutscenes/Dialogue Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/character-stage-scripts" class="odd">Character/Stage Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/pause-gameover-scripts" class="even">Pause/Game Over Scripts</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/state-substate-scripts" class="odd">State/Substate Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/global-scripts" class="even">Global Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/shaders" class="odd">Shaders</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/hxvlc" class="even">Using hxvlc for videos</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/custom-options" class="odd">Custom Options</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/custom-controls" class="even">Custom Controls</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/3d-rendering" class="odd">3D rendering - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/script-calls" class="even">All of the script calls - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/script-snippets" class="odd">Useful script snippets for modders - <span style="color: #FF0000;">UNFINISHED</span></a></li>
@@ -126,53 +132,60 @@
 			<h1>Custom Classes</h1>
 <p>Custom classes can be made either inside the script you need it in or you can make a script file corresponding with the name of the class in <code class="inline-code">./source</code>, and using <code class="inline-syntax inline-code"><span class="hljs-keyword">import</span></code> to import it.</p>
 <p>Here is a basic Song Script code that uses it:</p>
-<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">class</span> <span class="hljs-title class_">SpecialSprite</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">FlxSprite</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> <span class="hljs-attr">customValue</span>:<span class="hljs-title class_">String</span> = <span class="hljs-literal">null</span>;
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">new</span>(<span class="hljs-params">?x:<span class="hljs-built_in">Float</span> = <span class="hljs-number">0</span>, ?y:<span class="hljs-built_in">Float</span> = <span class="hljs-number">0</span>, ?graphic:FlxGraphicAsset, customValue:<span class="hljs-built_in">String</span></span>) { <span class="hljs-comment">// it also has to start with the same arguments as the super class, (limitation for now)</span>
-        <span class="hljs-variable language_">super</span>(x, y, graphic); <span class="hljs-comment">// this does nothing currently, its purely visual for now, but it will be used in the future</span>
-        <span class="hljs-variable language_">this</span>.<span class="hljs-property">customValue</span> = customValue;
-        <span class="hljs-comment">//other code stuff</span>
-    }
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">package</span>; <span class="hljs-comment">// Allow `package` declaration. Ignored by the interpreter.</span>
 
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">elapsed</span>) {
-        <span class="hljs-variable language_">super</span>.<span class="hljs-title function_">update</span>(elapsed);
-    }
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">SpecialSprite</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">FlxSprite</span> {
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getSprite</span>(<span class="hljs-params">v:<span class="hljs-built_in">String</span></span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SpecialSprite</span>(v);
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> <span class="hljs-title function_">customValue</span>(<span class="hljs-keyword">default</span>, set):<span class="hljs-title class_">String</span> = <span class="hljs-literal">null</span>;
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">set_customValue</span>(<span class="hljs-params">v:<span class="hljs-built_in">String</span></span>):<span class="hljs-title class_">String</span> {
+      <span class="hljs-keyword">if</span>(v == <span class="hljs-string">"powerful"</span>) 
+          <span class="hljs-title function_">trace</span>(<span class="hljs-string">"I'm powerful!"</span>);
+      <span class="hljs-title function_">loadGraphic</span>(<span class="hljs-title class_">Paths</span>.<span class="hljs-title function_">image</span>(v));
+      <span class="hljs-keyword">return</span> customValue = v;
+  }  
+        
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">new</span>(<span class="hljs-params">customValue:<span class="hljs-built_in">String</span></span>) {
+      <span class="hljs-variable language_">super</span>(<span class="hljs-number">200</span>, <span class="hljs-number">400</span>, <span class="hljs-literal">null</span>);
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">customValue</span> = customValue;
+      <span class="hljs-comment">//other code stuff</span>
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">elapsed</span>) {
+      <span class="hljs-variable language_">super</span>.<span class="hljs-title function_">update</span>(elapsed);
+  }
 }
 
 <span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>) {
-    <span class="hljs-keyword">var</span> spr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SpecialSprite</span>(<span class="hljs-number">200</span>, <span class="hljs-number">400</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">"powerful"</span>);
-    <span class="hljs-title function_">add</span>(spr);
+  <span class="hljs-keyword">var</span> spr = <span class="hljs-title class_">SpecialSprite</span>.<span class="hljs-title function_">getSprite</span>(<span class="hljs-string">"powerful"</span>);
+  <span class="hljs-title function_">add</span>(spr);
 }
 </code></pre>
 <h2>Particularities</h2>
-<p>As of writing this, this system is very limited and also presents some defects. For example:</p>
+<p>As of writing this, this system is limited and also presents some defects. For example:</p>
 <ul>
-<li>You cannot extend FlxGroups or other typed classes <em>(the ones that end with a <code class="inline-code">&lt;T&gt;</code>)</em>.</li>
-<li>Classes that override a class needs to have the same arguments on the constructor as the class it overrides. Same when creating the instance of the class.</li>
-<li>Compiled Classes that do not override a function in their code cannot have that function overridden by custom classes. For example, you can't override the <code class="inline-code">draw</code> method in a custom class that extends <code class="inline-syntax inline-code"><span class="hljs-title class_">FlxParticle</span></code>, because <code class="inline-syntax inline-code"><span class="hljs-title class_">FlxParticle</span></code> does not override <code class="inline-code">draw</code>.</li>
-<li>all variables need to be public in order to be accessed inside the class.</li>
-<li>static variables are not supported. (yet)</li>
-<li>static functions are not supported. (yet)</li>
-<li>private variables are not supported. They act as public variables.</li>
-<li>private functions are not supported. They act as public functions.</li>
-<li>You cannot extend a custom class. (yet)</li>
-<li>You can only extend a class that is in the packages, <code class="inline-code">flixel</code>, <code class="inline-code">funkin</code></li>
+<li>You cannot extend FlxGroups or other typed classes <em>(the ones that end with a <code class="inline-code">&lt;T&gt;</code>)</em>. This will be implemented in the future.</li>
+<li>Compiled Classes that do not override a function in their code cannot have that function overridden by custom classes. For example, you can't override the <code class="inline-code">draw</code> method in a custom class that extends <code class="inline-syntax inline-code"><span class="hljs-title class_">FlxParticle</span></code>, because <code class="inline-syntax inline-code"><span class="hljs-title class_">FlxParticle</span></code> does not override <code class="inline-code">draw</code>. This will be fixed in the future.</li>
+<li>private variables and functions has not effect. They can be accessed as public variables.</li>
+<li>You can only extend a class that is in the packages, <code class="inline-code">flixel</code>, <code class="inline-code">funkin</code> and <code class="inline-code">modchart</code>.</li>
 </ul>
 
 
 			<div class="info">
-				<div class="written">Written by: Ne_Eo &amp; Frakits</div>
-				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-09-11T09:37:50.000Z">2024-09-11</span></div>
+				<div class="written">Written by: Ne_Eo, Frakits &amp; Jamextreme140</div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2025-09-19T04:13:02.526Z">2025-09-19</span></div>
 
 				<div class="github-edit-button">
-					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/modding/scripting/custom-classes.md">Edit this page on GitHub</a>
+					<a href="https://github.com/CodenameCrew/codename-website/tree/main/wiki/modding/scripting/features/custom-classes.md">Edit this page on GitHub</a>
 				</div>
 			</div>
 
 			<div class="giscus"></div>
 			<div class="giscus-frame"></div>
 
-			<script src="https://giscus.app/client.js" data-repo="CodenameCrew/codename-website" data-repo-id="R_kgDOMm2E8w" data-category="Website" data-category-id="DIC_kwDOMm2E884Cio1F" data-mapping="specific" data-term="wiki/modding/scripting/custom-classes" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="https://codename-engine.com/giscus-theme.css" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
+			<script src="https://giscus.app/client.js" data-repo="CodenameCrew/codename-website" data-repo-id="R_kgDOMm2E8w" data-category="Website" data-category-id="DIC_kwDOMm2E884Cio1F" data-mapping="specific" data-term="wiki/modding/scripting/features/custom-classes" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="https://codename-engine.com/giscus-theme.css" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
 			</script>
 		</div>
 	</div>
