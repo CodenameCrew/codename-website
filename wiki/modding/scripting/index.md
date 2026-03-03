@@ -1,7 +1,7 @@
 ---
 author: Frakits
 desc: This page explains how to script the engine
-lastUpdated: 2025-01-08T23:47:04.206Z
+lastUpdated: 2025-09-12T09:36:28.820Z
 title: Scripting
 ---
 # Scripting
@@ -76,6 +76,7 @@ We have a special variable named `__script__` that points to the script that is 
 - <a href="./script-calls.md">All of the script calls</a>
 
 And if you wanna go advanced, follow the rest of the articles here:
+- <a href="./features/index.md">Scripting Features</a>
 - <a href="./playstate-scripts/pause-gameover-scripts.md">Pause/Game Over Scripts</a>
 - <a href="./playstate-scripts/cutscenes-dialogue-scripts.md">Cutscenes/Dialogue Scripts</a>
 - <a href="./playstate-scripts/character-stage-scripts.md">Character/Stage Scripts</a><br><br>
@@ -85,6 +86,5 @@ And if you wanna go advanced, follow the rest of the articles here:
 - <a href="./3d-rendering.md">3D rendering</a>
 - <a href="./hxvlc.md">Using hxvlc for videos</a><br><br>
 - <a href="./scripted-assets-libraries.md">Scripted Assets Libraries</a>
-- <a href="./custom-classes.md">Custom Classes</a>
 - <a href="./ndll-scripting.md">NDLL Scripting</a>
 - <a href="./custom-transitions.md">Custom Transitions</a>

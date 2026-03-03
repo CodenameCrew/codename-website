@@ -1,12 +1,10 @@
 {
-    "name": "FUNKALIS",
-    "description": "A mod inspired by SIGNALIS",
-    "author": "EwaTheBlue",
-    "version": "1.0",
-    "link": "https://gamebanana.com/mods/551598",
+    "name": "FNF: Funkalis",
+    "description": "A mod inspired by SIGNALIS.",
+    "author": "Nikita",
+    "version": "v1",
+    "link":"https://gamebanana.com/mods/551598",
     "source": "",
-
-    "lastUpdated": "2024-10-27T19:45:12.000Z",
-
-    "tags": ["hardcoded"]
+    "lastUpdated": "2025-12-20T18:25:00Z",
+    "tags": ["softcoded"]
 }

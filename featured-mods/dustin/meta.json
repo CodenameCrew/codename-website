@@ -1,12 +1,12 @@
 {
     "name": "Friday Night Dustin'",
-    "description": "sans dusttale",
-    "author": "chuf & others",
-    "version": "unreleased",
-    "link": "https://gamebanana.com/mods/431667",
-    "source": "",
+    "description": "T H E  V E S S E L S  A R E  R E A D Y. A F T E R  A L L  T H E S E  Y E A R S. A R E  Y O U  R E A D Y ?",
+    "author": "Dustin' Team",
+    "version": "1.1.1",
+    "link": "https://gamebanana.com/mods/613322",
+    "source": "https://github.com/lunarcleint/dustin-build",
 
-    "lastUpdated": "unreleased",
+    "lastUpdated": "2025-09-29T21:29:00.000Z",
 
-    "tags": ["upcoming", "softcoded", "length-very-long", "difficulty-hard"]
+    "tags": ["admin-pick", "softcoded", "length-very-long", "difficulty-hard", "loved", "featured"]
 }
