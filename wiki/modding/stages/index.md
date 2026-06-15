@@ -129,7 +129,7 @@ Keep in mind that where you put these nodes is important as the character will b
 ## <h2 id="ratings-node" sidebar="Rating sprites node">Ratings sprites node (<syntax lang="xml">&lt;ratings&gt;</syntax>, <syntax lang="xml">&lt;combo&gt;</syntax>)</h2>
 This node is only used to position the rating sprites and does nothing else *(atm)*. Positioning in nodes doesn't matter here.
 ```xml
-<ratings x="200" y="400">
+<ratings x="200" y="400"/>
 ```
 The only parameters are ``x`` and ``y``.
 
