@@ -1,7 +1,7 @@
 ---
 author: Frakits
 desc: This page explains how to use Gameplay Scripts in your mod!
-lastUpdated: 2025-05-02T18:08:41.000Z
+lastUpdated: 2025-11-04T11:51:29.396Z
 title: Gameplay Scripts
 ---
 # Gameplay Scripts
@@ -60,4 +60,18 @@ if (curCameraTarget == 1) // Equivalent to mustHitSection == true
 
 You can also add **Difficulty Based scripts** by placing them in a subfolder named after the difficulty inside the song’s scripts folder.<br>
 For example the scripts inside `songs/dadbattle/scripts/erect/` will only get loaded if the current difficulty is `erect`.
+
+
+### Custom Values
+Custom values are well... *custom values*. They are used to store **extra values** that your song may use.
+
+To access these values, you must access `SONG.meta.customValues`. This returns the values of the `customValues` entry inside `meta.json` of the current song. *(if it exists. if not, returns null)*
+
+To use them, you can access the key using dot-based access. Here's an example:
+```haxe
+var args = SONG.meta.customValues; // Let's say it returns {seed: "seed"}
+var value = args.seed; // returns the value of the "seed" key, which is seed.
+trace(value);
+```
+*`customValues` is a `Dynamic` object, so please be careful in accessing values inside it.*
 
