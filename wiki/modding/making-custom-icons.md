@@ -32,14 +32,14 @@ And for animated icons this is going to be different because every animated icon
     <transition from="neutral" to="winning" anim="confirm0" fps="10" offsetY="-15"/>
 
     <!-- this sets the percentage from 0 to the next step (added later) to be specified as a neutral type -->
-    <step percent="0" type="neutral"/>
+    <step percent="0" name="neutral"/>
 
     <!-- doing the same as before but for winning -->
     <anim name="winning" anim="confirm-hold0" looped="false" offsetY="-15" fps="0"/>
     <transition from="winning" to="neutral" anim="unconfirm0" fps="10" offsetY="-15"/>
 
     <!-- with this added in combination of the previous step node will make the icon go to its winning state at 80% of health and go back to neutral below that -->
-    <step percent="80" type="winning"/>
+    <step percent="80" name="winning"/>
 </icon>
 ```
 
