@@ -16,9 +16,9 @@ const tools = [
 		desc: "Tool to pack events for the engine"
 	},
 	{
-		link: "https://kitzsh.github.io/tex-packer-ex/",
-		title: "Texture Packer EX",
-		desc: "Tool to pack and repack spritesheets",
+		link: "https://heroicpacker.heroeyad.dev/",
+		title: "Heroic Packer",
+		desc: "Tool to pack and repack spritesheets and atlases",
 		external: true,
 	},
 	{
